@@ -1,0 +1,5 @@
+#let blue = rgb("#5B8EFD")
+#let purple = rgb("#725DEF")
+#let lavender = rgb("#DD217D")
+#let magenta = rgb("#DD217D")
+#let yellow = rgb("#FFB00D")
