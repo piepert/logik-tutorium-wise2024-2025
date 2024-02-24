@@ -122,29 +122,36 @@ Die Gestaltung der einzelnen Sequenzen des Logik-Tutoriums nimmt die abzudeckend
 
 == Farbgebung und Typografie
 
-Der Grundsatz für die Medien des Tutoriums heißt: wenige, gut unterscheidbare Farben. Daher habe ich mich für drei Farben entschieden:
+Der Grundsatz für die Medien des Tutoriums heißt: wenige, gut unterscheidbare Farben. Daher habe ich mich für fünf Farben entschieden, drei Primärfarben, zwei Sekundärfarben:
 
 // #circle(fill: yellow)
-#align(center, stack(dir: ltr,
-    spacing: 1cm,
-    [
-        #circle(fill: blue)
-        Blau \
-        #blue.to-hex()
-    ],
-    [
-        #circle(fill: magenta)
-        Magenta \
-        #magenta.to-hex()
-    ],
-    [
-        #circle(fill: orange)
-        Orange \
-        #orange.to-hex()
-    ]))
+#align(center, block(breakable: false, stack(dir: ltr,
+    spacing: 1.5cm,
+    ..((blue, [Blau]),
+        (purple, [Dunkelblau]),
+        (magenta, [Magenta]),
+        (brown, [Braun]),
+        (yellow, [Gelb])).map(e => {
 
-Diese drei Farben sind sowohl visuell ansprechend, als auch in den meisten Farbschwächen noch angemessen zu unterscheiden. So ist zum Beispiel diese Palette für Rot-Grün-Blinde noch unterscheidbar:
+        circle(fill: e.first())
+        e.last()
+    }))))
 
+Diese drei Farben sind sowohl visuell ansprechend, als auch in den meisten Farbschwächen noch angemessen zu unterscheiden. So ist zum Beispiel diese Palette für Menschen mit Rot-Grün-Schwäche noch unterscheidbar:
+
+#align(center, block(breakable: false, stack(dir: ltr,
+    spacing: 1.5cm,
+    ..((rgb("#7672E5"), [Blau]),
+        (rgb("#2A2A69"), [Dunkelblau]),
+        (rgb("#B4BC6D"), [Magenta]),
+        (rgb("#6A6E16"), [Braun]),
+        (rgb("#E6EB65"), [Gelb])).map(e => {
+
+        circle(fill: e.first())
+        e.last()
+    }))))
+
+Das dunkle Blau wird die Hauptakzentfarbe der Dokumente, so etwa für allgemeine Gestaltungselemente wie Überschriften, Links, o.ä. Die anderen sind zum Hervorheben bestimmter anderer Aspekte gedacht.
 
 Typografisch ist besonders eine Entscheidung getroffen wurden: gewählt wurde die Schriftart #link("https://brailleinstitute.org/freefont", [Atkinson Hyperlegible]), da bei dieser auch bei geringen Schriftgrößen oder Menschen mit Sehbehinderung bis zu einem gewissen Grad die Buchstaben noch sehr gut zu unterscheiden sind:
 

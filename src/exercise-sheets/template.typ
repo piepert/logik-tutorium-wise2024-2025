@@ -1,15 +1,19 @@
-#let blue = rgb("#5B8EFD")
-#let purple = rgb("#725DEF")
-#let lavender = rgb("#DD217D")
-#let magenta = rgb("#DD217D")
-#let yellow = rgb("#FFB00D")
+#let blue = rgb("#648fff")
+#let purple = rgb("#555ef0").darken(50%)
+#let magenta = rgb("#dc267f")
+#let brown = rgb("#fe6100").darken(50%)
+#let yellow = rgb("#ffb000")
+
+#let orange = none
+#let red = none
+#let green = none
 
 #let task(body) = {
     block(width: 100%, inset: 1em,
         stroke: (left: (thickness: 5pt, paint: blue)),
         fill: blue.lighten(90%),
 
-        text(size: 0.75em, strong(smallcaps[Aufgabe]))
+        text(size: 0.75em, strong(text(fill: purple, smallcaps[Aufgabe])))
         + place(dx: -1.5cm, dy: -0.5cm,
             text(size: 3em, fill: blue.lighten(75%), strong[A]))
         + block(body))
@@ -17,12 +21,12 @@
 
 #let hint(body) = {
     block(width: 100%, inset: 1em,
-        stroke: (left: (thickness: 5pt, paint: orange, dash: "dotted")),
-        fill: orange.lighten(90%),
+        stroke: (left: (thickness: 5pt, paint: yellow, dash: "dotted")),
+        fill: yellow.lighten(90%),
 
-        text(size: 0.75em, strong(smallcaps[Hinweis]))
+        text(size: 0.75em, strong(text(fill: brown, smallcaps[Hinweis])))
         + place(dx: -1.5cm, dy: -0.5cm,
-            text(size: 3em, fill: orange.lighten(75%), strong[H]))
+            text(size: 3em, fill: yellow.lighten(75%), strong[H]))
         + block(body))
 }
 
@@ -31,7 +35,7 @@
         stroke: (left: (thickness: 5pt, paint: blue, dash: "dotted")),
         fill: blue.lighten(90%),
 
-        text(size: 0.75em, strong(smallcaps[Lösung]))
+        text(size: 0.75em, strong(text(fill: purple, smallcaps[Lösung])))
         + place(dx: -1.5cm, dy: -0.5cm,
             text(size: 3em, fill: blue.lighten(75%), strong[L]))
         + block(body))
@@ -42,7 +46,7 @@
         stroke: (left: (thickness: 5pt, paint: magenta)),
         fill: magenta.lighten(90%),
 
-        text(size: 0.75em, strong(smallcaps[Definition]))
+        text(size: 0.75em, strong(text(fill: magenta, smallcaps[Definition])))
         + place(dx: -1.5cm, dy: -0.5cm,
             text(size: 3em, fill: magenta.lighten(75%), strong[D]))
         + block(body))
@@ -53,7 +57,7 @@
         stroke: (left: (thickness: 5pt, paint: magenta, dash: "dotted")),
         fill: magenta.lighten(90%),
 
-        text(size: 0.75em, strong(smallcaps[Achtung!]))
+        text(size: 0.75em, strong(text(fill: magenta, smallcaps[Achtung!])))
         + place(dx: -1.25cm, dy: -0.5cm,
             text(size: 3em, fill: magenta.lighten(75%), strong[!]))
         + block(body))
@@ -61,12 +65,12 @@
 
 #let example(body) = {
     block(width: 100%, inset: 1em,
-        stroke: (left: (thickness: 5pt, paint: orange)),
-        fill: orange.lighten(90%),
+        stroke: (left: (thickness: 5pt, paint: yellow)),
+        fill: yellow.lighten(90%),
 
-        text(size: 0.75em, strong(smallcaps[Beispiel]))
+        text(size: 0.75em, strong(text(fill: brown, smallcaps[Beispiel])))
         + place(dx: -1.5cm, dy: -0.5cm,
-            text(size: 3em, fill: orange.lighten(75%), strong[B]))
+            text(size: 3em, fill: yellow.lighten(75%), strong[B]))
         + block(body))
 }
 
@@ -106,13 +110,29 @@
     abstract: none,
     body
 ) = {
-    set text(font: "Atkinson Hyperlegible", lang: "de")
+    set text(font: "Atkinson Hyperlegible", size: 11pt, lang: "de")
     show math.equation: set text(font: "Fira Math")
 
     set par(justify: true)
 
     set enum(indent: 1em)
     set list(indent: 1em)
+
+    show link: underline
+    show link: set text(fill: purple)
+
+    // show heading: set text(fill: purple)
+    show heading: it => locate(loc => style(s => {
+        let num-style = it.numbering
+
+        if num-style == none {
+            return it
+        }
+
+        let num = numbering(num-style, ..counter(heading).at(loc))+[ \u{200b}]
+
+        [#move(text(fill: purple.lighten(25%), weight: "thin", num) + [] + text(fill: purple, it.body), dx: -1 * measure(num, s).width)]
+    }))
 
     set page(header: [
             #set text(size: 0.75em)
@@ -127,15 +147,18 @@
                 Tristan Pieper \
                 #datetime.today().display("[day].[month].[year]")
             ]
+
+            #line(length: 100%, stroke: purple)
         ],
 
         footer: align(center)[
+            #line(length: 100%, stroke: purple)
             Seite #counter(page).display() / #locate(loc => counter(page).final(loc).first())
         ],
 
-        margin: (top: 3cm))
+        margin: (top: 3.5cm, bottom: 3cm))
 
-    pad(align(center, text(size: 1.5em, strong(title))))
+    pad(align(center, text(fill: purple, size: 1.75em, strong(title))))
 
     if abstract != none {
         set text(size: 0.85em)
@@ -147,7 +170,8 @@
 
     if with-outline {
         show outline.entry: it => h(1em) + it
-        outline(indent: 1.5em)
+        set text(size: 0.75em)
+        pad(x: 1cm, y: 0.25cm, outline(indent: 1.5em))
     }
 
     set heading(numbering: "1.")
