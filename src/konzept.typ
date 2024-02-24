@@ -108,9 +108,40 @@ Die Struktur des Tutoriums soll transparent und gut geplant sein, jedoch auch so
 
 === Sequenzstruktur
 
-Die Gestaltung der einzelnen Sequenzen des Logik-Tutoriums nimmt die abzudeckenden Inhalte (siehe @inhalte) und bricht diese in grobe Sequenzen auf. Jede Sequenz besteht aus mindestens einer Sitzung, beginnt mit einer Inhaltsübersicht und endet mit einem fakultativen Testat, das außerhalb des Tutoriums stattfindet. Dies kann nach Absprache in Präsenz vor bzw. nach dem Tutorium stattfinden oder asynchron online.
+Die Gestaltung der einzelnen Sequenzen des Logik-Tutoriums nimmt die abzudeckenden Inhalte (siehe @inhalte) und bricht diese in grobe Sequenzen auf. Jede Sequenz besteht aus mindestens einer Sitzung, beginnt mit einer Inhaltsübersicht und endet mit einer fakultativen Lernevaluation, das in Form eines Testats außerhalb des Tutoriums stattfindet. Dies kann nach Absprache in Präsenz vor bzw. nach dem Tutorium stattfinden oder asynchron online. Dabei ist darauf zu achten, dass Reservesitzungen eingeplant sind, um die Möglichkeit abzudecken, dass die Studierenden langsamer sind, als erwartet, oder das Tutorium mit von ihnen gewünschten Inhalten füllen können.
+
+Der Ablauf einer Sequenz kann wie folgt zusammengefasst werden:
+
++ *Vorstellung der Sequenz:* Die Studierenden kennen den groben Ablauf der Sequenz und wissen, welche Fähigkeiten sie am Ende der Sequenz beherrschen sollen.
+
++ *Durchführung der Sequenz:* Die Studierenden generieren die geplanten Kompetenzen.
+
++ *Evaluation der Sequenz:* Die Studierenden haben die Möglichkeit, zu prüfen, ob sie die Ziele, die durch die Sequenz vorgegeben wurden, erreicht haben.
+
+Die Evaluation in Form eines Testats kann um eine fakultative Beurteilung durch die Tutoriumsleitung ergänzt werden. Durch individuelles Feedback zu den erdachten Lösungen erhalten die Studierenden die Möglichkeit, ihre Fähigkeiten besser einschätzen zu lassen und auf Fehler aufmerksam zu werden, die sie selbst übersehen haben. Eine andere Möglichkeit wäre, die Studierenden untereinander Feedback geben zu lassen und somit das soziale Ziel in den Fokus zu rücken. Dies kann jedoch auch als eine der Stellen im Tutorium verwendet werden, in denen die Tutoriumsleitung aktiv umfangreiches Feedback anbietet.
 
 === Sitzungsstruktur
+
+Die von der aktuellen Sequenz bestimmten Inhalte werden in einzelne Sitzungen verteilt. Jede Sitzung wird eingeleitet und enthält einen klaren Abschluss. Der Aufbau einer Sitzung ist an das PEST-Modell angelehnt:
+
++ *Problematisierung:* Das Problem der Sitzung wird motiviert und konkretisiert. Den Studierenden wird klar, _was_ sie lernen müssen, _warum_ es relevant ist und _wie_ es in den Kontext der Lehrveranstaltung einzuordnen ist.
+
++ *Erarbeitung:* Die Studierenden entwickeln eine Lösung des Problems bzw. Ansätze für eine Lösung.
+
++ *Sicherung:* Die Ergebnisse der Erarbeitung werden verglichen, korrigiert und verfeinert. Die Studierenden haben hier die Möglichkeit, eigene Fehler zu erkennen und ihr Ergebnis zu konkretisieren.
+
++ *Transfer:* Das gesicherte Ergebnis wird auf ein Beispiel angewendet, in dem das in der ersten Phase charakterisierte Problem auftritt. Die Studierenden erkennen, dass das Problem gelöst wurde.
+
+Dazu kommen eine Einleitungs- und Abschlussphase.
+
+In der Einleitungsphase wird den Studierenden die Möglichkeit gegeben, Themen in den Raum zu werfen, die sie in künftigen Sitzungen wiederholen wollen, organisatorische Fragen zu stellen oder sonstige Hinweise zu geben. Darauf folgt eine Wiederholung der Themen der letzten Sitzung inklusive einer einfachen aber klausur-gerechten Transferaufgabe zu dieser Sitzung. Im Anschluss beginnt die oben dargestellte Unterrichtsstruktur des PEST-Modells.
+
+Nach Beendigung der Transferphase folgt erneut die Möglichkeit für die Studierenden Fragen zu stellen oder Anmerkungen zu machen, dann ein thematischer Ausblick und eine Reflexion der Sitzung. Die Reflexion wird in Studierendenhand gegeben. Alle Studierenden (inklusive der Tutoriumsleitung) sollen je die folgenden Fragen beantworten:
+
++ Was nehmen Sie aus dieser Sitzung mit?
++ Woran wollen Sie in Zukunft arbeiten?
+
+Daraufhin wird die Sitzung geschlossen.
 
 == Aufgabenstellungen
 
