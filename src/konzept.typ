@@ -1,7 +1,7 @@
 #import "exercise-sheets/template.typ": *
 
 #show: project.with(
-    title: [Konzept für das Logik-Tutorium],
+        am Institut für Philosophie der Universität Rostock],
     with-outline: true,
 
     abstract: [
@@ -96,7 +96,7 @@ Die wichtigsten Medien des Tutoriums sind
 + die Folien des Tutoriums,
 + die fakultativen Aufgabenblätter des Tutoriums,
 + das Skript der Vorlesung und
-+ die fakultativen Testate des Tutoriums.
++ die fakultativen Lernevaluationen des Tutoriums.
 
 Die Medien sind so zu gestalten, dass sie möglichst vielseitig sind und jeder Inhalt des Tutoriums durch verschiedene Medien gestützt ist. Die Studierenden sind individuell und vielfältig, sie benötigen verschiedene Lernwege, daher sind nicht nur abwechslungsreiche Methoden und Sozialformen, sondern auch abwechslungsreiche Medien einzusetzen.
 
@@ -263,7 +263,7 @@ Auf den Folien sollen 6 Gestaltungselemente unterschieden werden:
 
 // #align(center, block(width: 70%, align(left, [
 #[
-#let smallblock(body) = align(center, block(width: 75%, align(left, body)))
+#let smallblock(body) = align(center, block(align(left, body)))
 #set enum(spacing: 1cm)
 + #nobreak[Eine Definition ist eine Begriffbestimmung. Definitionen werden zur Klärung von Begriffen eingesetzt. Alle klausurrelevanten Definitionen sind auf den Folien so hervorgehoben:
 
@@ -275,7 +275,7 @@ Auf den Folien sollen 6 Gestaltungselemente unterschieden werden:
 + #nobreak[Wichtige Dinge und Merksätze werden so dargestellt:
 
     #smallblock(notice[
-        Widersprechen sich die Prämissen, so ist der Schluss mit jeder beliebigen Konkluson gültig!
+        Widersprechen sich die Prämissen, so ist der Schluss mit jeder beliebigen Konklusion gültig!
     ])
 
     Es handelt sich dabei um Dinge, die beachtet werden müssen, oder um allgemeine Algorithmen bzw. Einschränkungen für Algorithmen und Vorgehen, um Aufgaben zu bearbeiten.
@@ -342,10 +342,11 @@ Für alle Dokumente sollen die Gestaltungselemente, bis auf den Inhalt, dieselbe
 
 Sowohl auf den Folien als auch auf den Aufgabenblättern werden die folgenden Elemente benutzt, um logische Sachverhalte darzustellen:
 
-+ *Wahrheitstafel:*
-+ *KdnS:*
-+ *Syntaxbaum und Semantikbaum:*
-+ *Modell-Diagramm:* Venn-Diagramm mit Individuen
++ *Wahrheitstafel:* TODO
++ *KdnS:* TODO
++ *Syntaxbaum:* TODO
++ *Semantikbaum:* TODO
++ *Modell-Diagramm:* Venn-Diagramm mit Individuen TODO
 
 = Inhalte <inhalte>
 
