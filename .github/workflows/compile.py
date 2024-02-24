@@ -26,4 +26,5 @@ for path, subdirs, files in os.walk(INPUT_DIRECTORY):
         FILE_LIST.append((file_name, new_path))
 
 for entry in FILE_LIST:
+    print("Compiling... ", entry[0], " -> ", entry[1])
     os.system(f"typst compile --font-path fonts/ {entry[0]} {entry[1]}")
