@@ -2,6 +2,8 @@
 
 #let project(
     title: none,
+    with-outline: false,
+    abstract: none,
     body
 ) = {
     set text(font: "Atkinson Hyperlegible", lang: "de")
@@ -35,8 +37,18 @@
 
     pad(align(center, text(size: 1.5em, strong(title))))
 
-    show outline.entry: it => h(1em) + it
-    outline(indent: 1.5em)
+    if abstract != none {
+        set text(size: 0.85em)
+
+        pad(x: 1cm, y: 0.25cm, par(first-line-indent: 1cm,
+            strong[Zusammenfassung:] +
+            abstract))
+    }
+
+    if with-outline {
+        show outline.entry: it => h(1em) + it
+        outline(indent: 1.5em)
+    }
 
     set heading(numbering: "1.")
 

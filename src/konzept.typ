@@ -2,7 +2,13 @@
 #import "templates/exercise-sheet.typ": project
 #import "templates/elements.typ": *
 
-#show: project.with(title: [Konzept für das Logik-Tutorium])
+#show: project.with(
+    title: [Konzept für das Logik-Tutorium],
+    with-outline: true,
+
+    abstract: [
+        Das Logik-Tutorium bildet für die Studierenden als eine Veranstaltung im ersten Semester die Möglichkeit, eine neue Lernumgebung kennenzulernen sowie sich in das selbstgesteuerte Lernen einzufinden. Es darf keine eintönige Lehrveranstaltung sein, sondern soll soziale Kontakte und Aktivität fördern. Ein einheitliches didaktisches, visuelles und inhaltiches Konzept soll den Einstieg in die Logik und das Studium der Universität Rostock erleichtern. Gleichzeitig soll es die Komptenzen und Inhalte des Moduls "Sprache, Logik, Argumentation" erfassen und den Studierenden einen Raum geben, sich diese anzueignen.
+    ])
 
 = Didaktisches Konzept
 
@@ -14,25 +20,41 @@ Im Gegensatz dazu ist die Universität eine freiwillige und elitäre Bildungsans
 
 Um diesen Übergang von der Schule ins Studium zu erleichtern, sollten die ersten Lehrveranstaltungen so konzipiert sein, dass sie den Studierenden diese Selbstverantwortlichkeit zeigen und sie in den Modus zu bringen, aktiv, vorbereitend und nachbereitend an den Lehrveranstaltungen teilzunehmen. Kommilitonen sollen sich untereinander vernetzen, Arbeit teilen, sich gegenseitig Hilfe liefern und unereinander sozialisieren.
 
-Daher verfolgt das Logik-Tutorium vier Ziele:
+Daher verfolgt das Logik-Tutorium fünf Ziele:
 
-+ *das soziale Ziel:* Das Tutorium soll die Studierenden in das methodisch-selbstgesteuerte Lernen einführen und sie untereinander zu vernetzen.
++ *das methodische Ziel:* Das Tutorium soll die Studierenden in das methodisch-selbstgesteuerte Lernen einführen.
 
-+ *das inhaltliche Ziel:* Die Inhalte des Tutorium sollen mindestens den klausurrelevanten Inhalte erfassen.
++ *das soziale Ziel:* Das Tutorium die Studierenden untereinander zu vernetzen.
+
++ *das inhaltliche Ziel:* Die Inhalte des Tutorium sollen mindestens die klausurrelevanten Inhalte erfassen.
 
 + *das Forderungs- und Förderungsziel:* Das Tutorium soll Studierende, die Probleme mit Logik haben, unterstützen und Studierende, denen Logik leicht fällt, fordern. Zusätzlich sollen die Studierenden Möglichkeiten haben, zu ihrem Leistungsstand beurteilt zu werden.
 
 + *das situative Ziel:* Die Studierenden fühlen sich mit der Lehrkraft wohl, haben keine Angst, Fragen untereinander auszutauschen und im Plenum oder individuell zu äußern, haben Spaß an der Arbeit miteinander und an den Themen des Tutoriums und fühlen sich generell in der Situation des Tutoriums wohl, gut aufgehoben und gut betreut.
 
+== Logisches Kompetenzmodell
+
+Aus den fünf Zielen des Tutoriums sind die im Tutorium zu generierenden Kompetenzen der Studierenden ableitbar.
+
++ *Methodenkompetenz* beschreibt die Fähigkeit, die fachlichen Methoden des Logik-Moduls korrekt anwenden zu können. Dazu gehört das direkte und indirekte metasprachliche Beweisen und das direkte und indirekte Beweisen mit dem Ableitungskalkül des natürlichen Schließens, das Feststellen logischer Folgerung, Äquivalenz, Wahrheit und Falschheit mit der Wahrheitstabelle und die Formalisierung von Aussagesätzen mit der Aussagen- und Prädikatenlogik.
+
++ *Sachkompetenz* beschreibt die Fähigkeit, die Inhalte des Logik-Moduls korrekt wiedergeben, einordnen und abwägen zu können. Darunter fallen typische Definitionen -- wie die des Arguments, der deduktiven Gültigkeit, die der Schlüssigkeit -- aber auch die richtige Bestimmung von Aussagesätzen, hinreichenden und notwendigen Bedingungen und die korrekte Vervollständigung des logischen Quadrats.
+
++ *Selbstkompetenz* beschreibt die Fähigkeit, das eigene Lernverhalten reflektieren und anpassen zu können.
+
++ *Sozialkompetenz* beschreibt die Fähigkeit, das eigene Sozialverhalten auf andere anpassen und reflektieren, sowie alleine und in Gruppen arbeiten zu können.
+
+Um die Ziele des Tutoriums umzusetzen, ist eine systematische Förderung dieser Kompetenzen angebracht. Für das Bestehen der Klausur ist besonders die logische Methodenkompetenz und Sachkompetenz relevant, für das erfolgreiche Abschließen des Studiums aber auch die Sozial- und Selbstkompetenz. Die Studierenden sollen sich nicht nur fachliche Fertigkeiten aneigenen, sondern sich auch als eine Studierendenschaft verstehen lernen und Freunde und Lerngruppen unter ihren Kommilitonen finden und ihr eigenes Lernverhalten optimieren können.
+
 == Methoden und Sozialformen
 
 In Anbetracht der Ziele gilt es, die Methoden und Sozialformen des Tutoriums so zu wählen, dass die gesetzten Ziele erreicht werden. Als grundlegendes Paradigma gilt es, eine Vielfalt an verschiedenen Methoden und Sozialformen anzuwenden. Dazu gilt eine Einschränkung: Der Frontalunterricht, indem ein Dozent die Inhalte als Lehrervortrag vermittelt, ist mit sehr viel bedacht anzuwenden.
 
-+ Der Frontalunterricht *fördert den Bystander-Effekt*: Die Studierenden lehnen sich in der neuen Situation zurück und aufgrund fehlenden Verantwortlichkeitsgefühls wird auf Nachfragen und Aktivitätsaufforderungen nur bedingt eingegangen.
++ Der *Frontalunterricht fördert den Bystander-Effekt*: Die Studierenden lehnen sich in der neuen Situation zurück und aufgrund fehlenden Verantwortlichkeitsgefühls wird auf Nachfragen und Aktivitätsaufforderungen nur bedingt eingegangen.
 
-+ Der Frontalunterricht *fördert passiv-schulisches Lernverhalten*: Die Studierenden werden an den Frontalunterricht in der Schule erinnert, in dem die Verantwortlichkeit bei der Lehrkraft lag. Dadurch fehlt die aktive Auseinandersetzung mit den Problemen, es wird eine Erwartungshaltung aufgebaut, in dem die Dozierenden die Inhalte den Studierenden präsentieren sollten, statt dass diese sie selbst erarbeiten.
++ Der *Frontalunterricht fördert passiv-schulisches Lernverhalten*: Die Studierenden werden an den Frontalunterricht in der Schule erinnert, in dem die Verantwortlichkeit bei der Lehrkraft lag. Dadurch fehlt die aktive Auseinandersetzung mit den Problemen, es wird eine Erwartungshaltung aufgebaut, in dem die Dozierenden die Inhalte den Studierenden präsentieren sollten, statt dass diese sie selbst erarbeiten.
 
-+ Der Frontalunterricht *erschwert das Erreichen des sozialen Ziels*: Da Studierenden im Frontalunterricht passiv die präsentierten Inhalte aufnehmen, kommt es nicht zu einer Interaktion untereinander. Im Gegenteil sogar: Interaktionen untereinander sind -- sofern nicht explizit gefordert -- im Frontalunterricht nicht erwünscht. Damit fällt es schwer, das soziale Ziel umzusetzen.
++ Der *Frontalunterricht erschwert das Erreichen des sozialen Ziels*: Da Studierenden im Frontalunterricht passiv die präsentierten Inhalte aufnehmen, kommt es nicht zu einer Interaktion untereinander. Im Gegenteil sogar: Interaktionen untereinander sind -- sofern nicht explizit gefordert -- im Frontalunterricht nicht erwünscht. Damit fällt es schwer, das soziale Ziel umzusetzen.
 
 Statt des Frontalunterrichts sollen Methoden gewählt werden, die verschiedene Sozialformen durchlaufen: etwa das Gruppenpuzzle ermöglicht es den Studierenden sich zuerst in Einzelarbeit Expertenwissen anzueignen, dieses in zwei Phasen als Gruppenarbeit untereinander zu präsentieren und zu besprechen und zuletzt im Plenum zu vergleichen.
 
@@ -46,7 +68,7 @@ Folgende Methoden sollen im Logik-Tutorium angewandt werden:
     In einem Gruppenpuzzle wird die Einzelarbeitsphase überprungen, von den Expertengruppen eine Aufgabe zum aktuellen Thema der Sitzung gestaltet. In den Stammgruppen werden die Aufgaben untereinander ausgetauscht, bearbeitet und verglichen. Im Plenum findet eine kurze Reflexion statt.
 
 - *Gruppenbefragung* \
-    Die Studierenden schreiben zuerst in Einzelarbeit jeder eine Frage auf, die sie inhaltich gerade beschäftigt. Danach werden die Studierenden in Gruppen aufgeteilt. Aus den Fragen werden so viele ausgelost, dass jede Gruppe eine Frage hat. Es folgt eine Bearbeitungszeit, in der die Gruppen versuchen eine ausführliche Antwort auf ihre Frage zu finden. Je nach Schnelligkeit können die Gruppen neue Fragen bekommen. Am Ende werden die Ergebnisse im Plenum in einem Vortrag diskutiert. Im Vortrag sollen
+    Die Studierenden schreiben zuerst in Einzelarbeit je eine Frage auf, die sie inhaltich gerade beschäftigt. Danach werden die Studierenden in Gruppen aufgeteilt. Aus den Fragen werden so viele ausgelost, dass jede Gruppe eine Frage hat. Es folgt eine Bearbeitungszeit, in der die Gruppen versuchen eine ausführliche Antwort auf ihre Frage zu finden. Je nach Schnelligkeit können die Gruppen neue Fragen bekommen. Am Ende werden die Ergebnisse im Plenum in einem Vortrag diskutiert. Im Vortrag sollen
 
     + das Problem und wie es interpretiert wurde,
     + die Herangehensweise zur Problemlösung und
@@ -71,11 +93,36 @@ Folgende Methoden sollen im Logik-Tutorium angewandt werden:
 
 == Medien
 
+Die wichtigsten Medien des Tutoriums sind
+
++ die Folien des Tutoriums,
++ die fakultativen Aufgabenblätter des Tutoriums,
++ das Skript der Vorlesung und
++ die fakultativen Testate des Tutoriums.
+
+Die Medien sind so zu gestalten, dass sie möglichst vielseitig sind und jeder Inhalt des Tutoriums durch verschiedene Medien gestützt ist. Die Studierenden sind individuell und vielfältig, sie benötigen verschiedene Lernwege, daher sind nicht nur abwechslungsreiche Methoden und Sozialformen, sondern auch abwechslungsreiche Medien einzusetzen.
+
+Die Studierenden sollen dazu angehalten werden, sich verschiedene Medien zu Nutze zu machen und selbständig Medien zu erschaffen, etwa in Form von Lernübersichten, Plakaten oder Vorlesungsmitschriften. Dazu sollen diese aktiv mit in das Tutorium einbezogen werden. Das ist auf verschiedenen Weisen möglich. Kommilitonen können sich untereinander Vorlesungsmitschriften präsentieren oder sie Grundlage für Gruppenarbeiten oder ähnlichem werden lassen. Als Ergebnis von Erarbeitungs- oder Sicherungsphasen können Lernübersichten oder Plakate dienen, wobei diese direkt den Mehrwert haben, zur Klausurvorbereitung verwendet werden zu können.
+
 == Struktur
+
+Die Struktur des Tutoriums soll transparent und gut geplant sein, jedoch auch so flexibel, dass die Studierenden ihre eigenen Probleme, Fragen und Interessen mit einbringen können. Dieser Grundsatz soll das situative Ziel des Tutoriums unterstützen, indem die Studierenden die Möglichkeit haben das Tutorium mitzugestalten. Außerdem soll es das methodische Ziel unterstützen, indem die Studierenden Eigenverantwortlichkeit für die Art und Weise ihres Lernprozesses übernehmen.
+
+=== Sequenzstruktur
+
+Die Gestaltung der einzelnen Sequenzen des Logik-Tutoriums nimmt die abzudeckenden Inhalte (siehe @inhalte) und bricht diese in grobe Sequenzen auf. Jede Sequenz besteht aus mindestens einer Sitzung, beginnt mit einer Inhaltsübersicht und endet mit einem fakultativen Testat, das außerhalb des Tutoriums stattfindet. Dies kann nach Absprache in Präsenz vor bzw. nach dem Tutorium stattfinden oder asynchron online.
+
+=== Sitzungsstruktur
+
+== Aufgabenstellungen
+
+=== Klausurrelevante Aufgabenstellungen
+
+=== Erweiterte Aufgabenstellungen
 
 = Visuelles Konzept
 
-== Farbgebung
+== Farbgebung und Typografie
 
 Der Grundsatz für die Medien des Tutoriums heißt: wenige, gut unterscheidbare Farben. Daher habe ich mich für drei Farben entschieden:
 
@@ -118,6 +165,8 @@ Diese drei Farben sind sowohl visuell ansprechend, als auch in den meisten Farbs
         #circle(fill: orange)
         Orange
     ]))
+
+#text(fill: red, strong[Typografie, Atkinson Hyperlegible])
 
 == Gestaltungselemente
 
@@ -190,7 +239,7 @@ Auf den Folien sollen 6 Gestaltungselemente unterschieden werden:
 // ])))
 ]
 
-== Wiederholungsserien
+=== Wiederholungsserien
 
 Auf den Wiederholungsserien werden hauptsächlich Aufgaben, Hinweise und Lösungen verwendet. Um die Wiederholungsserien visuell nicht zu überladen, findet eine Differenzierung der Gestaltungselemente der Folien von denen der Wiederholungsserien statt:
 
@@ -204,9 +253,18 @@ Jede Wiederholungsserie besteht aus drei verschiedenen Dokumenten:
 
 Für alle Dokumente sollen die Gestaltungselemente, bis auf den Inhalt, dieselben sein.
 
-= Inhalte
+=== Logische Elemente
 
-Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum für individuelle Wünsche der Studierenden enthalten.
+Sowohl auf den Folien als auch auf den Aufgabenblättern werden die folgenden Elemente benutzt, um logische Sachverhalte darzustellen:
+
++ *Wahrheitstafel:*
++ *KdnS:*
++ *Syntaxbaum und Semantikbaum:*
++ *Modell-Diagramm:* Venn-Diagramm mit Individuen
+
+= Inhalte <inhalte>
+
+Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum für individuelle Wünsche der Studierenden enthalten. Dabei gibt es ein kontingent an obligatorischen Inhalten, die sich aus den klausurrelevanten Aufgabenstellungen zusammensetzen, und fakultative Inhalte, die zur Vertiefung und Sicherung genutzt werden können.
 
 Logische Grundlagen:
 
