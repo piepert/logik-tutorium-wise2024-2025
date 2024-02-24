@@ -1,6 +1,4 @@
-#import "templates/colors.typ": *
-#import "templates/exercise-sheet.typ": project
-#import "templates/elements.typ": *
+#import "exercise-sheets/template.typ": *
 
 #show: project.with(
     title: [Konzept für das Logik-Tutorium],
@@ -52,7 +50,7 @@ In Anbetracht der Ziele gilt es, die Methoden und Sozialformen des Tutoriums so 
 
 + Der *Frontalunterricht fördert den Bystander-Effekt*: Die Studierenden lehnen sich in der neuen Situation zurück und aufgrund fehlenden Verantwortlichkeitsgefühls wird auf Nachfragen und Aktivitätsaufforderungen nur bedingt eingegangen.
 
-+ Der *Frontalunterricht fördert passiv-schulisches Lernverhalten*: Die Studierenden werden an den Frontalunterricht in der Schule erinnert, in dem die Verantwortlichkeit bei der Lehrkraft lag. Dadurch fehlt die aktive Auseinandersetzung mit den Problemen, es wird eine Erwartungshaltung aufgebaut, in dem die Dozierenden die Inhalte den Studierenden präsentieren sollten, statt dass diese sie selbst erarbeiten.
++ Der *Frontalunterricht fördert passiv-schulisches Lernverhalten*: Die Studierenden werden an den Frontalunterricht in der Schule erinnert, in dem die Verantwortlichkeit bei der Lehrkraft lag. Dadurch fehlt die aktive Auseinandersetzung mit den Problemen, es wird eine Erwartungshaltung aufgebaut, in dem die Dozierenden die Inhalte den Studierenden präsentieren sollten, statt dass sie diese selbst erarbeiten.
 
 + Der *Frontalunterricht erschwert das Erreichen des sozialen Ziels*: Da Studierenden im Frontalunterricht passiv die präsentierten Inhalte aufnehmen, kommt es nicht zu einer Interaktion untereinander. Im Gegenteil sogar: Interaktionen untereinander sind -- sofern nicht explizit gefordert -- im Frontalunterricht nicht erwünscht. Damit fällt es schwer, das soziale Ziel umzusetzen.
 
