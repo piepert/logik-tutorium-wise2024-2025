@@ -357,6 +357,98 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
 
 Logische Grundlagen:
 
+#tablex(
+    columns: (20%, auto, auto),
+    rows: 6,
+    stroke: none,
+    fill: (col, row) => (
+        purple,
+        none,
+        blue.lighten(75%)
+    ).at(
+        if row == 0 {
+            row
+        } else {
+            1 + calc.rem(row, 2)
+        }
+    ),
+
+    map-cols: (col, cells) => {
+        let index = 0
+
+        while index < cells.len() {
+            cells.at(index).content = [
+                #set par(justify: false)
+                #set text(size: 0.75em)
+                #cells.at(index).content
+            ]
+            index += 1
+        }
+
+        return cells
+    },
+
+    text(fill: white, strong[Sequenz]),
+    vlinex(stroke: purple),
+
+    text(fill: white, strong[Inhalt]),
+    vlinex(stroke: purple),
+
+    text(fill: white, strong[inhaltliche Ziele]),
+)[
+    Logische Grundlagen
+][
+    - philosophisch-logische Argumente
+    - Gütekriterien:
+        - Gültigkeit
+        - Schlüssigkeit
+
+    \
+    - indirekte Beweise
+    - direkte Beweise
+][
+    - wissen, was philosophische Argumente sind
+    - philosophische Argumente erkennen können
+    \
+    - Gültigkeit und Schlüssigkeit definieren können
+    - Gültigkeit und Schlüssigkeit vergleichen können
+    \
+    - durch metasprachliche Begründung einfache Beweise über deduktiv-gültige Argumente führen können
+][
+
+    Aussagenlogik
+][
+    - Syntax
+        - valide AL-Sätze
+        - aussagenlogische Formalisieurng
+
+    - Semantik
+][
+
+][
+    Wahrheitstabelle
+][
+    - Interpretation aussagenlogischer Ausdrücke mit der Wahrheitstabelle
+    - logische Wahrheit, logische Falschheit
+    - logische Folgerung, logische Äquivalenz
+][
+
+][
+   Kalkül des natürlichen Schließens
+][
+
+][
+
+][
+    Prädikatenlogik
+][
+
+][
+
+][
+    Prädikatenlogisches Kalkül des natürlichen Schließens
+]
+
 - philosophisch-logische Argumente
 - Gütekriterien:
   - deduktiv-gültige Schlüsse
