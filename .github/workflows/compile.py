@@ -13,10 +13,12 @@ for path, subdirs, files in os.walk(INPUT_DIRECTORY):
             continue
 
         splitted_path = os.path.normpath(file_name).split(os.sep)
+
+        if splitted_path[1] == "templates":
+            continue
+
         new_path = os.path.splitext((os.sep).join([OUTPUT_DIRECTORY] + splitted_path[1:]))[0] + ".pdf"
         new_path_parent = (os.sep).join([OUTPUT_DIRECTORY] + splitted_path[1:-1])
-
-        print(new_path_parent)
 
         if not os.path.exists(new_path_parent):
             os.makedirs(new_path_parent, exist_ok=True)
