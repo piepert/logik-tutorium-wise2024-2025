@@ -114,9 +114,61 @@ Die Gestaltung der einzelnen Sequenzen des Logik-Tutoriums nimmt die abzudeckend
 
 == Aufgabenstellungen
 
+Ähnlich der Standardisierung der Operatoren gibt es für das Tutorium nur eine begrenzte Auswahl an möglichen Aufgabenstellungen, die jeweils ein gewisses Ziel verfolgt, d.i. meist das Fördern einer bestimmten Fertigkeit. Dementsprechend müssen die Aufgabenstellungen sich ebenfalls an Inhalten von @inhalte orientieren.
+
 === Klausurrelevante Aufgabenstellungen
 
+Die folgenden Aufgabenstellungen sind vorbereitend auf die Klausur konzipiert:
+
++ Aussagesätze identifizieren
+
++ Definition von Grundkonzepten
+
++ Aussagenlogische Formalisierung
+
++ zum Verständnis von Sätzen mit „wenn“, „dann“ und „nur“ sowie von notwendigen und hinreichenden Bedingungen:
+    - alternative Formulierungen identifizieren können
+    - notwendige und hinreichende Bedingungen bestimmen können
+
++ logische Wahrheit, logische Falschheit, logische Folgerung und logische Äquivalenz mit der Wahrheitstafelmethode zeigen
+
++ Beweise mit dem aussagenlogischen Kalkül des natürlichen Schließens
+
++ prädikatenlogische Formalisierung
+
++ Zusammenhänge und Felde im logischen Quadrat ausfüllen
+
++ Beweise mit dem prädikatenlogischen Kalkül des natürlichen Schließens
+
++ verzweigte Beweise mit dem Kalkül des natürlichen Schließens
+
+Diese Aufgabenstellungen können beliebig kombiniert werden, so kann etwa für einen Beweis zuerst eine Formalisierung gefordert werden und dann ein Beweis mit dem Kalkül des natürlichen Schließens.
+
 === Erweiterte Aufgabenstellungen
+
+Diese Aufgabenstellungen sind ergänzend zu den obigen zu verstehen, in der Hinsicht, dass sie beim Bearbeiten ein tieferes Verständnis für die Inhalte erzeugen können:
+
++ Anführungszeichen setzen
+
++ Belegungen für wahre Aussagen finden
+
++ Interpretation aussagenlogischer Sätze mit Hilfe der Wahrheitstafel
+
++ syntaktisch korrekte AL-Sätze identifizieren
+
++ syntaktisch korrekte PL-Sätze identifizieren
+
++ Argumente entkräften, durch Ablehnung einer Prämisse oder Aufzeigen von Ungültigkeit
+
++ aussagenlogische Junktoren benennen und erklären
+
++ Hauptjunktor bestimmen
+
++ Wahrheitstafel für Ausdrücke bilden
+
++ Modelle für prädikatenlogische Ausdrücke bestimmen, in denen die Ausdrücke wahr sind
+
++ prädikatenlogische Ausdrücke für gegebene Modelle bestimmen, sodass die Ausdrücke wahr sind (am besten keine logisch wahren)
 
 = Visuelles Konzept
 
