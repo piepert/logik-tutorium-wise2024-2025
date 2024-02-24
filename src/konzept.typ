@@ -1,6 +1,9 @@
+#import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx, vlinex
+
 #import "exercise-sheets/template.typ": *
 
 #show: project.with(
+    title: [Konzept für das Logik-Tutorium
         am Institut für Philosophie der Universität Rostock],
     with-outline: true,
 
@@ -52,7 +55,7 @@ In Anbetracht der Ziele gilt es, die Methoden und Sozialformen des Tutoriums so 
 
 + Der *Frontalunterricht fördert passiv-schulisches Lernverhalten*: Die Studierenden werden an den Frontalunterricht in der Schule erinnert, in dem die Verantwortlichkeit bei der Lehrkraft lag. Dadurch fehlt die aktive Auseinandersetzung mit den Problemen, es wird eine Erwartungshaltung aufgebaut, in dem die Dozierenden die Inhalte den Studierenden präsentieren sollten, statt dass sie diese selbst erarbeiten.
 
-+ Der *Frontalunterricht erschwert das Erreichen des sozialen Ziels*: Da Studierenden im Frontalunterricht passiv die präsentierten Inhalte aufnehmen, kommt es nicht zu einer Interaktion untereinander. Im Gegenteil sogar: Interaktionen untereinander sind -- sofern nicht explizit gefordert -- im Frontalunterricht nicht erwünscht. Damit fällt es schwer, das soziale Ziel umzusetzen.
++ Der *Frontalunterricht erschwert das Erreichen des sozialen Ziels*: Da Studierenden im Frontalunterricht passiv die präsentierten Inhalte aufnehmen, kommt es nicht zu einer Interaktion untereinander. Im Gegenteil sogar: Interaktionen untereinander sind -- sofern nicht explizit gefordert -- im Frontalunterricht nicht erwünscht. Damit fällt es schwer, das soziale Ziel bei einer Überaktzentuierung des Frontalunterrichts umzusetzen.
 
 Statt des Frontalunterrichts sollen Methoden gewählt werden, die verschiedene Sozialformen durchlaufen: etwa das Gruppenpuzzle ermöglicht es den Studierenden sich zuerst in Einzelarbeit Expertenwissen anzueignen, dieses in zwei Phasen als Gruppenarbeit untereinander zu präsentieren und zu besprechen und zuletzt im Plenum zu vergleichen.
 
@@ -348,7 +351,7 @@ Sowohl auf den Folien als auch auf den Aufgabenblättern werden die folgenden El
 + *Semantikbaum:* TODO
 + *Modell-Diagramm:* Venn-Diagramm mit Individuen TODO
 
-= Inhalte <inhalte>
+= Inhalte und inhaltliche Ziele <inhalte>
 
 Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum für individuelle Wünsche der Studierenden enthalten. Dabei gibt es ein kontingent an obligatorischen Inhalten, die sich aus den klausurrelevanten Aufgabenstellungen zusammensetzen, und fakultative Inhalte, die zur Vertiefung und Sicherung genutzt werden können.
 
@@ -379,6 +382,7 @@ Kalkül des natürlichen Schließens (KdnS):
   - Zusatz-Annahmen
   - →-Einführung
   - Reductio ad absurdum
+- verzweigte Beweise I
 
 Prädikatenlogik:
 
@@ -388,3 +392,8 @@ Prädikatenlogik:
 - (Semantik)
 - logisches Quadrat
 - KdnS für PL
+- verzweigte Beweise II
+
+= Seminarplan
+
+Nr., Datum, Thema + organisatorisches (Lernevaluation?), Lektüre, Aufgabenblatt
