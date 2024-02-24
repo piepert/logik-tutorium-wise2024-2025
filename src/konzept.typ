@@ -146,25 +146,22 @@ Der Grundsatz für die Medien des Tutoriums heißt: wenige, gut unterscheidbare 
 Diese drei Farben sind sowohl visuell ansprechend, als auch in den meisten Farbschwächen noch angemessen zu unterscheiden. So ist zum Beispiel diese Palette für Rot-Grün-Blinde noch unterscheidbar:
 
 
-#align(center, stack(dir: ltr,
-    spacing: 1cm,
-    [
-        #let blue = rgb("#726EE2")
-        #circle(fill: blue)
-        Blau
-    ],
-    [
-        #let magenta = rgb("#B4BD6C")
-        #circle(fill: magenta)
-        Magenta
-    ],
-    [
-        #let orange = rgb("#DCE34F")
-        #circle(fill: orange)
-        Orange
-    ]))
+Typografisch ist besonders eine Entscheidung getroffen wurden: gewählt wurde die Schriftart #link("https://brailleinstitute.org/freefont", [Atkinson Hyperlegible]), da bei dieser auch bei geringen Schriftgrößen oder Menschen mit Sehbehinderung bis zu einem gewissen Grad die Buchstaben noch sehr gut zu unterscheiden sind:
 
-#text(fill: red, strong[Typografie, Atkinson Hyperlegible])
+#align(center, image(width: 35%, "atkinson_blur.png"))
+
+Währenddessen bei anderen Schriftarten:
+
+#align(center, {
+    image(width: 75%, "fonts_blur.png")
+
+    set text(size: 0.75em)
+    place([Arial],              dx: 1.15cm - 0.1cm, dy: -2.37cm - 1.75cm)
+    place([Calibri],            dx: 1.15cm - 0.1cm - 0.25cm, dy: -0.1cm - 1.75cm)
+
+    place([Times New\ Roman],    dx: 2.15cm + 6.7cm + 5.4cm, dy: -1.75cm - 2.37cm)
+    place([TW Cen MT],          dx: 2.15cm + 6.7cm + 5.4cm, dy: -1.75cm - 0.1cm)
+})
 
 == Gestaltungselemente
 
