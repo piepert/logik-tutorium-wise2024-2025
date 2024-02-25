@@ -1,6 +1,6 @@
 #import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx, vlinex
 
-#import "exercise-sheets/template.typ": *
+#import "/src/templates/exercise.typ": *
 
 #show: project.with(
     title: [Konzept für das Logik-Tutorium
@@ -212,29 +212,33 @@ Der Grundsatz für die Medien des Tutoriums heißt: wenige, gut unterscheidbare 
 
 // #circle(fill: yellow)
 #align(center, block(breakable: false, stack(dir: ltr,
-    spacing: 1.5cm,
+    spacing: 0.5cm,
     ..((blue, [Blau]),
         (purple, [Dunkelblau]),
         (magenta, [Magenta]),
         (brown, [Braun]),
         (yellow, [Gelb])).map(e => {
 
-        circle(fill: e.first())
-        e.last()
+        block(width: 2cm, {
+            circle(fill: e.first())
+            e.last()
+        })
     }))))
 
 Diese drei Farben sind sowohl visuell ansprechend, als auch in den meisten Farbschwächen noch angemessen zu unterscheiden. So ist zum Beispiel diese Palette für Menschen mit Rot-Grün-Schwäche noch unterscheidbar:
 
 #align(center, block(breakable: false, stack(dir: ltr,
-    spacing: 1.5cm,
+    spacing: 0.5cm,
     ..((rgb("#7672E5"), [Blau]),
         (rgb("#2A2A69"), [Dunkelblau]),
         (rgb("#B4BC6D"), [Magenta]),
         (rgb("#6A6E16"), [Braun]),
         (rgb("#E6EB65"), [Gelb])).map(e => {
 
-        circle(fill: e.first())
-        e.last()
+        block(width: 2cm, {
+            circle(fill: e.first())
+            e.last()
+        })
     }))))
 
 Das dunkle Blau wird die Hauptakzentfarbe der Dokumente, so etwa für allgemeine Gestaltungselemente wie Überschriften, Links, o.ä. Die anderen sind zum Hervorheben bestimmter anderer Aspekte gedacht.
@@ -355,12 +359,10 @@ Sowohl auf den Folien als auch auf den Aufgabenblättern werden die folgenden El
 
 Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum für individuelle Wünsche der Studierenden enthalten. Dabei gibt es ein kontingent an obligatorischen Inhalten, die sich aus den klausurrelevanten Aufgabenstellungen zusammensetzen, und fakultative Inhalte, die zur Vertiefung und Sicherung genutzt werden können.
 
-Logische Grundlagen:
-
 #tablex(
     columns: (20%, auto, auto),
-    rows: 6,
     stroke: none,
+
     fill: (col, row) => (
         purple,
         none,
@@ -373,15 +375,43 @@ Logische Grundlagen:
         }
     ),
 
-    map-cols: (col, cells) => {
+    // map-cols: (col, cells) => {
+    //     let index = 0
+
+    //     while index < cells.len() {
+    //         cells.at(index).content = [
+    //             #set par(justify: false)
+    //             #set text(size: 0.75em)
+    //             #v(0.5em)
+    //             #cells.at(index).content
+    //             #v(0.5em)
+    //         ]
+    //         index += 1
+    //     }
+
+    //     return cells
+    // },
+
+    map-rows: (row, cells) => {
         let index = 0
 
         while index < cells.len() {
             cells.at(index).content = [
                 #set par(justify: false)
                 #set text(size: 0.75em)
-                #cells.at(index).content
+
+                #if row <= 0 {
+                    v(0.25em)
+                    cells.at(index).content
+                    v(0.25em)
+
+                } else {
+                    v(0.5em)
+                    cells.at(index).content
+                    v(0.5em)
+                }
             ]
+
             index += 1
         }
 
@@ -398,6 +428,8 @@ Logische Grundlagen:
 )[
     Logische Grundlagen
 ][
+    - Definition der Logik
+    - (Abgrenzung zur Mathematik)
     - philosophisch-logische Argumente
     - Gütekriterien:
         - Gültigkeit
@@ -405,30 +437,57 @@ Logische Grundlagen:
 
     \
     - indirekte Beweise
-    - direkte Beweise
+    - (direkte Beweise)
+
+    \
+    - notwendige und hinreichende Bedingungen
 ][
+    - Logik definieren können
+    - (Logik von der Mathematik abgrenzen können)
     - wissen, was philosophische Argumente sind
     - philosophische Argumente erkennen können
+    - Argumente definieren können
     \
     - Gültigkeit und Schlüssigkeit definieren können
-    - Gültigkeit und Schlüssigkeit vergleichen können
+    - Gültigkeit und Schlüssigkeit vergleichen und voneinander abgrenzen können
     \
     - durch metasprachliche Begründung einfache Beweise über deduktiv-gültige Argumente führen können
 ][
 
     Aussagenlogik
 ][
+    - Analyse der Sprache an Satzbausteinen
+        - Nicht
+        - Und
+        - Oder
+        - Wenn-Dann
+        - Genau-Dann-Wenn
+
+    \
     - Syntax
+        - aussagenlogische Junktoren
         - valide AL-Sätze
-        - aussagenlogische Formalisieurng
+        - aussagenlogische Formalisierung
 
+    \
     - Semantik
+        - Bedeutung aussagenlogischer Junktoren
 ][
-
+    - aussagenlogische Strukturen der deutschen Sprache identifizieren können
+    - notwendige und hinreichende Bedingungen im Wenn-Dann-Satz identifizieren können
+    \
+    - ein Gefühl für die Struktur und Bildungsregeln von AL entwickeln
+    - Junktoren erkennen und deren Semantik erklären können
+    - Sätze der natürlichen Sprache aussagenlogisch formalisieren können
+    - Äquivalenzumformulierungen für notwenidge und hinreichende Bedingungen identifizieren und bilden können
 ][
     Wahrheitstabelle
 ][
     - Interpretation aussagenlogischer Ausdrücke mit der Wahrheitstabelle
+        - Semantik der Junktoren als Wahrheitstabelle
+        - komplexe Ausdrücke
+
+    \
     - logische Wahrheit, logische Falschheit
     - logische Folgerung, logische Äquivalenz
 ][
@@ -448,6 +507,8 @@ Logische Grundlagen:
 ][
     Prädikatenlogisches Kalkül des natürlichen Schließens
 ]
+
+Logische Grundlagen:
 
 - philosophisch-logische Argumente
 - Gütekriterien:

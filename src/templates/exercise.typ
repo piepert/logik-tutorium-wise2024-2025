@@ -1,12 +1,4 @@
-#let blue = rgb("#648fff")
-#let purple = rgb("#555ef0").darken(50%)
-#let magenta = rgb("#dc267f")
-#let brown = rgb("#fe6100").darken(50%)
-#let yellow = rgb("#ffb000")
-
-#let orange = none
-#let red = none
-#let green = none
+#import "colors.typ" as colors: *
 
 #let task(body) = {
     block(width: 100%, inset: 1em,
@@ -129,9 +121,9 @@
             return it
         }
 
-        let num = numbering(num-style, ..counter(heading).at(loc))+[ \u{200b}]
+        let num = text(weight: "thin", numbering(num-style, ..counter(heading).at(loc))+[ \u{200b}])
 
-        [#move(text(fill: purple.lighten(25%), weight: "thin", num) + [] + text(fill: purple, it.body), dx: -1 * measure(num, s).width)]
+        [#move(text(fill: purple.lighten(25%), num) + [] + text(fill: purple, it.body), dx: -1 * measure(num, s).width)]
     }))
 
     set page(header: [
