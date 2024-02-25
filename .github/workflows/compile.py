@@ -1,3 +1,4 @@
+import sys
 import os
 
 INPUT_DIRECTORY = "src"
@@ -14,10 +15,15 @@ for path, subdirs, files in os.walk(INPUT_DIRECTORY):
 
         splitted_path = os.path.normpath(file_name).split(os.sep)
 
-        if splitted_path[1] == "templates":
+        if splitted_path[1] == "templates" or splitted_path[1] == "packages":
             continue
 
-        new_path = os.path.splitext((os.sep).join([OUTPUT_DIRECTORY] + splitted_path[1:]))[0] + ".pdf"
+        splitted_file = os.path.splitext((os.sep).join([OUTPUT_DIRECTORY] + splitted_path[1:]))
+
+        if splitted_file[1] != ".typ":
+            continue
+
+        new_path = splitted_file[0] + ".pdf"
         new_path_parent = (os.sep).join([OUTPUT_DIRECTORY] + splitted_path[1:-1])
 
         if not os.path.exists(new_path_parent):
@@ -27,4 +33,6 @@ for path, subdirs, files in os.walk(INPUT_DIRECTORY):
 
 for entry in FILE_LIST:
     print("Compiling... ", entry[0], " -> ", entry[1])
-    os.system(f"typst compile --font-path fonts/ {entry[0]} {entry[1]}")
+
+    if os.system(f"typst compile --root . --font-path fonts/ {entry[0]} {entry[1]}") != 0:
+        sys.exit(1)
