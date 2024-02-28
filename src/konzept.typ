@@ -453,11 +453,15 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
     - philosophische Argumente erkennen
 
     - "Argument" definieren
+
     \
     - Gültigkeit und Schlüssigkeit definieren
 
     - Gültigkeit und Schlüssigkeit vergleichen und voneinander abgrenzen
+
     \
+    - kennen den formalen Aufbau eines Beweises#footnote[Theorem, Beweis, QED]
+
     - durch metasprachliche Begründung einfache Beweise über deduktiv-gültige Argumente führen
 ][
 
@@ -521,6 +525,8 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
     - logische Wahrheit und Falschheit in der Wahrheitstabelle beweisen
 
     - logische Folgerung und Äquivalenz in der Wahrheitstabelle bweisen
+
+    - schreiben für jeden Beweis QED und einen Antwortsatz
 ][
    Kalkül des natürlichen Schließens
 ][
@@ -562,8 +568,6 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
     \
     - logisches Quadrat
 ][
-    - verstehen die Notwendigkeit der Prädikatenlogik für die Analyse philosophischer Argumente
-
     - verstehen den Unterschied zwischen der reinen Satzlogik AL und der u.a. Begriffslogik PL
 
     - einfache prädikatenlogische unquantifizierte Sachverhalte formalisieren
@@ -583,7 +587,15 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
     - QT
     - PKS
 ][
+    - quantifizierte Ausdrücke spezialisieren und die spezialisierten Variablen korrekt ersetzen
 
+    - Ausdrücke, die Konstanten beinhalten, generalisieren und die Konstanten korrekt binden
+
+    - kennen die Einschränkungen der $forall$-Einf. und beachten sie bei der Ableitung
+
+    - kennen die Einschränkungden der $exists$-Bes. und beachten sie bei der Ableitung
+
+    - schreiben für jeden Beweis QED und einen Antwortsatz
 ]
 
 /*
