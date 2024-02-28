@@ -158,13 +158,13 @@ Die folgenden Aufgabenstellungen sind vorbereitend auf die Klausur konzipiert:
 
 + Definition von Grundkonzepten
 
-+ Aussagenlogische Formalisierung
++ aussagenlogische Formalisierung
 
 + zum Verständnis von Sätzen mit „wenn“, „dann“ und „nur“ sowie von notwendigen und hinreichenden Bedingungen:
     - alternative Formulierungen identifizieren können
     - notwendige und hinreichende Bedingungen bestimmen können
 
-+ logische Wahrheit, logische Falschheit, logische Folgerung und logische Äquivalenz mit der Wahrheitstafelmethode zeigen
++ logische Wahrheit, logische Falschheit, logische Folgerung und logische Äquivalenz mit der Wahrheitstabelle zeigen
 
 + Beweise mit dem aussagenlogischen Kalkül des natürlichen Schließens
 
@@ -182,11 +182,13 @@ Diese Aufgabenstellungen können beliebig kombiniert werden, so kann etwa für e
 
 Diese Aufgabenstellungen sind ergänzend zu den obigen zu verstehen, in der Hinsicht, dass sie beim Bearbeiten ein tieferes Verständnis für die Inhalte erzeugen können:
 
++ metasprachlich Beweisen
+
 + Anführungszeichen setzen
 
 + Belegungen für wahre Aussagen finden
 
-+ Interpretation aussagenlogischer Sätze mit Hilfe der Wahrheitstafel
++ Interpretation aussagenlogischer Sätze mit Hilfe der Wahrheitstabelle
 
 + syntaktisch korrekte AL-Sätze identifizieren
 
@@ -198,7 +200,7 @@ Diese Aufgabenstellungen sind ergänzend zu den obigen zu verstehen, in der Hins
 
 + Hauptjunktor bestimmen
 
-+ Wahrheitstafel für Ausdrücke bilden
++ Wahrheitstabelle für Ausdrücke bilden
 
 + Modelle für prädikatenlogische Ausdrücke bestimmen, in denen die Ausdrücke wahr sind
 
@@ -349,7 +351,7 @@ Für alle Dokumente sollen die Gestaltungselemente, bis auf den Inhalt, dieselbe
 
 Sowohl auf den Folien als auch auf den Aufgabenblättern werden die folgenden Elemente benutzt, um logische Sachverhalte darzustellen:
 
-+ *Wahrheitstafel:* TODO
++ *Wahrheitstabelle:* TODO
 + *KdnS:* TODO
 + *Syntaxbaum:* TODO
 + *Semantikbaum:* TODO
@@ -424,7 +426,7 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
     text(fill: white, strong[Inhalt]),
     vlinex(stroke: purple),
 
-    text(fill: white, strong[inhaltliche Ziele]),
+    text(fill: white, strong[Die Studierenden können/haben/...]),
 )[
     Logische Grundlagen
 ][
@@ -442,16 +444,21 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
     \
     - notwendige und hinreichende Bedingungen
 ][
-    - Logik definieren können
-    - (Logik von der Mathematik abgrenzen können)
+    - "Logik" definieren
+
+    - (Logik von der Mathematik abgrenzen)
+
     - wissen, was philosophische Argumente sind
-    - philosophische Argumente erkennen können
-    - Argumente definieren können
+
+    - philosophische Argumente erkennen
+
+    - "Argument" definieren
     \
-    - Gültigkeit und Schlüssigkeit definieren können
-    - Gültigkeit und Schlüssigkeit vergleichen und voneinander abgrenzen können
+    - Gültigkeit und Schlüssigkeit definieren
+
+    - Gültigkeit und Schlüssigkeit vergleichen und voneinander abgrenzen
     \
-    - durch metasprachliche Begründung einfache Beweise über deduktiv-gültige Argumente führen können
+    - durch metasprachliche Begründung einfache Beweise über deduktiv-gültige Argumente führen
 ][
 
     Aussagenlogik
@@ -473,13 +480,29 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
     - Semantik
         - Bedeutung aussagenlogischer Junktoren
 ][
-    - aussagenlogische Strukturen der deutschen Sprache identifizieren können
-    - notwendige und hinreichende Bedingungen im Wenn-Dann-Satz identifizieren können
+    - aussagenlogische Strukturen der deutschen Sprache identifizieren
+
+    - notwendige und hinreichende Bedingungen im Wenn-Dann-Satz identifizieren
+
     \
     - ein Gefühl für die Struktur und Bildungsregeln von AL entwickeln
-    - Junktoren erkennen und deren Semantik erklären können
-    - Sätze der natürlichen Sprache aussagenlogisch formalisieren können
-    - Äquivalenzumformulierungen für notwenidge und hinreichende Bedingungen identifizieren und bilden können
+
+    - Schemata suchen und erkennen
+
+    - Schemata zur Bildung neuer Ausdrücke benutzen
+
+    - Junktoren in der natürlichen Sprache erkennen
+
+    - Sätze der natürlichen Sprache aussagenlogisch formalisieren
+
+    - "nur" und "genau dann, wenn" adäquat formalisieren
+
+    - Äquivalenzumformulierungen für notwenidge und hinreichende Bedingungen identifizieren und bilden
+
+    \
+    - Wahrheitsbedingungen von Sätzen erkennen
+
+    - die Semantik der Junktoren definieren
 ][
     Wahrheitstabelle
 ][
@@ -491,22 +514,79 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
     - logische Wahrheit, logische Falschheit
     - logische Folgerung, logische Äquivalenz
 ][
+    - die semantische Definition der Junktoren in der Wahrheitstabelle darstellen
 
+    - Ausdrücke mit der Wahrheitstabelle auswerten
+
+    - logische Wahrheit und Falschheit in der Wahrheitstabelle beweisen
+
+    - logische Folgerung und Äquivalenz in der Wahrheitstabelle bweisen
 ][
    Kalkül des natürlichen Schließens
 ][
+    - direkte Schlussregeln
+        - MP, MT, KS, KP, $not$-Bes., $not$-Einf., $and$-Bes., $and$-Einf., DS, $or$-Einf., $<->$-Bes., $<->$-Einf., DM, $->$-Ers., KM, $->$-Einf., RAA
 
+    - erweiterte Schlussregeln
+        - linke Beweisspalte und ZA
+        - RAA
+        - $->$-Einführung
 ][
+    - verstehen das Muster der direkten Regelanwendung
 
+    - einfache bis mittelkomplexe direkte Beweise führen
+
+    - wissen, dass man für RAA standardmäßig das Gegenteil der Konklusion annimmt
+
+    - die linke Beweisspalte bilden
+
+    - RAA durchführen
+
+    - erkennen, wann $->$-Einf. gefordert ist
+
+    - wissen, dass sie beim Einführen einer ZA die Abhängigkeiten der Zeilen prüfen müssen
 ][
     Prädikatenlogik
 ][
+    - Syllogismen & Prädikatierung
 
+    \
+    - Syntax
+        - Konstanten und Prädikate
+        - Quantoren, Variablen
+        - prädikatenlogische Formalisierung
+
+    \
+    - (Semantik)
+
+    \
+    - logisches Quadrat
 ][
+    - verstehen die Notwendigkeit der Prädikatenlogik für die Analyse philosophischer Argumente
 
+    - verstehen den Unterschied zwischen der reinen Satzlogik AL und der u.a. Begriffslogik PL
+
+    - einfache prädikatenlogische unquantifizierte Sachverhalte formalisieren
+
+    - einfache prädikatenlogische quantifizierte Sachverhalte formalisieren
+
+    - Quantoren ineinander umrechenen
+
+    - die Begriffe des logischen Quadrats nennen
+
+    - eigene Beispiele für das logische Quadrat finden
 ][
     Prädikatenlogisches Kalkül des natürlichen Schließens
+][
+    - $forall$-Einf., $forall$-Bes.
+    - $exists$-Bes., $exists$-Einf.
+    - QT
+    - PKS
+][
+
 ]
+
+/*
 
 Logische Grundlagen:
 
@@ -546,6 +626,8 @@ Prädikatenlogik:
 - logisches Quadrat
 - KdnS für PL
 - verzweigte Beweise II
+
+*/
 
 = Seminarplan
 
