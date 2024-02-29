@@ -1,4 +1,4 @@
-#import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx, vlinex
+#import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx, vlinex, hlinex
 
 #import "/src/templates/exercise.typ": *
 
@@ -98,7 +98,7 @@ Die wichtigsten Medien des Tutoriums sind
 
 + die Folien des Tutoriums,
 + die fakultativen Aufgabenblätter des Tutoriums,
-+ das Skript der Vorlesung und
++ das Skript der Vorlesung#footnote[Das Skript wird zitiert mit "Skript p. 94 / S. 181." Die Abkürzung "p." meint die PDF-Seite, also "$x$ / 115" und "S." steht für die Buchseiten ab p. 16 steht.] und
 + die fakultativen Lernevaluationen des Tutoriums.
 
 Die Medien sind so zu gestalten, dass sie möglichst vielseitig sind und jeder Inhalt des Tutoriums durch verschiedene Medien gestützt ist. Die Studierenden sind individuell und vielfältig, sie benötigen verschiedene Lernwege, daher sind nicht nur abwechslungsreiche Methoden und Sozialformen, sondern auch abwechslungsreiche Medien einzusetzen.
@@ -426,7 +426,7 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
     text(fill: white, strong[Inhalt]),
     vlinex(stroke: purple),
 
-    text(fill: white, strong[Die Studierenden können/haben/...]),
+    text(fill: white, strong[Die Studierenden können/haben/wissen/...]),
 )[
     Logische Grundlagen
 ][
@@ -434,7 +434,7 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
     - (Abgrenzung zur Mathematik)
     - philosophisch-logische Argumente
     - Gütekriterien:
-        - Gültigkeit
+        - deduktive Gültigkeit
         - Schlüssigkeit
 
     \
@@ -643,4 +643,4 @@ Prädikatenlogik:
 
 = Seminarplan
 
-Nr., Datum, Thema + organisatorisches (Lernevaluation?), Lektüre, Aufgabenblatt
+#include "raw-plan.typ"
