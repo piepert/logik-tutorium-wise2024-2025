@@ -103,7 +103,8 @@
     body
 ) = {
     set text(font: "Atkinson Hyperlegible", size: 11pt, lang: "de")
-    show math.equation: set text(font: "Fira Math")
+    // show math.equation: set text(font: "Fira Math")
+    show math.equation: set text(font: "STIX Two Math")
 
     set par(justify: true)
 

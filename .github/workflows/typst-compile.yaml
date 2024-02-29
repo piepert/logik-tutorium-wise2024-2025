@@ -31,6 +31,8 @@ jobs:
           unzip $GITHUB_WORKSPACE/fonts/firamath-otf.zip -d $GITHUB_WORKSPACE/fonts/firamath
           wget -P $GITHUB_WORKSPACE/fonts https://brailleinstitute.org/wp-content/uploads/atkinson-hyperlegible-font/Atkinson-Hyperlegible-Font-Print-and-Web-2020-0514.zip
           unzip $GITHUB_WORKSPACE/fonts/Atkinson-Hyperlegible-Font-Print-and-Web-2020-0514.zip -d $GITHUB_WORKSPACE/fonts/atkinsonhyperlegible
+          wget -P $GITHUB_WORKSPACE/fonts https://github.com/stipub/stixfonts/archive/refs/tags/v2.13b171.zip
+          unzip $GITHUB_WORKSPACE/fonts/v2.13b171.zip
 
       - name: Compile Typst to PDF
         run: python3 .github/workflows/compile.py
