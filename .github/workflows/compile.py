@@ -34,5 +34,14 @@ for path, subdirs, files in os.walk(INPUT_DIRECTORY):
 for entry in FILE_LIST:
     print("Compiling... ", entry[0], " -> ", entry[1])
 
+    try:
+        with open(entry[0], "r") as f:
+            if "//#DONT_COMPILE_TO_PDF" in list(map(lambda n: n.strip(), f.readlines())):
+                print("Skipping file doesn't need to be compiled.")
+                continue
+    except IOError:
+        print("Skipping because of error.")
+        continue
+
     if os.system(f"typst compile --root . --font-path fonts/ {entry[0]} {entry[1]}") != 0:
         sys.exit(1)
