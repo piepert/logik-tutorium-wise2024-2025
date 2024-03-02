@@ -1,3 +1,4 @@
+//#DONT_COMPILE_TO_PDF
 #import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx, vlinex, hlinex, cellx
 #import "/src/templates/exercise.typ": *
 
