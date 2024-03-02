@@ -1,11 +1,15 @@
 #import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx, vlinex, hlinex
 
 #import "/src/templates/exercise.typ": *
+#import "/src/templates/slides.typ": *
+#import "/src/packages/inference.typ": *
 
 #show: project.with(
     title: [Konzept für das Logik-Tutorium
         am Institut für Philosophie der Universität Rostock],
     with-outline: true,
+
+    document-title: [Konzept für das Logik-Tutorium],
 
     abstract: [
         Das Logik-Tutorium bildet für die Studierenden als eine Veranstaltung im ersten Semester die Möglichkeit, eine neue Lernumgebung kennenzulernen sowie sich in das selbstgesteuerte Lernen einzufinden. Es darf keine eintönige Lehrveranstaltung sein, sondern soll soziale Kontakte und Aktivität fördern. Ein einheitliches didaktisches, visuelles und inhaltiches Konzept soll den Einstieg in die Logik und das Studium der Universität Rostock erleichtern. Gleichzeitig soll es die Komptenzen und Inhalte des Moduls "Sprache, Logik, Argumentation" erfassen und den Studierenden einen Raum geben, sich diese anzueignen.
