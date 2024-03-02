@@ -111,7 +111,7 @@ Die Struktur des Tutoriums soll transparent und gut geplant sein, jedoch auch so
 
 === Sequenzstruktur
 
-Die Gestaltung der einzelnen Sequenzen des Logik-Tutoriums nimmt die abzudeckenden Inhalte (siehe @inhalte) und bricht diese in grobe Sequenzen auf. Jede Sequenz besteht aus mindestens einer Sitzung, beginnt mit einer Inhaltsübersicht und endet mit einer fakultativen Lernevaluation, das in Form eines Testats außerhalb des Tutoriums stattfindet. Dies kann nach Absprache in Präsenz vor bzw. nach dem Tutorium stattfinden oder asynchron online. Dabei ist darauf zu achten, dass Reservesitzungen eingeplant sind, um die Möglichkeit abzudecken, dass die Studierenden langsamer sind, als erwartet, oder das Tutorium mit von ihnen gewünschten Inhalten füllen können.
+Die Gestaltung der einzelnen Sequenzen des Logik-Tutoriums nimmt die abzudeckenden Inhalte (siehe @inhalte) und bricht diese in grobe Sequenzen auf. Jede Sequenz besteht aus mindestens einer Sitzung, beginnt mit einer Inhaltsübersicht und endet mit einer fakultativen Lernevaluation (LEVs), das in Form eines Testats außerhalb des Tutoriums stattfindet. Dies kann nach Absprache in Präsenz vor bzw. nach dem Tutorium stattfinden oder asynchron online. Dabei ist darauf zu achten, dass Reservesitzungen eingeplant sind, um die Möglichkeit abzudecken, dass die Studierenden langsamer sind, als erwartet, oder das Tutorium mit von ihnen gewünschten Inhalten füllen können.
 
 Der Ablauf einer Sequenz kann wie folgt zusammengefasst werden:
 
@@ -121,7 +121,7 @@ Der Ablauf einer Sequenz kann wie folgt zusammengefasst werden:
 
 + *Evaluation der Sequenz:* Die Studierenden haben die Möglichkeit, zu prüfen, ob sie die Ziele, die durch die Sequenz vorgegeben wurden, erreicht haben.
 
-Die Evaluation in Form eines Testats kann um eine fakultative Beurteilung durch die Tutoriumsleitung ergänzt werden. Durch individuelles Feedback zu den erdachten Lösungen erhalten die Studierenden die Möglichkeit, ihre Fähigkeiten besser einschätzen zu lassen und auf Fehler aufmerksam zu werden, die sie selbst übersehen haben. Eine andere Möglichkeit wäre, die Studierenden untereinander Feedback geben zu lassen und somit das soziale Ziel in den Fokus zu rücken. Dies kann jedoch auch als eine der Stellen im Tutorium verwendet werden, in denen die Tutoriumsleitung aktiv umfangreiches Feedback anbietet.
+Die LEVs in Form eines Testats kann um eine fakultative Beurteilung durch die Tutoriumsleitung ergänzt werden. Durch individuelles Feedback zu den erdachten Lösungen erhalten die Studierenden die Möglichkeit, ihre Fähigkeiten besser einschätzen zu lassen und auf Fehler aufmerksam zu werden, die sie selbst übersehen haben. Eine andere Möglichkeit wäre, die Studierenden untereinander Feedback geben zu lassen und somit das soziale Ziel in den Fokus zu rücken. Dies kann jedoch auch als eine der Stellen im Tutorium verwendet werden, in denen die Tutoriumsleitung aktiv umfangreiches Feedback anbietet.
 
 === Sitzungsstruktur
 
@@ -574,7 +574,7 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
 
     - einfache prädikatenlogische quantifizierte Sachverhalte formalisieren
 
-    - Quantoren ineinander umrechenen
+    - Quantoren ineinander umrechnen
 
     - die Begriffe des logischen Quadrats nennen
 

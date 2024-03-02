@@ -156,7 +156,7 @@
     if abstract != none {
         set text(size: 0.85em)
 
-        pad(x: 1cm, y: 0.25cm, par(first-line-indent: 1cm,
+        pad(x: 1cm, y: 0.25cm, par(//first-line-indent: 1cm,
             strong[Zusammenfassung:] +
             abstract))
     }
