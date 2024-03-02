@@ -1,7 +1,13 @@
 #import "/src/templates/exercise.typ": *
 
 #show: project.with(
-    title: [Ablaufplan im WiSe 2024/25],
+    title: [
+        Ablaufplan für das Logik-Tutorium
+    ],
+
+    document-title: [
+        Ablaufplan für das Logik-Tutorium
+    ],
 
     abstract: [
         In diesem Tutorium lernen Sie die grundlagen des logischen Denkens für die Analyse philosophischer Argumente, damit sie in zukünftigen Hausarbeiten und Seminaren die Positionen philosophischer Texte kriterienbasiert analysieren und beurteilen können.
