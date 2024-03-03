@@ -5,7 +5,10 @@
     no: 1,
     type: [LEV],
     suffix-title: [Logische Grundlagen],
+    point-distribution: true,
     show-namefields: true,
+    show-timefield: true,
+    max-time: 25,
     show-lines: true
 )
 
@@ -14,7 +17,7 @@
 ]
 
 #task(lines: 20, points: 6)[Gütekriterien][
-    Beurteilen Sie die folgenden Argumente jeweils im Bezug auf die zwei Gütekriterien!
+    Beurteilen Sie die folgenden Argumente jeweils in Bezug auf die zwei Gütekriterien! Begründen Sie ihre Antworten kurz.
 ][
     1. #inference(
         [Wenn ich auf dem Mond laufe, kann ich höher springen als auf der Erde.],
@@ -48,19 +51,18 @@
         [...])
 
     3. #inference(
-        [Die Straße ist nass oder es regnet nicht.],
-        [Die Straße ist nicht nass.],
+        [Die Straße ist nass.],
         inference-line,
         [...])
 ]
 
 #task(lines: 10, points: 4, extra: true)[Beweis][
-    Beweisen Sie das folgende Argument durch einen indirekten Beweis!
+    Beweisen Sie die Gültigkeit des folgenden Arguments durch einen indirekten Beweis!
 ][
     #inference(
-        [Alle Affen sind brilliant.],
-        [Alle Chimpansen sind Affen.],
+        [Alle Ärzte sind brilliant.],
+        [Alle Chirurgen sind Ärzte.],
         inference-line,
-        [Alle Chimpansen sind brilliant.]
+        [Alle Chirurgen sind brilliant.]
     )
 ]
