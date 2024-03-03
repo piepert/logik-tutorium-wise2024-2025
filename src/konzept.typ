@@ -174,7 +174,7 @@ Die folgenden Aufgabenstellungen sind vorbereitend auf die Klausur konzipiert:
 
 + prädikatenlogische Formalisierung
 
-+ Zusammenhänge und Felde im logischen Quadrat ausfüllen
++ Zusammenhänge und Felder im logischen Quadrat ausfüllen
 
 + Beweise mit dem prädikatenlogischen Kalkül des natürlichen Schließens
 
