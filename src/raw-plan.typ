@@ -2,7 +2,22 @@
 #import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx, vlinex, hlinex, cellx
 #import "/src/templates/exercise.typ": *
 
-#state("tut-dates").update((datetime.today(),))
+#state("tut-dates").update((
+    datetime(year: 2024, month: 10, day: 16),
+    datetime(year: 2024, month: 10, day: 23),
+    datetime(year: 2024, month: 10, day: 30),
+    datetime(year: 2024, month: 11, day: 6),
+    datetime(year: 2024, month: 11, day: 13),
+    datetime(year: 2024, month: 11, day: 20),
+    datetime(year: 2024, month: 11, day: 27),
+    datetime(year: 2024, month: 12, day: 4),
+    datetime(year: 2024, month: 12, day: 11),
+    datetime(year: 2024, month: 12, day: 18),
+    datetime(year: 2025, month: 1, day: 8),
+    datetime(year: 2025, month: 1, day: 15),
+    datetime(year: 2025, month: 1, day: 22),
+    datetime(year: 2025, month: 1, day: 29),
+))
 
 #let plan-sequence(content) = (
 
