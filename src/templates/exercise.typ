@@ -8,7 +8,7 @@
         stroke: (bottom: (paint: purple, dash: "dashed")),
         fill: blue.lighten(75%), {
 
-        text(fill: purple, strong([#type #no]) + [ --- #title])
+        text(fill: purple, strong[#type #no] + [ --- #title])
     })
 
     block(body)
@@ -29,7 +29,7 @@
             for i in range(0, lines) {
                 v(0.75cm)
                 v(-1.2em)
-                line(length: 100%)
+                line(length: 100%, stroke: black.lighten(50%))
             }
         }))
 }
@@ -105,10 +105,10 @@
     instruction,
     ..args) = {
 
-    counter("tasks").step()
+    counter(if extra { "tasks" } else { "extra-tasks" }).step()
 
     let args = args.pos()
-    let no = counter("tasks").display("A")
+    let no = counter(if extra { "tasks" } else { "extra-tasks" }).display(if extra { "1" } else { "A" })
 
     let t = (
         no: no,
@@ -169,8 +169,10 @@
     show-hints: true,
     show-solutions: true,
     show-namefields: false,
+    show-timefield: false,
+    max-time: 0,
     show-lines: false,
-    point-distribution: true,
+    point-distribution: false,
     body
 ) = {
     if type == none {
@@ -232,6 +234,16 @@
                 #document-title \
                 Tristan Pieper \
                 #datetime.today().display("[day].[month].[year]")
+
+                #locate(loc => {
+                    if state("timefield").at(loc) != 1 {
+                        if show-timefield {
+                            [Zeit: #max-time min.]
+                        }
+
+                        state("timefield").update(1)
+                    }
+                })
             ]
 
             #line(length: 100%, stroke: purple)
@@ -274,7 +286,7 @@
         let extrapoints-sum = points.filter(e => e.extra).map(e => e.points).sum(default: 0)
         let points-sum-all = points-sum + extrapoints-sum
 
-        if points-sum-all > 0 {
+        if points-sum-all > 0 and point-distribution {
             v(1fr)
             set text(fill: purple)
             block(fill: blue.lighten(75%),
