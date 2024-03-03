@@ -106,6 +106,9 @@
 
     ..plan-sequence[logische Grundlagen],
     [], [
+        *Organisatorisches*
+        - Vorstellung und Erwartungen
+
         *Einführung in die Logik*
         - Einführung und Motivation logischer Analyse
         - philosophische Argumente und ihre Gütekriterien
@@ -185,7 +188,7 @@
         - Aufgabenserie #counter("plan-table").display()
         - LEV #counter("table-sequence").display()
     ], [
-        - Ich kann äquivalente AL-Sätze für Wenn-Dann-Sätze bilden, besonders im Zusammenhang von "nur" und der Kontraposition des Konditionals.
+        - Ich kann äquivalente natürlichsprachliche Sätze für Wenn-Dann-Sätze bilden, besonders im Zusammenhang von "nur" und der Kontraposition des Konditionals.
         - Ich kann die Wahrheitsbedingungen der Junktoren natürlich-sprachlich wiedergeben.
         - Ich kann die Wahrheitsbedingungen der Junktoren mit der Wahrheitstabelle darstellen.
         - Ich kann AL-Ausdrücke mit der Wahrheitstabelle auswerten.
@@ -224,9 +227,10 @@
     ],
 
     [], [
-        *Reductio ad absurdum*
+        *Reductio ad absurdum, verzweigte Beweise*
         - die Regeln: DM, $<->$-Bes., $<->$-Einf., $->$-Ers. und $->$-Einf.
         - die Regel des Reductio ad absurdums (RAA)
+        - verzweigte Beweise
 
         *Material:*
         - Skript p. / S.
@@ -234,6 +238,7 @@
         - LEV #counter("table-sequence").display()
     ], [
         - Ich kann einen Beweis mittels der Regel RAA im KdnS korrekt führen.
+        - Ich kann einen einfachen verzweigten Beweis führen.
     ],
 
     ..plan-sequence[Prädikatenlogik],
@@ -293,4 +298,13 @@
         - Ich kann existenzquantifizierte Sätze unter Berücksichtigung der Einsränkungen korrekt mit der $exists$-Bes. spezialisieren.
         - Ich kann die Bedingungen der $exists$-Bes. und $forall$-Einf. in meiner Ableitung korrekt prüfen.
     ],
+
+    ..plan-sequence[Reserve],
+    [], align(center + horizon)[
+        *Reserve*
+    ], [],
+
+    [], align(center + horizon)[
+        *Reserve*
+    ], [],
 )
