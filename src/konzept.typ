@@ -645,6 +645,6 @@ Prädikatenlogik:
 
 */
 
-= Seminarplan
+= Ablaufplan Tutorium
 
 #include "raw-plan.typ"

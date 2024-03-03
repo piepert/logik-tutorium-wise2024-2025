@@ -2,7 +2,7 @@
 #import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx, vlinex, hlinex, cellx
 #import "/src/templates/exercise.typ": *
 
-#state("seminar-dates").update((datetime.today(),))
+#state("tut-dates").update((datetime.today(),))
 
 #let plan-sequence(content) = (
 
@@ -36,8 +36,8 @@
         if cell.x == 0 and cell.y >= 1 and cell.colspan == 1 {
             cell.content = align(center + top, counter("plan-table").step() + locate(loc => [
                 *#counter("plan-table").at(loc).first(). Sitzung* \
-                #if state("seminar-dates").at(loc).len() > (counter("plan-table").at(loc).first() - 1) {
-                    state("seminar-dates").at(loc).at(counter("plan-table").at(loc).first() - 1).display("[day].[month].[year]")
+                #if state("tut-dates").at(loc).len() > (counter("plan-table").at(loc).first() - 1) {
+                    state("tut-dates").at(loc).at(counter("plan-table").at(loc).first() - 1).display("[day].[month].[year]")
                 } else {
                     [N/A]
                 }
