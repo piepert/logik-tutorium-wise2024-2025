@@ -23,21 +23,25 @@
 #task(lines: 20, points: 6, [Gütekriterien], [
     Beurteilen Sie die folgenden Argumente jeweils in Bezug auf die zwei Gütekriterien! Begründen Sie ihre Antworten kurz.
 ], [
-    1. #inference(
-        [Wenn ich auf dem Mond laufe, kann ich höher springen als auf der Erde.],
-        [Ich kann nicht höher als auf der Erde springen.],
-        inference-line,
-        [Ich bin nicht auf dem Mond.])
+    1. #inference-raw(```
+        Wenn ich auf dem Mond laufe, kann ich höher springen als auf der Erde.
+        Ich kann nicht höher als auf der Erde springen.
+        ----
+        Ich bin nicht auf dem Mond.
+        ```)
 
-    2. #inference(
-        [Entweder alle Kirschen sind grün oder es regnet Sonnenstrahlen.],
-        [Nicht alle Kirschen sind grün.],
-        inference-line,
-        [Also regnet es Sonnenstrahlen.])
+    2. #inference-raw(```
+        Entweder alle Kirschen sind grün oder es regnet Sonnenstrahlen.
+        Nicht alle Kirschen sind grün.
+        ----
+        Also regnet es Sonnenstrahlen.
+        ```)
 
-    3. #inference([Alle Menschen können Fleisch essen.],
-        inference-line,
-        [Alle Menschen sollten Fleisch essen.])
+    3. #inference-raw(```
+        Alle Menschen können Fleisch essen.
+        ----
+        Alle Menschen sollten Fleisch essen.
+        ```)
 ], (
     (2, [
         1. Das Argument wurde als schlüssig und gültig charakterisiert, da die Prämissen wahr und die Konklusion logisch aus den Prämissen folgt. Wurde es als unschlüssig beurteilt, so muss eine Begründung erfolgen.
@@ -55,21 +59,24 @@
 #task(lines: 10, points: 3, [logische Folgerung], [
     Geben Sie zu jedem Argument eine Konklusion an, die logisch aus den Prämissen folgt!
 ], [
-    1. #inference(
-        [Alle Vögel können fliegen.],
-        [Ein Pinguin ist ein Vogel.],
-        inference-line,
-        [...])
+    1. #inference-raw(```
+        Alle Vögel können fliegen.
+        Ein Pinguin ist ein Vogel.
+        ----
+        ...
+        ```)
 
-    2. #inference(
-        [Pinguine leben am Südpol und Eisbären am Nordpol.],
-        inference-line,
-        [...])
+    2. #inference-raw(```
+        Pinguine leben am Südpol und Eisbären am Nordpol.
+        ----
+        ...
+        ```)
 
-    3. #inference(
-        [Die Straße ist nass.],
-        inference-line,
-        [...])
+    3. #inference-raw(```
+        Die Straße ist nass.
+        ----
+        ...
+        ```)
 ], (
     (1, [
         - "Alle Vögel können fliegen."

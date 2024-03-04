@@ -33,11 +33,21 @@
 #let inference(..lines) = {
     tablex(
         inset: 0pt,
-        row-gutter: 1em,
+        row-gutter: 0.65em,
         stroke: none,
         ..lines.pos().map(e => if e != inference-line {
             block(inset: (x: 2pt), e)
         } else {
             e
+        }))
+}
+
+#let inference-raw(raw-block) = {
+    inference(..raw-block.text.split("\n")
+        .map(e => e.trim())
+        .map(e => if e == "----" {
+            inference-line
+        } else {
+            eval(mode: "markup", e)
         }))
 }
