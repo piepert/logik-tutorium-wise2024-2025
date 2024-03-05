@@ -1,18 +1,20 @@
 #import "/src/templates/slides.typ": *
 
+#import "/src/packages/inference.typ": *
+
 #show: slides.with(
-    no: 4,
+    no: 1,
     title: [Organisatorisches und Einführung in die Logik]
 )
 
 #slide[
-    = Ihr und Ich
+    = Sie/Ihr und Ich
 
-    - Siezen vs. Duzen?
+    + Siezen vs. Duzen?
 
-    - *Namenskarten*
+    + Namenskärtchen
 
-    - Stellen Sie sich bitte kurz vor, beantworten Sie ...
+    + Stellen Sie sich bitte kurz vor, beantworten Sie Folgendes:
         - Wie heißen Sie?
         - Welche Fächerkombination studieren Sie?
         - Wenn Sie in einem fiktiven Universum leben müssten, in welchem?
@@ -34,9 +36,9 @@
         - ... der Organisation des Tutoriums
         - ... dem Umfang des Tutoriums
         - ... den Themen des Tutoriums
-        - ... gegenüber der Lernatosphäre
+        - ... der Lernatmosphäre im Tutorium
         - ... mir als Tutor
-        - ...
+        - ... Ihren fachlichen Schwächen und Lücken
 ]
 
 #slide[
@@ -46,7 +48,7 @@
 
     + Teilen Sie Ihre Zeit ein. Sie müssen nicht stundenlang am Stück an Aufgaben sitzen. Sie müssen auch nicht _alle_ Angebote wahrnehmen.
 
-    + Kontaktieren Sie mich und Ihre Kommilitonen bei Fragen per E-Mails. Senden Sie mir und Ihren Kommilitionen Ihre Lösungen zu und holen Sie sich (gegenseitig) Feedback!
+    + Kontaktieren Sie mich und Ihre Kommilitonen bei Fragen. Senden Sie mir und Ihren Kommilitionen Ihre Lösungen zu und holen Sie sich (gegenseitig) Feedback!
 
     + Vernetzen Sie sich! Das Studium ist kein Alleingang!
 ]
@@ -59,7 +61,7 @@
 
     + *die Wiederholungsserien* -- für die Nachbereitung
 
-    + *die Lernevaluationen* -- für Reflexion im Selbstudium
+    + *die Lernevaluationen* (LEVs) -- für Reflexion des Selbstudiums
 ]
 
 #slide[
@@ -67,35 +69,86 @@
     #heading(outlined: false)[Nun eine kurze Demonstration, wo Sie die Medien finden.]
 ]
 
-// Wie das Logical mit reinbringen? Als Motivation?
 
 #slide[
     = Motivation logischer Analyse
+
+    1. Wir spielen Detektive. #h(1fr) → Wahrheitsfindung
+    2. Wir betrachten politische Argumente. #h(1fr) → Begründung
+    // Wie das Logical mit reinbringen? Als Motivation?
 ]
+
+#slide[
+    == Flugzeugentführung im Urlaubsparadies
+
+    #task[
+
+    ]
+]
+
+#slide[
+    == Politische Argumente
+    #set text(size: 0.95em)
+
+    #example[
+        Die Populisten müssen an die Macht kommen, denn die Gesellschaft steht vor dem Untergang und muss gerettet werden. Sie kann aber nur gerettet werden, wenn die Populisten an die Macht kommen.#footnote[Vgl. David Lanius: _Wie argumentieren Rechtspopulisten? Eine Argumentationsanalyse am Beispiel des AfD-Wahlprogramms._ https://davidlanius.de/de/wie-argumentieren-rechtspopulisten/ (05.03.2024, 08:30 Uhr).]
+    ]
+
+    *Idee:* Vielleicht bräuchten wir ein Werkzeug, um dieses Argument bewerten zu können?
+]
+
+// von Logicals zu Philosophie übergehen ...
 
 // Vorher gemeinsam erarbeiten! Philosophische Beispiel-Argumente mitbringen und daraus dieses Merkmal erarbeiten! Vorwissen aus der Vorlesung darf gerne mit eingebracht werden!
 #slide[
     = Philosophische Argumente
 
     #definition[
-        Ein philosophisches Argument ist eine Ansammlung von Aussagesätzen, von denen behauptet wird, dass die einen (die #unbreak[*Annahmen*] bzw. #unbreak[*Prämissen*]) eine andere (die #unbreak[*Konklusion*]) in der Art stützen würden, dass es rational wäre, anzunehmen, die Konklusion wäre wahr, wenn man annimmt, dass die Prämissen ebenfalls wahr sind.
+        Ein Argument ist eine Ansammlung von Aussagesätzen, von denen behauptet wird, dass die einen (die #unbreak[*Annahmen*] bzw. #unbreak[*Prämissen*]) einen anderen (die #unbreak[*Konklusion*]) in der Art stützen würden, dass es rational wäre, anzunehmen, die Konklusion wäre wahr, wenn man annimmt, dass die Prämissen wahr sind.
+    ]
+]
+
+#slide[
+    #set text(size: 0.95em)
+    #hint[
+        Argumente stellen Begründungszusammenhänge dar. Die #unbreak[*Annahmen*] sollen eine gemeinsame Wissensgrundlage sein, auf die sich der Philosoph beruft, die #unbreak[*Konklusion*] das Ergebnis, was sich aus dieser Grundlage ergeben soll.
     ]
 
     #hint[
-        Philosophische Argumente stellen Begründungszusammenhänge dar. Die #unbreak[*Annahmen*] sollen eine gemeinsame Wissensgrundlage sein, auf die sich der Philosoph beruft, die #unbreak[*Konklusion*] das Ergebnis, was sich aus dieser Grundlage ergeben soll.
+        Die *Annahmen* werden getrennt über den Strich geschrieben, die Konklusion darunter. Ein Beispiel folgt.
     ]
+]
+
+#slide[
+    #example(inference-raw(```
+    1. Die Gesellschaft steht vor dem Untergang und muss gerettet werden.
+    2. Die Gesellschaft kann nur gerettet werden, wenn die Populisten an die Macht kommen.
+    ----
+    3. Die Populisten müssen an die Macht kommen.#footnote[Vgl. David Lanius: _Wie argumentieren Rechtspopulisten? Eine Argumentationsanalyse am Beispiel des AfD-Wahlprogramms._ https://davidlanius.de/de/wie-argumentieren-rechtspopulisten/ (05.03.2024, 08:30 Uhr).]
+    ```))
 ]
 
 #slide[
     = Logische Gütekriterien
-    // Gütekriterien gemeinsam bearbeiten, in Gruppen
+    // Gütekriterien gemeinsam erarbeiten, in Gruppen
     // -> mehrere Argumente mitbringen, ungültige, gültige und schlüssige
+    // am Ende sollen Sie eigene Gütekriterien entwickeln, diese vergleichen wir mit Gültigkeit und Schlüssigkeit
 ]
 
 #slide[
     == Gültigkeit
+    // induktiv, deduktiv
+    // wir bleiben bei deduktiv
 ]
 
 #slide[
     == Schlüssigkeit
+]
+
+#slide[
+    == Fazit
+
+    // NEUEINORDNUNG:
+    // 1. Detektivbeispiel, was haben wir getan? -> induktiv-gültige Schlüsse gezogen
+    // 2. Politische Argumentation -> ungültiges, unschlüssiges Argument
 ]
