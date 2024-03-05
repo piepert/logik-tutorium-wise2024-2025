@@ -3,7 +3,7 @@
 #import "/src/templates/exercise.typ": *
 
 #state("tut-dates").update((
-    datetime(year: 2024, month: 10, day: 16),
+    // datetime(year: 2024, month: 10, day: 16), // beginnt erst ab zweiter Woche
     datetime(year: 2024, month: 10, day: 23),
     datetime(year: 2024, month: 10, day: 30),
     datetime(year: 2024, month: 11, day: 6),
@@ -126,7 +126,7 @@
         *Folgern und Folgerung Beweisen*
         - Vertiefung der Gütekriterien
         - logische Folgerung
-        - metasprachliches Beweisen
+        - einfaches Beweisen
 
 
         *Material:*
@@ -304,7 +304,7 @@
         *Reserve*
     ], [],
 
-    [], align(center + horizon)[
-        *Reserve*
-    ], [],
+    // [], align(center + horizon)[
+    //     *Reserve*
+    // ], [],
 )
