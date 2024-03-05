@@ -46,8 +46,7 @@
         [H],
         yellow,
         yellow.lighten(90%),
-        brown,
-        dotted: true)
+        brown)
 }
 
 #let solution(body) = {
@@ -101,6 +100,8 @@
     date: none,
     body
 ) = {
+    show footnote.entry: set text(size: 0.5em)
+
     if date == none {
         date = datetime.today()
     }
@@ -109,11 +110,28 @@
 
     set text(size: 24pt, lang: "de", font: "Atkinson Hyperlegible")
     set page(paper: "presentation-16-9",
-        footer: h(1fr) + (locate(loc => if loc.page() != 1 {
-            text(fill: purple.lighten(25%),
-                size: 0.75em,
-                strong(str(counter(page).at(loc).first() - 1)))
-        }))
+        footer: {
+
+                (locate(loc => if loc.page() != 1 {
+                    set text(fill: if loc.page() > 2 {
+                        purple.lighten(25%)
+                    } else {
+                        blue.lighten(25%)
+                    })
+
+                    text(size: 0.5em,[
+                        #semester(short: true, date) ---
+                        Logik-Tutorium \##no ---
+                        #title ---
+                        Tristan Pieper
+                    ])
+
+                    h(1fr)
+
+                    text(size: 0.75em,
+                        strong(str(counter(page).at(loc).first() - 1))) + text(size: 0.5em, [ \/ #(counter(page).final(loc).first() - 1)])
+            }))
+        }
         // + h(1fr)
         // + text(size: 0.5em, fill: purple.lighten(25%))[Logik-Tutorium \##no, Tristan Pieper]
     )
@@ -134,9 +152,14 @@
         ]
     ]))
 
+    set page(fill: purple)
     slide[
-        #outline(title: "Ablauf", fill: none, depth: 1)
+        #show outline.entry: set text(fill: white)
+
+        #heading(outlined: false, text(fill: blue.lighten(25%), [Ablauf]))
+        #outline(title: none, fill: none, depth: 1)
     ]
 
+    set page(fill: white)
     body
 }
