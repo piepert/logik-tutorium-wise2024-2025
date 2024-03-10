@@ -91,7 +91,7 @@
 #let uncover = polylux.uncover
 #let only = polylux.uncover
 #let pause = polylux.pause
-#let slide = polylux.polylux-slide
+#let slide(..args) = polylux.polylux-slide(..args) + counter("slide-counter").step()
 
 #let slides(
     no: 0,
@@ -112,7 +112,7 @@
     set page(paper: "presentation-16-9",
         footer: {
 
-                (locate(loc => if loc.page() != 1 {
+                (locate(loc => if loc.page() > 2 {
                     set text(fill: if loc.page() > 2 {
                         purple.lighten(25%)
                     } else {
@@ -129,7 +129,7 @@
                     h(1fr)
 
                     text(size: 0.75em,
-                        strong(str(counter(page).at(loc).first() - 1))) + text(size: 0.5em, [ \/ #(counter(page).final(loc).first() - 1)])
+                        strong(str(counter(page).at(loc).first() - 2))) + text(size: 0.5em, [ \/ #(counter(page).final(loc).first() - 2)])
             }))
         }
         // + h(1fr)
@@ -154,10 +154,19 @@
 
     set page(fill: purple)
     slide[
-        #show outline.entry: set text(fill: white)
+        #set text(fill: white)
 
         #heading(outlined: false, text(fill: blue.lighten(25%), [Ablauf]))
-        #outline(title: none, fill: none, depth: 1)
+
+        #locate(loc => {
+            let elems = query(selector(heading).after(loc), loc)
+
+            enum(..elems
+                .filter(e => e.level == 1 and e.outlined)
+                .map(e => {
+                    e.body
+                }))
+        })
     ]
 
     set page(fill: white)

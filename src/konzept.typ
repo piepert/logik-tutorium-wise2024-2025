@@ -1,5 +1,3 @@
-#import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx, vlinex, hlinex
-
 #import "/src/templates/exercise.typ": *
 #import "/src/templates/slides.typ": *
 #import "/src/packages/inference.typ": *
@@ -365,7 +363,10 @@ Sowohl auf den Folien als auch auf den Aufgabenblättern werden die folgenden El
 
 Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum für individuelle Wünsche der Studierenden enthalten. Dabei gibt es ein kontingent an obligatorischen Inhalten, die sich aus den klausurrelevanten Aufgabenstellungen zusammensetzen, und fakultative Inhalte, die zur Vertiefung und Sicherung genutzt werden können.
 
-#tablex(
+#set table(inset: 0.75em)
+#show table.cell: set text(size: 0.75em)
+
+#table(
     columns: (20%, auto, auto),
     stroke: none,
 
@@ -398,41 +399,43 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
     //     return cells
     // },
 
-    map-rows: (row, cells) => {
-        let index = 0
+    // map-rows: (row, cells) => {
+    //     let index = 0
 
-        while index < cells.len() {
-            cells.at(index).content = [
-                #set par(justify: false)
-                #set text(size: 0.75em)
+    //     while index < cells.len() {
+    //         cells.at(index).content = [
+    //             #set par(justify: false)
+    //             #set text(size: 0.75em)
 
-                #if row <= 0 {
-                    v(0.25em)
-                    cells.at(index).content
-                    v(0.25em)
+    //             #if row <= 0 {
+    //                 // v(0.25em)
+    //                 pad(y: 0.25em, cells.at(index).content)
+    //                 // v(0.25em)
 
-                } else {
-                    v(0.5em)
-                    cells.at(index).content
-                    v(0.5em)
-                }
-            ]
+    //             } else {
+    //                 // v(0.5em)
+    //                 pad(y: 0.5em, cells.at(index).content)
+    //                 // v(0.5em)
+    //             }
+    //         ]
 
-            index += 1
-        }
+    //         index += 1
+    //     }
 
-        return cells
-    },
+    //     return cells
+    // },
 
     text(fill: white, strong[Sequenz]),
-    vlinex(stroke: purple),
+    table.vline(stroke: purple),
 
     text(fill: white, strong[Inhalt]),
-    vlinex(stroke: purple),
+    table.vline(stroke: purple),
 
     text(fill: white, strong[Die Studierenden können/haben/wissen/...]),
 )[
-    Logische Grundlagen
+    Logische Grundlagen \
+    (LG)
+    #set-sequence-goals-key("LG")
 ][
     - Definition der Logik
     - (Abgrenzung zur Mathematik)
@@ -448,28 +451,30 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
     \
     - notwendige und hinreichende Bedingungen
 ][
-    - "Logik" definieren
+    #print-goals-for-sequence()
 
-    - (Logik von der Mathematik abgrenzen)
+    // - "Logik" definieren
 
-    - wissen, was philosophische Argumente sind
+    // - wissen, was philosophische Argumente sind
 
-    - philosophische Argumente erkennen
+    // - philosophische Argumente erkennen
 
-    - "Argument" definieren
+    // - "Argument" definieren
 
-    \
-    - Gültigkeit und Schlüssigkeit definieren
+    // \
+    // - Gültigkeit und Schlüssigkeit definieren
 
-    - Gültigkeit und Schlüssigkeit vergleichen und voneinander abgrenzen
+    // - Gültigkeit und Schlüssigkeit vergleichen und voneinander abgrenzen
 
-    \
-    - kennen den formalen Aufbau eines Beweises#footnote[Theorem, Beweis, QED]
+    // \
+    // - kennen den formalen Aufbau eines Beweises#footnote[Theorem, Beweis, QED]
 
-    - durch metasprachliche Begründung einfache Beweise über deduktiv-gültige Argumente führen
+    // - durch metasprachliche Begründung einfache Beweise über deduktiv-gültige Argumente führen
 ][
 
-    Aussagenlogik
+    Aussagenlogik \
+    (AL)
+    #set-sequence-goals-key("AL")
 ][
     - Analyse der Sprache an Satzbausteinen
         - Nicht
@@ -488,31 +493,33 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
     - Semantik
         - Bedeutung aussagenlogischer Junktoren
 ][
-    - aussagenlogische Strukturen der deutschen Sprache identifizieren
+    #print-goals-for-sequence()
+    // - aussagenlogische Strukturen der deutschen Sprache identifizieren
 
-    - notwendige und hinreichende Bedingungen im Wenn-Dann-Satz identifizieren
+    // - notwendige und hinreichende Bedingungen im Wenn-Dann-Satz identifizieren
 
-    \
-    - ein Gefühl für die Struktur und Bildungsregeln von AL entwickeln
+    // \
+    // - ein Gefühl für die Struktur und Bildungsregeln von AL entwickeln
 
-    - Schemata suchen und erkennen
+    // - Schemata suchen und erkennen
 
-    - Schemata zur Bildung neuer Ausdrücke benutzen
+    // - Schemata zur Bildung neuer Ausdrücke benutzen
 
-    - Junktoren in der natürlichen Sprache erkennen
+    // - Junktoren in der natürlichen Sprache erkennen
 
-    - Sätze der natürlichen Sprache aussagenlogisch formalisieren
+    // - Sätze der natürlichen Sprache aussagenlogisch formalisieren
 
-    - "nur" und "genau dann, wenn" adäquat formalisieren
+    // - "nur" und "genau dann, wenn" adäquat formalisieren
 
-    - Äquivalenzumformulierungen für notwenidge und hinreichende Bedingungen identifizieren und bilden
+    // - Äquivalenzumformulierungen für notwenidge und hinreichende Bedingungen identifizieren und bilden
 
-    \
-    - Wahrheitsbedingungen von Sätzen erkennen
+    // \
+    // - Wahrheitsbedingungen von Sätzen erkennen
 
-    - die Semantik der Junktoren definieren
+    // - die Semantik der Junktoren definieren
 ][
-    Wahrheitstabelle
+    Wahrheitstabelle \
+    (WT) #set-sequence-goals-key("WT")
 ][
     - Interpretation aussagenlogischer Ausdrücke mit der Wahrheitstabelle
         - Semantik der Junktoren als Wahrheitstabelle
@@ -522,17 +529,19 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
     - logische Wahrheit, logische Falschheit
     - logische Folgerung, logische Äquivalenz
 ][
-    - die semantische Definition der Junktoren in der Wahrheitstabelle darstellen
+    #print-goals-for-sequence()
+    // - die semantische Definition der Junktoren in der Wahrheitstabelle darstellen
 
-    - Ausdrücke mit der Wahrheitstabelle auswerten
+    // - Ausdrücke mit der Wahrheitstabelle auswerten
 
-    - logische Wahrheit und Falschheit in der Wahrheitstabelle beweisen
+    // - logische Wahrheit und Falschheit in der Wahrheitstabelle beweisen
 
-    - logische Folgerung und Äquivalenz in der Wahrheitstabelle bweisen
+    // - logische Folgerung und Äquivalenz in der Wahrheitstabelle bweisen
 
-    - schreiben für jeden Beweis QED und einen Antwortsatz
+    // - schreiben für jeden Beweis QED und einen Antwortsatz
 ][
-   Kalkül des natürlichen Schließens
+   Kalkül des natürlichen Schließens \
+   (KS) #set-sequence-goals-key("KS")
 ][
     - direkte Schlussregeln
         - MP, MT, KS, KP, $not$-Bes., $not$-Einf., $and$-Bes., $and$-Einf., DS, $or$-Einf., $<->$-Bes., $<->$-Einf., DM, $->$-Ers., KM, $->$-Einf., RAA
@@ -542,21 +551,23 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
         - RAA
         - $->$-Einführung
 ][
-    - verstehen das Muster der direkten Regelanwendung
+    #print-goals-for-sequence()
+    // - verstehen das Muster der direkten Regelanwendung
 
-    - einfache bis mittelkomplexe direkte Beweise führen
+    // - einfache bis mittelkomplexe direkte Beweise führen
 
-    - wissen, dass man für RAA standardmäßig das Gegenteil der Konklusion annimmt
+    // - wissen, dass man für RAA standardmäßig das Gegenteil der Konklusion annimmt
 
-    - die linke Beweisspalte bilden
+    // - die linke Beweisspalte bilden
 
-    - RAA durchführen
+    // - RAA durchführen
 
-    - erkennen, wann $->$-Einf. gefordert ist
+    // - erkennen, wann $->$-Einf. gefordert ist
 
-    - wissen, dass sie beim Einführen einer ZA die Abhängigkeiten der Zeilen prüfen müssen
+    // - wissen, dass sie beim Einführen einer ZA die Abhängigkeiten der Zeilen prüfen müssen
 ][
-    Prädikatenlogik
+    Prädikatenlogik \
+    (PL) #set-sequence-goals-key("PL")
 ][
     - Syllogismen & Prädikatierung
 
@@ -572,34 +583,37 @@ Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum
     \
     - logisches Quadrat
 ][
-    - verstehen den Unterschied zwischen der reinen Satzlogik AL und der u.a. Begriffslogik PL
+    #print-goals-for-sequence()
+    // - verstehen den Unterschied zwischen der reinen Satzlogik AL und der u.a. Begriffslogik PL
 
-    - einfache prädikatenlogische unquantifizierte Sachverhalte formalisieren
+    // - einfache prädikatenlogische unquantifizierte Sachverhalte formalisieren
 
-    - einfache prädikatenlogische quantifizierte Sachverhalte formalisieren
+    // - einfache prädikatenlogische quantifizierte Sachverhalte formalisieren
 
-    - Quantoren ineinander umrechnen
+    // - Quantoren ineinander umrechnen
 
-    - die Begriffe des logischen Quadrats nennen
+    // - die Begriffe des logischen Quadrats nennen
 
-    - eigene Beispiele für das logische Quadrat finden
+    // - eigene Beispiele für das logische Quadrat finden
 ][
-    Prädikatenlogisches Kalkül des natürlichen Schließens
+    Prädikatenlogisches Kalkül des natürlichen Schließens \
+    (PK) #set-sequence-goals-key("PK")
 ][
     - $forall$-Einf., $forall$-Bes.
     - $exists$-Bes., $exists$-Einf.
     - QT
     - PKS
 ][
-    - quantifizierte Ausdrücke spezialisieren und die spezialisierten Variablen korrekt ersetzen
+    #print-goals-for-sequence()
+    // - quantifizierte Ausdrücke spezialisieren und die spezialisierten Variablen korrekt ersetzen
 
-    - Ausdrücke, die Konstanten beinhalten, generalisieren und die Konstanten korrekt binden
+    // - Ausdrücke, die Konstanten beinhalten, generalisieren und die Konstanten korrekt binden
 
-    - kennen die Einschränkungen der $forall$-Einf. und beachten sie bei der Ableitung
+    // - kennen die Einschränkungen der $forall$-Einf. und beachten sie bei der Ableitung
 
-    - kennen die Einschränkungden der $exists$-Bes. und beachten sie bei der Ableitung
+    // - kennen die Einschränkungden der $exists$-Bes. und beachten sie bei der Ableitung
 
-    - schreiben für jeden Beweis QED und einen Antwortsatz
+    // - schreiben für jeden Beweis QED und einen Antwortsatz
 ]
 
 /*

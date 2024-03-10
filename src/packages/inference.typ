@@ -1,5 +1,3 @@
-#import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx, vlinex, hlinex
-
 #let normalform(..arguments) = {
     let lines = ()
 
@@ -28,18 +26,19 @@
         ..lines.flatten())
 }
 
-#let inference-line = line(length: 100%)
+#let inference-line = (v(-0.6em), table.hline(stroke: 0.75pt), v(0em))
 
 #let inference(..lines) = {
-    tablex(
+    table(
         inset: 0pt,
         row-gutter: 0.65em,
         stroke: none,
+
         ..lines.pos().map(e => if e != inference-line {
             block(inset: (x: 2pt), e)
         } else {
             e
-        }))
+        }).flatten())
 }
 
 #let inference-raw(raw-block) = {

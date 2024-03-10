@@ -1,6 +1,8 @@
 //#DONT_COMPILE_TO_PDF
-#import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx, vlinex, hlinex, cellx
+#import "/src/packages/goals.typ": *
 #import "/src/templates/exercise.typ": *
+
+#show: ref-goals
 
 #state("tut-dates").update((
     // datetime(year: 2024, month: 10, day: 16), // beginnt erst ab zweiter Woche
@@ -20,18 +22,31 @@
 ))
 
 #let plan-sequence(content) = (
+    table.cell(colspan: 3, fill: none, v(-1em)),
 
-    colspanx(3, cellx(fill: none, v(-1.5em))),
-    hlinex(stroke: purple + 1pt),
-    colspanx(3, cellx(fill: purple, align(center,
+    table.hline(stroke: purple + 1pt),
+
+    table.cell(colspan: 3, fill: purple, align(center,
         strong(
             text(fill: white,
                 counter("table-sequence").step() +
-                [Abschnitt #counter("table-sequence").display() - #content]))))),
-    hlinex(stroke: purple + 1pt)
+                [Abschnitt #counter("table-sequence").display() - #content])))),
+
+    table.hline(stroke: purple + 1pt)
 )
 
-#tablex(
+#let cell-meeting = align(center + top,
+    counter("plan-table").step() + locate(loc => [
+        *#counter("plan-table").at(loc).first(). Sitzung* \
+        #if state("tut-dates").at(loc).len() > (counter("plan-table").at(loc).first() - 1) {
+            state("tut-dates").at(loc).at(counter("plan-table").at(loc).first() - 1).display("[day].[month].[year]")
+        } else {
+            [N/A]
+        }
+    ])
+)
+
+#table(
     columns: (15%, auto, auto),
     stroke: none,
 
@@ -47,65 +62,65 @@
         }
     ),
 
-    map-cells: cell => {
-        if cell.x == 0 and cell.y >= 1 and cell.colspan == 1 {
-            cell.content = align(center + top, counter("plan-table").step() + locate(loc => [
-                *#counter("plan-table").at(loc).first(). Sitzung* \
-                #if state("tut-dates").at(loc).len() > (counter("plan-table").at(loc).first() - 1) {
-                    state("tut-dates").at(loc).at(counter("plan-table").at(loc).first() - 1).display("[day].[month].[year]")
-                } else {
-                    [N/A]
-                }
-            ]))
-        }
+    // map-cells: cell => {
+    //     if cell.x == 0 and cell.y >= 1 and cell.colspan == 1 {
+    //         cell.content = align(center + top, counter("plan-table").step() + locate(loc => [
+    //             *#counter("plan-table").at(loc).first(). Sitzung* \
+    //             #if state("tut-dates").at(loc).len() > (counter("plan-table").at(loc).first() - 1) {
+    //                 state("tut-dates").at(loc).at(counter("plan-table").at(loc).first() - 1).display("[day].[month].[year]")
+    //             } else {
+    //                 [N/A]
+    //             }
+    //         ]))
+    //     }
 
-        return cell
-    },
+    //     return cell
+    // },
 
-    map-rows: (row, cells) => {
-        let index = 0
+    // map-rows: (row, cells) => {
+    //     let index = 0
 
-        while index < cells.len() {
-            if cells.at(index) == none {
-                index += 1
-                continue
-            }
+    //     while index < cells.len() {
+    //         if cells.at(index) == none {
+    //             index += 1
+    //             continue
+    //         }
 
-            cells.at(index).content = [
-                #set par(justify: false)
-                #set text(size: 0.75em)
+    //         cells.at(index).content = [
+    //             #set par(justify: false)
+    //             #set text(size: 0.75em)
 
-                #if row <= 0 {
-                    v(0.25em)
-                    cells.at(index).content
-                    v(0.25em)
+    //             #if row <= 0 {
+    //                 v(0.25em)
+    //                 cells.at(index).content
+    //                 v(0.25em)
 
-                } else {
-                    v(0.5em)
-                    cells.at(index).content
-                    v(0.5em)
-                }
-            ]
+    //             } else {
+    //                 v(0.5em)
+    //                 cells.at(index).content
+    //                 v(0.5em)
+    //             }
+    //         ]
 
-            index += 1
-        }
+    //         index += 1
+    //     }
 
-        return cells
-    },
+    //     return cells
+    // },
 
 
     // Nr., Datum, Thema + organisatorisches (Lernevaluation?), Lektüre, Aufgabenblatt
 
     text(fill: white, strong[Sitzung]),
-    vlinex(stroke: purple),
+    table.vline(stroke: purple),
 
     text(fill: white, strong[Inhalt, Material]),
-    vlinex(stroke: purple),
+    table.vline(stroke: purple),
 
     text(fill: white, strong[Ziele]),
 
     ..plan-sequence[logische Grundlagen],
-    [], [
+    cell-meeting, [
         *Organisatorisches*
         - Vorstellung und Erwartungen
 
@@ -116,13 +131,19 @@
         *Material:*
         - Aufgabenserie #counter("plan-table").display()
     ], [
-        - Ich kann den Begriff "Logik" definieren.
-        - Ich kann den Aufbau eines philosophischen Argumentes erklären.
-        - Ich kann den Begriff "Argument" definieren.
-        - Ich kann die Gütekriterien von philosophischen Argumenten nennen.
+        // - Ich kann den Begriff "Logik" definieren.
+        // - Ich kann den Aufbau eines philosophischen Argumentes erklären.
+        // - Ich kann den Begriff "Argument" definieren.
+        // - Ich kann die Gütekriterien von philosophischen Argumenten nennen.
+
+        @definieren-logik[Ich kann den Begriff "Logik" definieren.]
+        @wissen-phil-argumente[Ich weiß, was ein philosophisches Argument ist und wie es aufgebaut ist.]
+        @definieren-argument[Ich kann den Begriff "Argument" definieren.]
+
+        #multi-goal-ref([Ich kann die Gütekriterien von philosophischen Argumenten nennen.], "definieren-gültigkeit", "definieren-schlüssigkeit")
     ],
 
-    [], [
+    cell-meeting, [
         *Folgern und Folgerung Beweisen*
         - Vertiefung der Gütekriterien
         - logische Folgerung
@@ -140,7 +161,7 @@
     ],
 
     ..plan-sequence[Aussagenlogik],
-    [], [
+    cell-meeting, [
         *Grundlagen der Formalisierung*
         - aussagenlogische Zusammenhänge in der natürlichen Sprache
         - aussagenlogische Satzbausteine der natürlichen Sprache
@@ -156,7 +177,7 @@
         - Ich kann die hinreichende und notwendige Bedingung in einem Wenn-Dann-Satz bestimmen.
     ],
 
-    [], [
+    cell-meeting, [
         *Syntax der Aussagenlogik, AL-Formalisierung*
 
         - Schemata und Mustererkennung
@@ -177,7 +198,7 @@
     ],
 
     ..plan-sequence[Wahrheitstabelle],
-    [], [
+    cell-meeting, [
         *Semantik der Aussagenlogik*
         - Semantik der Junktoren
         - logische Wahrheit, logische Falschheit
@@ -196,10 +217,10 @@
     ],
 
     ..plan-sequence[Kalkül des natürlichen Schließens (KdnS)],
-    [], [
+    cell-meeting, [
         *Ableiten mit dem KdnS*
         - Einführung des KdnS
-        - die Regeln: KM, MP, MT, KP, $not$-Bes. und $not$-Einf.
+        - die Regeln: DS, KM, KP, $not$-Bes. und $not$-Einf.
 
         *Material:*
         - Skript p. / S.
@@ -211,9 +232,9 @@
         - Ich kann einfache bis mittelkomplexe Beweise im Kalkül des natürlichen Schließens führen.
     ],
 
-    [], [
+    cell-meeting, [
         *Beweise mit Zusatzannahmen*
-        - die Regeln: $and$-Bes., $and$-Einf., $or$-Einf., DS
+        - die Regeln: $and$-Bes., $and$-Einf., $or$-Einf., MP, MT
         - linke Beweisspalte
         - die Regel der $->$-Einführung
 
@@ -226,7 +247,7 @@
         - Ich weiß, wann und wie ich die Abhängigkeiten meiner abgeleiteten Konklusion prüfen muss.
     ],
 
-    [], [
+    cell-meeting, [
         *Reductio ad absurdum, verzweigte Beweise*
         - die Regeln: DM, $<->$-Bes., $<->$-Einf., $->$-Ers. und $->$-Einf.
         - die Regel des Reductio ad absurdums (RAA)
@@ -242,7 +263,7 @@
     ],
 
     ..plan-sequence[Prädikatenlogik],
-    [], [
+    cell-meeting, [
         *Motivation und Syntax der Prädikatenlogik, prädikatenlogische Formalisierung*
         - Syllogismen, Prädikatierung und Modelltheorie
         - Syntax der Prädikatenlogik
@@ -256,7 +277,7 @@
         - Ich kann einfache bis mittelkomplexe prädikatenlogische unquantifizierte Sachverhalte formalisieren.
     ],
 
-    [], [
+    cell-meeting, [
         *Quantoren und das logische Quadrat*
         - das logische Quadrat
         - Formalisierung quantifizierter Sätze
@@ -273,7 +294,7 @@
     ],
 
     ..plan-sequence[Prädikatenlogisches Kalkül des natürlichen Schließens],
-    [], [
+    cell-meeting, [
         *Uneingeschränkte prädikatenlogische Ableitungsregeln*
         - die Regeln: $forall$-Bes., $exists$-Einf. und QT
 
@@ -285,7 +306,7 @@
         - Ich kann unquantifizierte Sätze korrekt mit der $exists$-Einf. generalisieren.
     ],
 
-    [], [
+    cell-meeting, [
         *Eingeschränkte prädikatenlogische Ableitungsregeln*
         - die Regeln: $exists$-Bes., $forall$-Einf. und PKS
 
@@ -300,11 +321,11 @@
     ],
 
     ..plan-sequence[Reserve],
-    [], align(center + horizon)[
+    cell-meeting, table.cell(align: center + horizon, [
         *Reserve*
-    ], [],
+    ]), [],
 
-    // [], align(center + horizon)[
+    // [], table.cell(align: center + horizon, [
     //     *Reserve*
-    // ], [],
+    // ]), [],
 )

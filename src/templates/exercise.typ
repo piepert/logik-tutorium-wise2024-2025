@@ -1,4 +1,4 @@
-#import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx, vlinex, hlinex, cellx
+#import "/src/packages/goals.typ": *
 
 #import "colors.typ" as colors: *
 #import "slides.typ" as slides: *
@@ -99,21 +99,21 @@
 }
 
 #let make-matrix-row(no, title, extra, points, solutions) = (
-    hlinex(stroke: purple),
+    table.hline(stroke: purple),
 
-    cellx(fill: blue.lighten(75%),
+    table.cell(fill: blue.lighten(75%),
         strong(if extra [Zusatzaufgabe ] else [Aufgabe ]) +
         strong[#no --- #title]),
 
-    cellx(fill: blue.lighten(75%),
+    table.cell(fill: blue.lighten(75%),
         align(center, strong[#box(line(length: 0.75cm)) / #points])),
 
-    hlinex(stroke: purple),
+    table.hline(stroke: purple),
 
     ..solutions.map(e => (
         e.at(1),
         align(center, box(line(length: 0.75cm)) + [ \/ #e.at(0)]),
-        hlinex(stroke: (paint: purple, dash: "dashed")),
+        table.hline(stroke: (paint: purple, dash: "dashed")),
     )).flatten()
 )
 
@@ -130,17 +130,17 @@
         return
     }
 
-    tablex(
-        columns: (1fr, auto),
+    table(
+        columns: (1fr, 3cm),
         stroke: none,
         inset: (x: 1em, y: 0.75em),
 
-        cellx(fill: purple, text(fill: white,
+        table.cell(fill: purple, text(fill: white,
             align(horizon, strong[Aufgabe]))),
 
-        vlinex(stroke: purple),
+        table.vline(stroke: purple),
 
-        cellx(fill: purple, text(fill: white,
+        table.cell(fill: purple, text(fill: white,
             align(center, strong[Erreichte \ Punkte]))),
 
         ..tasks
@@ -156,7 +156,7 @@
                     task.points,
                     task.solution)}).flatten(),
 
-        colspanx(2, cellx(fill: purple, v(-10pt))),
+        table.cell(colspan: 2, fill: purple, v(-10pt)),
 
         ..(if tasks.filter(task => task.extra and
                     task.solution != none and
@@ -174,7 +174,7 @@
                         task.points,
                         task.solution)}).flatten(),
 
-                colspanx(2, cellx(fill: purple, v(-10pt)))
+                table.cell(colspan: 2, fill: purple, v(-10pt))
             )
         } else { () }).flatten(),
 
@@ -305,7 +305,10 @@
         [#move(text(fill: purple.lighten(25%), num) + [] + text(fill: purple, it.body), dx: -1 * measure(num, s).width)]
     }))
 
-    set page(header: [
+    set page(
+        margin: (top: 3.5cm, bottom: 3cm),
+
+        header: [
             #set text(size: 0.75em)
 
             #grid(columns: (50%, 50%))[
@@ -346,8 +349,7 @@
             #line(length: 100%, stroke: purple)
             Seite #counter(page).display() / #locate(loc => counter(page).final(loc).first())
         ],
-
-        margin: (top: 3.5cm, bottom: 3cm))
+    )
 
     big-heading(title)
 
@@ -370,6 +372,9 @@
     state("tasks").update(())
     state("tasks-points").update(())
     state("show-lines").update(show-lines)
+
+    // set goals
+    set-all-goals()
 
     body
 
@@ -438,7 +443,7 @@
 
                         point-distribution.push(f(last-to - 1, 0))
 
-                        center-block(tablex(
+                        center-block(table(
                             columns: n + 3,
                             stroke: none,
                             align: center,
@@ -446,7 +451,7 @@
                             strong[Punktzahl], ..point-distribution,
                                 // [#calc.round(points-sum*0.5 - 1) -- 0],
 
-                            hlinex(stroke: 1pt + purple),
+                            table.hline(stroke: 1pt + purple),
 
                             strong[Wert],
                             ..([sehr gut],
@@ -455,7 +460,7 @@
                                 [ausreichend],
                                 [n.b.])
                                 .rev()
-                                .map(e => (vlinex(stroke: 1pt + purple), text(size: 0.95em, e)))
+                                .map(e => (table.vline(stroke: 1pt + purple), text(size: 0.95em, e)))
                                 .rev()
                                 .flatten(),
                         ))

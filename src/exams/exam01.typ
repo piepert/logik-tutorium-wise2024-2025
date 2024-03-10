@@ -79,6 +79,7 @@
         ```)
 ], (
     (1, [
+        Eines der folgenden:
         - "Alle Vögel können fliegen."
         - "Ein Pinguin ist ein Vogel."
         - "Ein Pinguin kann fliegen."
@@ -86,6 +87,7 @@
     ]),
 
     (1, [
+        Eines der folgenden:
         - "Pinguine leben am Südpol und Eisbären am Nordpol."
         - "Pinguine leben am Südpol."
         - "Eisbären leben am Nordpol."
@@ -93,6 +95,7 @@
     ]),
 
     (1, [
+        Eines der folgenden:
         - "Die Straße ist nass."
         - "Es ist nicht der Fall, dass die Straße nicht nass ist."
         - äquivalente oder allgemeingültige Aussagen
