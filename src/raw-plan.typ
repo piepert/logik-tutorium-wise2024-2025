@@ -137,7 +137,9 @@
         // - Ich kann die Gütekriterien von philosophischen Argumenten nennen.
 
         @definieren-logik[Ich kann den Begriff "Logik" definieren.]
-        @wissen-phil-argumente[Ich weiß, was ein philosophisches Argument ist und wie es aufgebaut ist.]
+
+        #multi-goal-ref([Ich weiß, was ein philosophisches Argument ist und wie es aufgebaut ist.], "wissen-phil-argumente", "erkennen-phil-argumente")
+
         @definieren-argument[Ich kann den Begriff "Argument" definieren.]
 
         #multi-goal-ref([Ich kann die Gütekriterien von philosophischen Argumenten nennen.], "definieren-gültigkeit", "definieren-schlüssigkeit")

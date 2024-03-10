@@ -1,3 +1,5 @@
+#import "/src/templates/colors.typ": *
+
 #let goal-list = (
     // Grundlagen
     definieren-logik: ["Logik" definieren],
@@ -171,6 +173,10 @@
     })
 }
 
+#let format-goal-key(key) = text(fill: purple,
+    size: 0.75em,
+    [(#strong(key))])
+
 #let print-goals-for-sequence() = locate(loc => { style(sty => {
     let s = state("sequence-goals").at(loc)
 
@@ -179,7 +185,7 @@
     }
 
     let goals = ()
-    let max-goal-size = calc.max(..get-all-goals(loc).map(e => measure(e+[,], sty).width))
+    let max-goal-size = calc.max(..get-all-goals(loc).map(e => measure(format-goal-key(e)+[,], sty).width))
 
     for key in s.goals.at(s.current-key) {
 
@@ -191,7 +197,7 @@
             return text(fill: red, strong("\""+key+"\" NOT FOUND"))
         }
 
-        goals.push(strong(goal-key))
+        goals.push(format-goal-key(goal-key))
         goals.push(goal.at(1))
     }
 
@@ -203,13 +209,12 @@
 })})
 
 #let ref-goals(body) = {
-
     show ref: it => {
         let key = str(it.target)
 
         if key in goal-list {
             locate(loc => { style(s => {
-                let max-goal-size = calc.max(..get-all-goals(loc).map(e => measure(e+[,], s).width))
+                let max-goal-size = calc.max(..get-all-goals(loc).map(e => measure(format-goal-key(e+[,]), s).width))
 
                 let goal = get-goal(key, loc)
 
@@ -219,7 +224,7 @@
                     return text(fill: red, strong("\""+key+"\" NOT FOUND"))
                 }
 
-                if it.supplement == none {
+                if it.supplement == none or it.supplement == auto {
                     goal-key
 
                 } else {
@@ -227,7 +232,7 @@
                         column-gutter: 0.5em,
                         row-gutter: 1em,
 
-                        strong(goal-key),
+                        format-goal-key(goal-key),
                         it.supplement)
                 }
             })})
@@ -242,7 +247,7 @@
 
 #let multi-goal-ref(body, ..goals) = locate(loc => { style(s => {
     let list = ()
-    let max-goal-size = calc.max(..get-all-goals(loc).map(e => measure(e+[,], s).width))
+    let max-goal-size = calc.max(..get-all-goals(loc).map(e => measure(format-goal-key(e+[,]), s).width))
 
     for key in goals.pos() {
         if key in goal-list {
@@ -262,6 +267,6 @@
         column-gutter: 0.5em,
         row-gutter: 1em,
 
-        strong(list.join[,\ ]),
+        list.map(e => format-goal-key(e)).join[,\ ],
         body)
 })})

@@ -363,6 +363,8 @@ Sowohl auf den Folien als auch auf den Aufgabenblättern werden die folgenden El
 
 Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum für individuelle Wünsche der Studierenden enthalten. Dabei gibt es ein kontingent an obligatorischen Inhalten, die sich aus den klausurrelevanten Aufgabenstellungen zusammensetzen, und fakultative Inhalte, die zur Vertiefung und Sicherung genutzt werden können.
 
+Die Ziele werden je mit einer Identifikator versehen. Dieser besteht aus einer Abkürzung aus zwei Großbuchstaben (etwa "LG" für "logische Grundlagen") und einer fortlaufenden Nummer für die jeweilige Sequenz. Damit kann für alle Sitzungsziele nachverfolgt werden, aus welchen Sequenzzielen sie stammen.
+
 #set table(inset: 0.75em)
 #show table.cell: set text(size: 0.75em)
 
