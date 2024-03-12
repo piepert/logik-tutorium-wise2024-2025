@@ -152,9 +152,9 @@ Daraufhin wird die Sitzung geschlossen.
 
 Ähnlich der Standardisierung der Operatoren gibt es für das Tutorium nur eine begrenzte Auswahl an möglichen Aufgabenstellungen, die jeweils ein gewisses Ziel verfolgt, d.i. meist das Fördern einer bestimmten Fertigkeit. Dementsprechend müssen die Aufgabenstellungen sich ebenfalls an Inhalten von @inhalte orientieren.
 
-=== Klausurrelevante Aufgabenstellungen
+=== Obligatorische Aufgabenstellungen
 
-Die folgenden Aufgabenstellungen sind vorbereitend auf die Klausur konzipiert:
+Die folgenden Aufgabenstellungen müssen von allen Studierenden nach Abschluss des Moduls weitestgehend ohne Probleme gelöst werden können:
 
 + Aussagesätze identifizieren
 
@@ -163,7 +163,7 @@ Die folgenden Aufgabenstellungen sind vorbereitend auf die Klausur konzipiert:
 + aussagenlogische Formalisierung
 
 + zum Verständnis von Sätzen mit „wenn“, „dann“ und „nur“ sowie von notwendigen und hinreichenden Bedingungen:
-    - alternative Formulierungen identifizieren können
+    - alternative, äquivalente Formulierungen identifizieren können
     - notwendige und hinreichende Bedingungen bestimmen können
 
 + logische Wahrheit, logische Falschheit, logische Folgerung und logische Äquivalenz mit der Wahrheitstabelle zeigen
