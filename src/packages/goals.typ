@@ -10,6 +10,8 @@
     definieren-schlüssigkeit: [Schlüssigkeit definieren],
     kennen-aufbau-beweis: [kennen den formalen Aufbau eines Beweises],
     beweise-metasprache: [durch metasprachliche Begründung einfache Beweise über deduktiv-gültige Argumente führen],
+    identifizieren-aussagesätze: [Aussagesätze unter anderen Sätzen identifizieren],
+    definieren-logische-folgerung: ["logische Folgerung" definieren],
 
     // AL
     identifizieren-al-strukturen: [aussagenlogische Strukturen der deutschen Sprache identifizieren],
@@ -33,6 +35,7 @@
     korrekte-beweisform: [schreiben für jeden Beweis QED und einen Antwortsatz],
 
     // KdnS
+    aufbauen-kdns: [KdnS korrekt aufbauen können],
     verstehen-direkte-regeln: [verstehen das Muster der direkten Regelanwendung],
     beweise-kdns-einfach: [einfache bis mittelkomplexe direkte Beweise führen],
     wissen-raa-verfahren: [wissen, dass man für RAA standardmäßig das Gegenteil der Konklusion annimmt],
@@ -40,6 +43,7 @@
     beweisen-mittels-raa: [Beweis mittels RAA durchführen],
     erkennen-konditionalisierung: [erkennen, wann $->$-Einf. gefordert ist],
     prüfen-abhängigkeiten: [wissen, dass sie beim Einführen einer ZA die Abhängigkeiten der Zeilen prüfen müssen],
+    beweisen-verzweigt: [verzweigen Beweis durchführen],
 
     // PL
     wissen-unterschied-al-pl: [verstehen den Unterschied zwischen der reinen Satzlogik AL und der u.a. Begriffslogik PL],
@@ -64,11 +68,13 @@
             "definieren-logik",
             "wissen-phil-argumente",
             "erkennen-phil-argumente",
+            "identifizieren-aussagesätze",
             "definieren-argument",
             "definieren-gültigkeit",
             "definieren-schlüssigkeit",
             "kennen-aufbau-beweis",
-            "beweise-metasprache"
+            "beweise-metasprache",
+            "definieren-logische-folgerung",
         ),
 
         "AL": (
@@ -95,6 +101,7 @@
         ),
 
         "KS": (
+            "aufbauen-kdns",
             "verstehen-direkte-regeln",
             "beweise-kdns-einfach",
             "wissen-raa-verfahren",
@@ -102,6 +109,7 @@
             "beweisen-mittels-raa",
             "erkennen-konditionalisierung",
             "prüfen-abhängigkeiten",
+            "beweisen-verzweigt",
         ),
 
         // PL

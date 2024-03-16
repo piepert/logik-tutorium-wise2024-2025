@@ -156,10 +156,15 @@
         - Aufgabenserie #counter("plan-table").display()
         - LEV #counter("table-sequence").display()
     ], [
-        - Ich kann die Gütekriterien von philosophischen Argumenten definieren und voneinander abgrenzen.
-        - Ich kann "logische Folgerung" definieren.
-        - Ich kann einen Beweis korrekt aufbauen.
-        - Ich kann einen einfachen indirekten Beweis führen.
+        @identifizieren-aussagesätze[Ich kann Aussagesätze identifizieren.]
+
+        #multi-goal-ref([Ich kann die Gütekriterien von philosophischen Argumenten definieren und voneinander abgrenzen.], "definieren-gültigkeit", "definieren-schlüssigkeit")
+
+        @definieren-logische-folgerung[Ich kann "logische Folgerung" definieren.]
+
+        @kennen-aufbau-beweis[Ich kann einen Beweis korrekt aufbauen.]
+
+        // @beweise-metasprache[Ich kann einen einfachen indirekten Beweis führen.]
     ],
 
     ..plan-sequence[Aussagenlogik],
@@ -175,8 +180,8 @@
         - Aufgabenserie #counter("plan-table").display()
     ], [
         // - Ich kann die Formalisierung von gültigen Schlüssen motivieren.
-        - Ich kann die aussagenlogische Struktur der deutschen Sprache identifizieren.
-        - Ich kann die hinreichende und notwendige Bedingung in einem Wenn-Dann-Satz bestimmen.
+        @identifizieren-al-strukturen[Ich kann die aussagenlogische Struktur der deutschen Sprache identifizieren.]
+        @identifizieren-hinr-notw-bed[Ich kann die hinreichende und notwendige Bedingung in einem Wenn-Dann-Satz bestimmen.]
     ],
 
     cell-meeting, [
@@ -193,10 +198,14 @@
         - Aufgabenserie #counter("plan-table").display()
         - LEV #counter("table-sequence").display()
     ], [
-        - Ich kann erkennen, ob ein Ausdruck syntaktisch korrekt nach den Regeln von AL gebildet wurde.
-        - Ich kann syntaktisch korrekte Ausdrücke nach den Bildungsregeln von AL bilden.
-        - Ich kann die aussagenlogischen Junktoren in der natürlichen Sprache erkennen und korrekt formalisieren.
-        - Ich kann die Phänomene "nur" und "genau dann, wenn" im Wenn-Dann-Satz bzw. Genau-Dann-Wenn-Satz korrekt formalisieren.
+        #multi-goal-ref([Ich kann erkennen, ob ein Ausdruck syntaktisch korrekt nach den Regeln von AL gebildet wurde.], "entwickeln-gefühl-al-syntax",
+"erkennen-suchen-schemata")
+
+        #multi-goal-ref([Ich kann syntaktisch korrekte Ausdrücke nach den Bildungsregeln von AL bilden.], "entwickeln-gefühl-al-syntax", "bilden-ausdrücke-schemata")
+
+        #multi-goal-ref([Ich kann die aussagenlogischen Junktoren in der natürlichen Sprache erkennen und korrekt formalisieren.], "identifizieren-junktoren", "formalisieren-al")
+
+        @formalisieren-wd-gdw-nur[Ich kann die Phänomene "nur" und "genau dann, wenn" im Wenn-Dann-Satz bzw. Genau-Dann-Wenn-Satz korrekt formalisieren.]
     ],
 
     ..plan-sequence[Wahrheitstabelle],
@@ -211,11 +220,15 @@
         - Aufgabenserie #counter("plan-table").display()
         - LEV #counter("table-sequence").display()
     ], [
-        - Ich kann äquivalente natürlichsprachliche Sätze für Wenn-Dann-Sätze bilden, besonders im Zusammenhang von "nur" und der Kontraposition des Konditionals.
-        - Ich kann die Wahrheitsbedingungen der Junktoren natürlich-sprachlich wiedergeben.
-        - Ich kann die Wahrheitsbedingungen der Junktoren mit der Wahrheitstabelle darstellen.
-        - Ich kann AL-Ausdrücke mit der Wahrheitstabelle auswerten.
-        - Ich kann "logische Wahrheit", "logische Falschheit" und "logische Äquivalenz" definieren.
+        @bilden-notw-hinr-äquivalenz[Ich kann äquivalente natürlichsprachliche Sätze für Wenn-Dann-Sätze bilden, besonders im Zusammenhang von "nur" und der Kontraposition des Konditionals.]
+
+        @definieren-semantik-junktoren[Ich kann die Wahrheitsbedingungen der Junktoren natürlich-sprachlich wiedergeben.]
+
+        @darstellen-junktoren-wahrheitstabelle[Ich kann die Wahrheitsbedingungen der Junktoren mit der Wahrheitstabelle darstellen.]
+
+        @auswerten-ausdrücke-wahrheitstabelle[Ich kann AL-Ausdrücke mit der Wahrheitstabelle auswerten.]
+
+        #multi-goal-ref([Ich kann "logische Wahrheit", "logische Falschheit" und "logische Äquivalenz" mit der Wahrheitstabelle beweisen.], "beweisen-logische-wahrheit", "beweisen-logische-folgerung", "beweisen-logische-äquivalenz")
     ],
 
     ..plan-sequence[Kalkül des natürlichen Schließens (KdnS)],
@@ -228,10 +241,11 @@
         - Skript p. / S.
         - Aufgabenserie #counter("plan-table").display()
     ], [
-        - Ich kann den KdnS korrekt aufbauen.
-        - Ich kann Schemata für Ableitungsregeln im KdnS erkennen und anwenden.
-        - Ich kann für jede Spalte des KdnS erklären, was ich in sie eintragen muss.
-        - Ich kann einfache bis mittelkomplexe Beweise im Kalkül des natürlichen Schließens führen.
+        @aufbauen-kdns[Ich kann den KdnS korrekt aufbauen.]
+
+        #multi-goal-ref([Ich kann Schemata für Ableitungsregeln im KdnS erkennen und anwenden.], "verstehen-direkte-regeln", "beweise-kdns-einfach")
+
+        @beweise-kdns-einfach[Ich kann einfache bis mittelkomplexe Beweise im Kalkül des natürlichen Schließens führen.]
     ],
 
     cell-meeting, [
@@ -244,9 +258,11 @@
         - Skript p. / S.
         - Aufgabenserie #counter("plan-table").display()
     ], [
-        - Ich kann die linke Beweisspalte korrekt herstellen und darin die Abhängigkeiten einer Zeile ablesen.
-        - Ich kann erkennen, wann eine $->$-Einf. gefordert ist.
-        - Ich weiß, wann und wie ich die Abhängigkeiten meiner abgeleiteten Konklusion prüfen muss.
+        @bilden-linke-beweisspalte[Ich kann die linke Beweisspalte korrekt herstellen und darin die Abhängigkeiten einer Zeile ablesen.]
+
+        @erkennen-konditionalisierung[Ich kann erkennen, wann eine $->$-Einf. gefordert ist.]
+
+        @prüfen-abhängigkeiten[Ich weiß, wann und wie ich die Abhängigkeiten meiner abgeleiteten Konklusion prüfen muss.]
     ],
 
     cell-meeting, [
@@ -260,8 +276,9 @@
         - Aufgabenserie #counter("plan-table").display()
         - LEV #counter("table-sequence").display()
     ], [
-        - Ich kann einen Beweis mittels der Regel RAA im KdnS korrekt führen.
-        - Ich kann einen einfachen verzweigten Beweis führen.
+        #multi-goal-ref([Ich kann einen Beweis mittels der Regel RAA im KdnS korrekt führen.], "wissen-raa-verfahren", "beweisen-mittels-raa")
+
+        @beweisen-verzweigt[Ich kann einen einfachen verzweigten Beweis führen.]
     ],
 
     ..plan-sequence[Prädikatenlogik],
@@ -270,13 +287,14 @@
         - Syllogismen, Prädikatierung und Modelltheorie
         - Syntax der Prädikatenlogik
         - Formalisierung unquantifizierter Beispiele
+        - Formalisierung quantifizierter Beispiele
 
         *Material:*
         - Skript p. / S.
         - Aufgabenserie #counter("plan-table").display()
     ], [
-        - Ich kann korrekte Sätze der Sprache PL bilden.
-        - Ich kann einfache bis mittelkomplexe prädikatenlogische unquantifizierte Sachverhalte formalisieren.
+        @formalisieren-pl-unquantifiziert[Ich kann einfache bis mittelkomplexe prädikatenlogische unquantifizierte Sachverhalte formalisieren.]
+        @formalisieren-pl-quantifiziert[Ich kann einfache prädikatenlogische quantifizierte Sachverhalte formalisieren.]
     ],
 
     cell-meeting, [
@@ -289,10 +307,9 @@
         - Aufgabenserie #counter("plan-table").display()
         - LEV #counter("table-sequence").display()
     ], [
-        - Ich kann einfache prädikatenlogische quantifizierte Sachverhalte formalisieren.
-        - Ich kann die Begriffe des logischen Quadrats benennen.
-        - Ich kann zu einem gegebenen Satz im logischen Quadrat weitere Sätze für die freien Stellen im logischen Quadrat bilden.
-        - Ich kann das Negationszeichen vor Quantoren durch Umwandlung entfernen.
+        @benennen-begriffe-log-quad[Ich kann die Begriffe des logischen Quadrats benennen.]
+        @finden-beispiele-log-quad[Ich kann zu einem gegebenen Satz im logischen Quadrat weitere Sätze für die freien Stellen im logischen Quadrat bilden.]
+        @umrechnen-quantoren[Ich kann das Negationszeichen vor Quantoren durch Umwandlung entfernen.]
     ],
 
     ..plan-sequence[Prädikatenlogisches Kalkül des natürlichen Schließens],
@@ -304,8 +321,8 @@
         - Skript p. / S.
         - Aufgabenserie #counter("plan-table").display()
     ], [
-        - Ich kann allquantifizierte Sätze korrekt mit der $forall$-Bes. spezialisieren.
-        - Ich kann unquantifizierte Sätze korrekt mit der $exists$-Einf. generalisieren.
+        @variablen-spezialisieren[Ich kann allquantifizierte Sätze korrekt mit der $forall$-Bes. spezialisieren.]
+        @konstanten-generalisieren[Ich kann unquantifizierte Sätze korrekt mit der $exists$-Einf. generalisieren.]
     ],
 
     cell-meeting, [
@@ -317,9 +334,11 @@
         - Aufgabenserie #counter("plan-table").display()
         - LEV #counter("table-sequence").display()
     ], [
-        - Ich kann unquantifizierte Sätze unter Berücksichtigung der Einsränkungen korrekt mit der $forall$-Einf. generalisieren.
-        - Ich kann existenzquantifizierte Sätze unter Berücksichtigung der Einsränkungen korrekt mit der $exists$-Bes. spezialisieren.
-        - Ich kann die Bedingungen der $exists$-Bes. und $forall$-Einf. in meiner Ableitung korrekt prüfen.
+        #multi-goal-ref([Ich kann unquantifizierte Sätze unter Berücksichtigung der Einsränkungen korrekt mit der $forall$-Einf. generalisieren.], "kennen-einschränkung-allq-einf", "konstanten-generalisieren")
+
+        #multi-goal-ref([Ich kann existenzquantifizierte Sätze unter Berücksichtigung der Einsränkungen korrekt mit der $exists$-Bes. spezialisieren.], "kennen-einschränkung-exq-bes", "variablen-spezialisieren")
+
+        #multi-goal-ref([Ich kann die Bedingungen der $exists$-Bes. und $forall$-Einf. in meiner Ableitung korrekt prüfen.],  "kennen-einschränkung-allq-einf", "kennen-einschränkung-exq-bes")
     ],
 
     ..plan-sequence[Reserve],
