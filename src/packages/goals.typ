@@ -181,9 +181,16 @@
     })
 }
 
-#let format-goal-key(key) = text(fill: purple,
-    size: 0.75em,
-    [(#strong(key))])
+#let format-goal-key(..keys) = text(fill: purple,
+    math.equation(block: true, $mat(delim: "[",
+        #block(width: 0.5cm,
+            align(center,
+                text(font: "Atkinson Hyperlegible",
+                    size: 0.6em,
+                    strong(keys.pos().join([\ ])))
+            )
+        )
+    )$))
 
 #let print-goals-for-sequence() = locate(loc => { style(sty => {
     let s = state("sequence-goals").at(loc)
@@ -237,7 +244,7 @@
 
                 } else {
                     grid(columns: (max-goal-size, 1fr),
-                        column-gutter: 0.5em,
+                        column-gutter: 1em,
                         row-gutter: 1em,
 
                         format-goal-key(goal-key),
@@ -272,9 +279,9 @@
     }
 
     grid(columns: (max-goal-size, 1fr),
-        column-gutter: 0.5em,
+        column-gutter: 1em,
         row-gutter: 1em,
 
-        list.map(e => format-goal-key(e)).join[,\ ],
+        format-goal-key(..list),
         body)
 })})

@@ -46,6 +46,8 @@
     ])
 )
 
+#show table.cell: set par(justify: false)
+
 #table(
     columns: (15%, auto, auto),
     stroke: none,

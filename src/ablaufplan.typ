@@ -17,4 +17,5 @@
         Zum erfolgreichen Aneignen der Inhalte sind zu jeder Sitzung Lernziele gegeben, die sie sich im Laufe des Semesters aneignen müssen, um das Modul zu bestehen. Es werden _nicht_ alle  Lernziele in den einzelnen Sitzungen vollumfänglich behandelt. Nutzen Sie die Materialien im Selbstudium, um fehlendes Wissen zu ergänzen und die nötigen Fähigkeiten zu entwickeln.
     ])
 
+#show table.cell: set text(size: 0.75em)
 #include "raw-plan.typ"
