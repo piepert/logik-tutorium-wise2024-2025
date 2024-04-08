@@ -3,6 +3,15 @@
 #import "colors.typ" as colors: *
 #import "slides.typ" as slides: *
 
+#let nobreak(body) = block(breakable: false, body)
+#let center-block(body) = align(center, block(align(left, body)))
+
+#let big-heading(title) = pad(bottom: 0.5cm,
+        align(center,
+            text(fill: purple,
+                size: 1.75em,
+                strong(title))))
+
 #let make-element(type, no, title, body) = {
     block(inset: 7pt,
         stroke: (bottom: (paint: purple, dash: "dashed")),
@@ -18,7 +27,7 @@
 #let make-task(no, title, instruction, body, extra, points, lines) = {
     make-element(if extra [Zusatzaufgabe] else [Aufgabe],
         no,
-        title + h(1fr) + if points != none { [#points P.] },
+        title + h(1fr) + if points != none and points > 0 { [#points P.] },
         block(emph(instruction)) + if body != none { block(body) } +
 
         locate(loc => {
@@ -192,12 +201,91 @@
     )
 }
 
-#let task(lines: 0,
-    points: none,
+#let make-point-distribution(loc) = {
+    let points = state("tasks").at(loc)
+    let points-sum = points.filter(e => not e.extra).map(e => e.points).sum(default: 0)
+    let extrapoints-sum = points.filter(e => e.extra).map(e => e.points).sum(default: 0)
+    let points-sum-all = points-sum + extrapoints-sum
+
+    if points-sum-all > 0 {
+        v(1fr)
+        set text(fill: purple)
+        block(fill: blue.lighten(75%),
+            breakable: false,
+            stroke: purple,
+            inset: 1em,
+            width: 100%, {
+
+            [Insgesamt sind #points-sum + #extrapoints-sum Punkte erreichbar. Sie haben #box(line(stroke: purple, length: 1cm)) von #points-sum Punkten erreicht.]
+
+            let f(from, to) = {
+                from = calc.round(from)
+                to = calc.round(to)
+
+                if from == to [#from] else [#from -- #to]
+            }
+
+            let n = 3
+
+            let top-socket = points-sum * 0.9
+            let bottom-socket = points-sum * 0.5
+
+            let point-distribution = (f(points-sum, top-socket),)
+            let last-to = top-socket
+
+            for i in range(0, n) {
+                let to = calc.min(last-to - 1, top-socket - (top-socket - bottom-socket) / n * (i + 1))
+
+                point-distribution.push(f(last-to - 1, to))
+                last-to = to
+            }
+
+            point-distribution.push(f(last-to - 1, 0))
+
+            center-block(table(
+                columns: n + 3,
+                stroke: none,
+                align: center,
+
+                strong[Punktzahl], ..point-distribution,
+                    // [#calc.round(points-sum*0.5 - 1) -- 0],
+
+                table.hline(stroke: 1pt + purple),
+
+                strong[Wert],
+                ..([sehr gut],
+                    [gut],
+                    [befriedigend],
+                    [ausreichend],
+                    [n.b.])
+                    .rev()
+                    .map(e => (table.vline(stroke: 1pt + purple), text(size: 0.95em, e)))
+                    .rev()
+                    .flatten(),
+            ))
+        })
+    }
+}
+
+#let task(
+    // Anzahl der Linien für Lösungen auf dem Aufgabenblatt
+    lines: 0,
+
+    // Anzahl der Punkte für die Aufgabe. Subtask-Punkte werden addiert
+    points: 0,
+
+    // Extraaufgabe?
     extra: false,
+
+    // Titel der Aufgabe
     title,
+
+    // Aufgabenstellung
     instruction,
-    ..args) = counter(if extra { "tasks" } else { "extra-tasks" }).step() + locate(loc => {
+
+    // optional aufgelistete Argumente: Body, Lösung (siehe bei project() das Argument solutions-as-matrix), Hinweise
+    ..args
+    ) = counter(if extra { "tasks" } else { "extra-tasks" }).step() + locate(loc => {
 
     let args = args.pos()
     let no = numbering(if extra { "1" } else { "A" }, ..counter(if extra { "tasks" } else { "extra-tasks" }).at(loc))
@@ -217,55 +305,118 @@
         t.body = none
     }
 
-    if points != none and type(points) in (int, float) and points > 0 {
-        state("tasks-points").update(k => {
-            if k == none {
-                return ((points: points, extra: extra),)
-            }
-
-            k.push((points: points, extra: extra))
-            return k
-        })
-    }
-
-    // args: 0=body, 1=solution, 2=hint
-    state("tasks").update(k => {
-        if k == none {
-            return (t,)
-        }
-
+    state("tasks", ()).update(k => {
         k.push(t)
         return k
     })
 
-    make-task(no, title, instruction, t.body, t.extra, t.points, lines)
+    state("subtask-indent").update((0,))
+
+    locate(loc => {
+        let t = state("tasks").final(loc).at(state("tasks").at(loc).len() - 1)
+        make-task(no, title, instruction, t.body, t.extra, t.points, lines)
+    })
 })
 
-#let nobreak(body) = block(breakable: false, body)
-#let center-block(body) = align(center, block(align(left, body)))
+#let subtask(points: 0, tight: false, content) = {
+    if points != none and type(points) == int {
+        state("tasks", ()).update(k => {
+            if k.len() == 0 {
+                return k
+            }
 
-#let big-heading(title) = pad(bottom: 0.5cm,
-        align(center,
-            text(fill: purple,
-                size: 1.75em,
-                strong(title))))
+            let li = k.len() - 1
+            let e = k.at(li)
+
+            e.points += points
+
+            k.at(li) = e
+            return k
+        })
+    }
+
+    state("subtask-indent", (0,)).update(k => {
+        k.push(0)
+        k
+    })
+
+    locate(loc => {
+        let indent = state("subtask-indent").at(loc)
+
+        let num = indent.at(indent.len() - 2) + 1
+        let markers = ("1.", "a)")
+
+        let marker = if indent.len() - 2 >= markers.len() {
+            "i."
+        } else {
+            markers.at(indent.len() - 2)
+        }
+
+        enum(numbering: (_) => numbering(marker, num), tight: tight, if points != none and points > 0 {
+            content
+        } else {
+            content
+        } + h(1fr))
+    })
+
+    state("subtask-indent", (0,)).update(k => {
+        k = k.slice(0, k.len() - 1)
+
+        if k.len() > 0 {
+            k.last() = k.last() + 1
+        }
+
+        k
+    })
+}
 
 #let project(
     no: none,
+
+    // Kategorie des Dokuments, z.B. "Test", "Kontrolle", "Klausur"
     type: none,
+
+    // Überschrift des Dokuments; wenn nicht gestzt, dann wird es aus type, no und suffix-title generiert
     title: none,
+
+    // falls title nicht gesetzt, wird es genutzt, um die Überschrift zu generieren
     suffix-title: none,
+
+    // Inhaltsverzeichnis an/aus
     with-outline: false,
+
+    // Zusammenfassung unter dem Titel
     abstract: none,
+
+    // falls gesetzt, wird in der Kopfzeile angezeigt; falls nicht gesetzt, wird title benutzt
     document-title: none,
+
     show-hints: true,
     show-solutions: true,
+
+    // im Kopf Name und Zeit anzeigen
     show-namefields: false,
     show-timefield: false,
+
+    // wenn show-timefield, dann ist der Zeitbetrag dieser Wert in Minuten
     max-time: 0,
+
+    // Linien für Lösungen auf dem Aufgabenblatt generieren (Anzahl muss für jede Aufgabe selbständig festgelegt werden)
     show-lines: false,
-    point-distribution: false,
+
+    // Punkteverteilung anzeigen, in den Aufgaben/Lösungen
+    show-point-distribution-in-tasks: false,
+    show-point-distribution-in-solutions: false,
+
+    // Lösungsmatrix anzeigen; erwartetes Lösungsargument der Aufgaben verändert sich in eine Liste aus 2-Tupeln, wobei das erste Element immer eine Anzahl an Punkten und das zweite Element die Beschreibung ist, wofür diese Punkte vergeben werden
     solutions-as-matrix: false,
+
+    university: [Universität Rostock],
+    faculty: none,
+    institute: [Institut für Philosophie],
+    seminar: [Tutorium: Sprache, Logik, Argumentation],
+    semester: none,
+
     body
 ) = {
     if type == none {
@@ -311,10 +462,12 @@
         header: [
             #set text(size: 0.75em)
 
-            #grid(columns: (50%, 50%))[
-                Universität Rostock \
-                Institut für Philosophie \
-                Tutorium: Sprache, Logik, Argumentation
+            #table(columns: (50%, 50%), align: top, stroke: none, inset: 0pt)[
+                #if university != none [#university \ ]
+                #if faculty != none [#faculty \ ]
+                #if institute != none [#institute \ ]
+                #if seminar != none [#seminar \ ]
+                #if semester != none [#semester \ ]
 
                 #locate(loc => {
                     if state("namefields").at(loc) != 1 {
@@ -370,13 +523,16 @@
     set heading(numbering: "1.")
 
     state("tasks").update(())
-    state("tasks-points").update(())
     state("show-lines").update(show-lines)
 
-    // set goals
+    // set goal
     set-all-goals()
 
     body
+
+    if show-point-distribution-in-tasks {
+        locate(loc => make-point-distribution(loc))
+    }
 
     locate(loc => {
         let tasks = state("tasks").at(loc)
@@ -403,68 +559,8 @@
             if solutions-as-matrix {
                 make-solution-matrix(loc)
 
-                let points = state("tasks-points").at(loc)
-                let points-sum = points.filter(e => not e.extra).map(e => e.points).sum(default: 0)
-                let extrapoints-sum = points.filter(e => e.extra).map(e => e.points).sum(default: 0)
-                let points-sum-all = points-sum + extrapoints-sum
-
-                if points-sum-all > 0 and point-distribution {
-                    v(1fr)
-                    set text(fill: purple)
-                    block(fill: blue.lighten(75%),
-                        breakable: false,
-                        stroke: purple,
-                        inset: 1em,
-                        width: 100%, {
-
-                        [Insgesamt sind #points-sum + #extrapoints-sum Punkte erreichbar. Sie haben #box(line(stroke: purple, length: 1cm)) von #points-sum Punkten erreicht.]
-
-                        let f(from, to) = {
-                            from = calc.round(from)
-                            to = calc.round(to)
-
-                            if from == to [#from] else [#from -- #to]
-                        }
-
-                        let n = 3
-
-                        let top-socket = points-sum * 0.9
-                        let bottom-socket = points-sum * 0.5
-
-                        let point-distribution = (f(points-sum, top-socket),)
-                        let last-to = top-socket
-
-                        for i in range(0, n) {
-                            let to = calc.min(last-to - 1, top-socket - (top-socket - bottom-socket) / n * (i + 1))
-
-                            point-distribution.push(f(last-to - 1, to))
-                            last-to = to
-                        }
-
-                        point-distribution.push(f(last-to - 1, 0))
-
-                        center-block(table(
-                            columns: n + 3,
-                            stroke: none,
-                            align: center,
-
-                            strong[Punktzahl], ..point-distribution,
-                                // [#calc.round(points-sum*0.5 - 1) -- 0],
-
-                            table.hline(stroke: 1pt + purple),
-
-                            strong[Wert],
-                            ..([sehr gut],
-                                [gut],
-                                [befriedigend],
-                                [ausreichend],
-                                [n.b.])
-                                .rev()
-                                .map(e => (table.vline(stroke: 1pt + purple), text(size: 0.95em, e)))
-                                .rev()
-                                .flatten(),
-                        ))
-                    })
+                if show-point-distribution-in-solutions {
+                    make-point-distribution(loc)
                 }
 
             } else {

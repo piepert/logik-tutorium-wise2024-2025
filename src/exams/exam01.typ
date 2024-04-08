@@ -5,10 +5,11 @@
     no: 1,
     type: [LEV],
     suffix-title: [Logische Grundlagen],
-    point-distribution: true,
+    show-point-distribution-in-tasks: true,
     show-namefields: true,
     show-timefield: true,
     max-time: 25,
+    show-solutions: false,
     show-lines: true,
     solutions-as-matrix: true
 )
