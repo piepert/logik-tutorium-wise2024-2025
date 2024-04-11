@@ -327,7 +327,7 @@ Auf den Folien sollen 6 Gestaltungselemente unterschieden werden:
 + #nobreak[Hinweise sind Zusatzinformationen von niedriger Priorität.
 
     #smallblock(hint[
-        Nur weil Einstein mit seiner Relativitätstheorie bisher Recht hatte, heißt es nicht, dass wir noch auf Phänomene stoßen könnten, bei denen die Relativitätstheorie nicht mehr funktioniert. Die Schlüssigkeit eines Arguments ist damit vom Vorwissen abhängig.
+        Nur weil Einstein mit seiner Relativitätstheorie bisher Recht hatte, heißt es nicht, dass wir nicht doch noch auf Phänomene stoßen könnten, bei denen die Relativitätstheorie nicht mehr funktioniert. Die Schlüssigkeit eines Arguments ist damit vom Vorwissen abhängig.
     ])
 
     Diese Zusatzinformationen sind für die Studierenden nur aus motivationalen oder didaktischen Gründen zu verwenden, um etwa auch als Vertiefung oder Kontextualisierung zu wirken.
