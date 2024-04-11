@@ -1,7 +1,7 @@
 #import "/src/packages/goals.typ": *
 
 #import "colors.typ" as colors: *
-#import "slides.typ" as slides: *
+#import "slides.typ" as slides-lib: *
 
 #let make-element(type, no, title, body) = {
     block(inset: 7pt,
@@ -19,7 +19,7 @@
     make-element(if extra [Zusatzaufgabe] else [Aufgabe],
         no,
         title + h(1fr) + if points != none { [#points P.] },
-        block(emph(instruction)) + if body != none { block(body) } +
+        if instruction != none { block(emph(instruction)) } + if body != none { block(body) } +
 
         locate(loc => {
             if state("show-lines").at(loc) == false {
@@ -38,14 +38,14 @@
     make-element([Lösungsvorschlag],
         no,
         title + h(1fr) + if points != none { [#points P.] },
-        block(emph(instruction)) + if body != none { block(body) } + slides.solution(solution))
+        if instruction != none { block(emph(instruction)) } + if body != none { block(body) } + slides-lib.solution(solution))
 }
 
 #let make-hint(no, title, instruction, body, extra, points, hint) = {
     make-element([Hinweis],
         no,
         title + h(1fr) + if points != none { [#points P.] },
-        block(emph(instruction)) + if body != none { block(body) } + slides.hint(hint))
+        if instruction != none { block(emph(instruction)) } + if body != none { block(body) } + slides-lib.hint(hint))
 }
 
 #let make-solutions(loc) = {
@@ -266,6 +266,14 @@
     show-lines: false,
     point-distribution: false,
     solutions-as-matrix: false,
+
+    university: [Universität Rostock],
+    institute: [Institut für Philosophie],
+    course: [Tutorium: Sprache, Logik, Argumentation],
+    docent: [M. Wunsch],
+    author: [Tristan Pieper],
+    date: datetime.today(),
+
     body
 ) = {
     if type == none {
@@ -312,9 +320,9 @@
             #set text(size: 0.75em)
 
             #grid(columns: (50%, 50%))[
-                Universität Rostock \
-                Institut für Philosophie \
-                Tutorium: Sprache, Logik, Argumentation
+                #university \
+                #institute \
+                #course
 
                 #locate(loc => {
                     if state("namefields").at(loc) != 1 {
@@ -328,8 +336,8 @@
             ][
                 #show: align.with(top + right)
                 #document-title \
-                Tristan Pieper \
-                #datetime.today().display("[day].[month].[year]")
+                #author \
+                #date.display("[day].[month].[year]")
 
                 #locate(loc => {
                     if state("timefield").at(loc) != 1 {
@@ -391,16 +399,19 @@
     show: it => if show-solutions and solutions-as-matrix {
         set page(flipped: true, columns: 2, margin: (x: 1cm, top: 3cm, bottom: 2cm))
         it
+    } else {
+        pagebreak()
+        it
     }
 
     locate(loc => {
         let tasks = state("tasks").at(loc)
 
         if show-solutions and tasks.filter(e => e.solution != none).len() != 0 {
-            set text(size: 0.75em)
-            big-heading[Lösungsvorschläge zu #type #no]
+            big-heading[Lösungsvorschläge -- #type #no]
 
             if solutions-as-matrix {
+                set text(size: 0.75em)
                 make-solution-matrix(loc)
 
                 let points = state("tasks-points").at(loc)
@@ -468,7 +479,6 @@
                 }
 
             } else {
-                pagebreak()
                 make-solutions(loc)
             }
         }
