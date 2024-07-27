@@ -1,1 +1,3 @@
 ressourcen/
+.gitignore
+typst.toml

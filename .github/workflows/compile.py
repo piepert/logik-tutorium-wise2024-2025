@@ -13,18 +13,19 @@ for path, subdirs, files in os.walk(INPUT_DIRECTORY):
         if not os.path.isfile(file_name):
             continue
 
-        splitted_path = os.path.normpath(file_name).split(os.sep)
+        split_path = os.path.normpath(file_name).split(os.sep)
 
-        if splitted_path[1] == "templates" or splitted_path[1] == "packages":
+        if split_path[1] == "templates" or split_path[1] == "packages" or split_path[1] == "pool":
+            print("Skipping file ", file_name," because it's in a non-compilation path.")
             continue
 
-        splitted_file = os.path.splitext((os.sep).join([OUTPUT_DIRECTORY] + splitted_path[1:]))
+        split_file = os.path.splitext((os.sep).join([OUTPUT_DIRECTORY] + split_path[1:]))
 
-        if splitted_file[1] != ".typ":
+        if split_file[1] != ".typ":
             continue
 
-        new_path = splitted_file[0] + ".pdf"
-        new_path_parent = (os.sep).join([OUTPUT_DIRECTORY] + splitted_path[1:-1])
+        new_path = split_file[0] + ".pdf"
+        new_path_parent = (os.sep).join([OUTPUT_DIRECTORY] + split_path[1:-1])
 
         if not os.path.exists(new_path_parent):
             os.makedirs(new_path_parent, exist_ok=True)
