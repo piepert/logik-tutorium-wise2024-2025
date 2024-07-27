@@ -1,17 +1,85 @@
+#import "@preview/grape-suite:1.0.0": seminar-paper, german-dates
+#import "/src/packages/goals.typ": *
+
 #import "/src/templates/exercise.typ": *
 #import "/src/templates/slides.typ": *
 #import "/src/packages/inference.typ": *
 
-#show: project.with(
-    title: [Konzept für das Logik-Tutorium
-        am Institut für Philosophie der Universität Rostock],
-    with-outline: true,
+#set text(lang: "de")
+#show: seminar-paper.project.with(
+    university: "Universität Rostock",
+    faculty: "Philosophische Fakultät",
+    institute: "Institut für Philosophie",
+    seminar: "Tutorium: Sprache, Logik, Argumentation",
+    docent: none,
 
-    document-title: [Konzept für das Logik-Tutorium],
+    submit-to: v(-2em),
+    submit-by: v(-2em),
 
+    author: "Tristan Pieper",
+    email: "tristan.pieper@uni-rostock.de",
+    address: none,
+
+    semester: german-dates.semester(datetime.today()),
+
+    title: [Konzept für das Logik-Tutorium am Institut für Philosophie der Universität Rostock],
+    show-outline: true,
+
+    /*
     abstract: [
-        Das Logik-Tutorium bildet für die Studierenden als eine Veranstaltung im ersten Semester die Möglichkeit, eine neue Lernumgebung kennenzulernen sowie sich in das selbstgesteuerte Lernen einzufinden. Es darf keine eintönige Lehrveranstaltung sein, sondern soll soziale Kontakte und Aktivität fördern. Ein einheitliches didaktisches, visuelles und inhaltiches Konzept soll den Einstieg in die Logik und das Studium der Universität Rostock erleichtern. Gleichzeitig soll es die Komptenzen und Inhalte des Moduls "Sprache, Logik, Argumentation" erfassen und den Studierenden einen Raum geben, sich diese anzueignen.
-    ])
+        Das Logik-Tutorium bildet für die Studierenden als eine Veranstaltung im ersten Semester die Möglichkeit, eine neue Lernumgebung kennenzulernen sowie sich in das selbstgesteuerte Lernen einzufinden. Es darf keine eintönige Lehrveranstaltung sein, sondern soll soziale Kontakte und Aktivität fördern. Ein einheitliches didaktisches, visuelles und inhaltiches Konzept soll den Einstieg in die Logik und das Studium der Universität Rostock erleichtern. Gleichzeitig soll es die Kompetenzen und Inhalte des Moduls "Sprache, Logik, Argumentation" erfassen und den Studierenden einen Raum geben, sich diese anzueignen.
+    ],
+    */
+
+    footer: [],
+
+    header-left: context {
+        if here().page() <= 2 {
+            return none
+        }
+
+        if calc.rem(counter(page).at(here()).first(), 2) == 1 {
+            let l-heads = query(selector(heading.where(level: 2)).before(here()))
+
+            if l-heads.len() > 0 {
+                numbering(heading.numbering, ..counter(heading).at(l-heads.last().location()))
+                [ ]
+                l-heads.last().body
+            }
+        } else {
+            counter(page).display()
+        }
+    },
+
+    header-right: context {
+        if here().page() <= 2 {
+            return none
+        }
+
+        show: align.with(right)
+
+        if calc.rem(counter(page).at(here()).first(), 2) == 0 {
+            let l-heads = query(selector(heading.where(level: 1)).before(here()))
+
+            if l-heads.len() > 0 {
+                numbering(heading.numbering, ..counter(heading).at(l-heads.last().location()))
+                [ ]
+                l-heads.last().body
+            }
+        } else {
+            if here().page() == 3 {
+                [1]
+            } else {
+                counter(page).display()
+            }
+        }
+    },
+
+    page-margins: (inside: 3.5cm, outside: 3cm, top: 3.5cm, bottom: 3cm),
+    show-declaration-of-independent-work: false,
+)
+
+#show heading.where(level: 1): it => pagebreak(weak: true) + it
 
 = Didaktisches Konzept
 

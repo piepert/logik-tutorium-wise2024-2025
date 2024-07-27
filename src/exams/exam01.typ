@@ -1,18 +1,7 @@
-#import "/src/templates/exercise.typ": *
+#import "/src/templates/exams.typ": project, task
 #import "/src/packages/inference.typ": *
 
-#show: project.with(
-    no: 1,
-    type: [LEV],
-    suffix-title: [Logische Grundlagen],
-    show-point-distribution-in-tasks: true,
-    show-namefields: true,
-    show-timefield: true,
-    max-time: 25,
-    show-solutions: false,
-    show-lines: true,
-    solutions-as-matrix: true
-)
+#show: project.with(no: 1)
 
 #task(lines: 10, points: 3, [Grundbegriffe], [
     Erklären Sie, womit sich die Logik beschäftigt. Nennen Sie außerdem die zwei Gütekriterien von Argumenten.
@@ -22,7 +11,7 @@
 ))
 
 #task(lines: 20, points: 6, [Gütekriterien], [
-    Beurteilen Sie die folgenden Argumente jeweils in Bezug auf die zwei Gütekriterien! Begründen Sie ihre Antworten kurz.
+    Beurteilen Sie die folgenden Argumente jeweils in Bezug auf die zwei Gütekriterien! Begründen Sie Ihre Antworten kurz.
 ], [
     1. #inference-raw(```
         Wenn ich auf dem Mond laufe, kann ich höher springen als auf der Erde.

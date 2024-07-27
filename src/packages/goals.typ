@@ -1,4 +1,5 @@
-#import "/src/templates/colors.typ": *
+#import "@preview/grape-suite:1.0.0": colors
+#import colors: *
 
 #let goal-list = (
     // Grundlagen
@@ -133,7 +134,7 @@
 ))
 
 #let get-goal(key, loc) = {
-    let s = state("sequence-goals").final(loc)
+    let s = state("sequence-goals", (:)).final(loc)
 
     if s == none {
         return none
@@ -160,7 +161,7 @@
     return none
 }
 
-#let set-sequence-goals-key(key) = state("sequence-goals").update(k => {
+#let set-sequence-goals-key(key) = state("sequence-goals", (:)).update(k => {
     k.current-key = key
     k
 })
@@ -193,7 +194,7 @@
     )$))
 
 #let print-goals-for-sequence() = locate(loc => { style(sty => {
-    let s = state("sequence-goals").at(loc)
+    let s = state("sequence-goals", ()).at(loc)
 
     if s == none {
         return none

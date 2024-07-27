@@ -61,7 +61,7 @@
 
     + *die Wiederholungsserien* -- für die Nachbereitung
 
-    + *die Lernevaluationen* (LEVs) -- für Reflexion des Selbstudiums
+    + *die Lernevaluationen* (LEVs) -- für Reflexion des Selbststudiums
 ]
 
 #slide[
