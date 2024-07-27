@@ -175,7 +175,7 @@ Die Medien sind so zu gestalten, dass sie möglichst vielseitig sind und jeder I
 
 Die Studierenden sollen dazu angehalten werden, sich verschiedene Medien zu Nutze zu machen und selbständig Medien zu erschaffen, etwa in Form von Lernübersichten, Plakaten oder Vorlesungsmitschriften. Dazu sollen diese aktiv mit in das Tutorium einbezogen werden. Das ist auf verschiedenen Weisen möglich. Kommilitonen können sich untereinander Vorlesungsmitschriften präsentieren oder sie Grundlage für Gruppenarbeiten oder ähnlichem werden lassen. Als Ergebnis von Erarbeitungs- oder Sicherungsphasen können Lernübersichten oder Plakate dienen, wobei diese direkt den Mehrwert haben, zur Klausurvorbereitung verwendet werden zu können.
 
-== Struktur
+== Formale Struktur
 
 Die Struktur des Tutoriums soll transparent und gut geplant sein, jedoch auch so flexibel, dass die Studierenden ihre eigenen Probleme, Fragen und Interessen mit einbringen können. Dieser Grundsatz soll das situative Ziel des Tutoriums unterstützen, indem die Studierenden die Möglichkeit haben das Tutorium mitzugestalten. Außerdem soll es das methodische Ziel unterstützen, indem die Studierenden Eigenverantwortlichkeit für die Art und Weise ihres Lernprozesses übernehmen.
 
@@ -216,11 +216,35 @@ Nach Beendigung der Transferphase folgt erneut die Möglichkeit für die Studier
 
 Daraufhin wird die Sitzung geschlossen.
 
+== Inhaltliche Struktur
+
+Eine grundlegende Frage ist: Wie sind die Inhalte der Logik zu vermitteln? Das eröffnet den Aspekt, wie die Tutorumsleitung dafür sorgen kann, den Lernprozess möglichst gut zu gestalten.
+
+=== Motivation, Problemorientierung und Zielorientierung
+
+Zur Aufrechterhaltung des intensiven, langfristigen auseinandersetzens mit einem Lerngebiet, ist Motivation nötig. Das bedeutet, dass die Inhalte nicht einfach "vorgesetzt" werden dürfen. Es lernt sich besser, wenn der _Sinn_ des Inhaltes den Lernenden bekannt ist. Diese Motivation kann durch eine Problemorientierung aufgebaut und durch eine Zielorientierung beibehalten werden.
+
+Statt den Studierenden vorzusetzen, was ein gültiger Schluss ist und wie er auszusehen hat, könnte man etwa mit einem Szenario starten, in dem zwei Argumente gebracht werden. Die Studierenden sollen bewerten, welches "besser" ist. Das ungültige, vielleicht ein Autoritätsargument, sagt gar nichts über die Richtigkeit der Konklusion aus und ist somit "schlechter" als das Gültige. Die Notwendigkeit zur Bewertung von Argumenten ist damit motiviert. Durch mehrere Vergleiche und aufeinander bauende Stufen, in denen die Studierenden sich die einzelnen Kriterien selbst erarbeiten und sich ihnen bewusst werden, ist der innere Drang, die aufgeworfenen Hürden und Probleme zu lösen, viel höher, als beim Vorgeben von Definitionen. Eine Motivierung durch Probleme ist damit vorteilhaft.
+
+Eine reine Aneinanderreihung von Problemen und Beispielen kann jedoch trotzdem Orientierungslosigkeit hervorrufen, die Frage kommt auf, wo man denn eigentlich hin wolle. Die Lösung: eine Zielorientierung. Der Lernprozess (z.B. eine Sequenz und einzelne Sitzung) wird gestartet, indem man den Studierenden aufzeigt, was sie am Ende können sollen. Auch dies kann über ein Problem geschehen: die Lösung des Problems kann ein Ziel des Lernens sein. Weiterhin können Zusammenfassungen zwischendurch und am Ende helfen, den Überblick zu behalten. *Den Studierenden muss ihr eigener Fortschritt bewusst werden.* Sie dürfen nicht orientierungslos durch das Tutorium laufen.
+
+=== Strukturierung des Begriffserwerbs
+
+Die Strukturierung anhand von Problemen ist eine Möglichkeit zur feineren Planung konkreter Lernsituationen. Eine Möglichkeit für den groben Ablauf der Themen wäre die Strukturierung nach fester inhaltlicher Abschnitte, die ihre Themen erschöpfend behandeln, z.B.:
+
++ Logische Grundlagen
++ Aussagenlogik
++ Prädikatenlogik
+
+Jedoch bietet es sich an, Themen nicht direkt erschöpfend zu handeln, um Überforderung vorzubeugen. Das lässt sich an einem Beispiel zeigen: Das Konditional und das Bikonditional bieten viele Gesprächsthemen. Zum Einen ist die Semantik der materiellen Implikation nicht immer alltagsnahe. Zum anderen sind notwendige und hinreichende Bedinungen, Formulierungen mit "nur" und logisch-äquivalente Formulierungsvarianten, sowie das Gesetz der Kontraposition, sehr viel auf einmal, was behandelt wird, besonders für Logik-Einsteiger. Beide haben signifikante Bedeutung für die Argumentation, besonders wenn es um ihre tautologischen Varianten (logische Folgerung und logische Äquivalenz) geht.
+
+Mit Bezug auf die Problemorientierung kann hier nicht immer davon ausgegangen werden, dass ein passender Übergang vom einen zum anderen möglich ist. Die alternative: eher einander nähere Themen hintereinander behandeln, statt eine direkte fachliche Gliederung. Dieselben Bereiche können mehrmals behandelt werden, dies schafft Wiederholung und Festigung, dann können sie vertieft und erweitert werden.
+
 == Aufgabenstellungen
 
 Ähnlich der Standardisierung der Operatoren gibt es für das Tutorium nur eine begrenzte Auswahl an möglichen Aufgabenstellungen, die jeweils ein gewisses Ziel verfolgt, d.i. meist das Fördern einer bestimmten Fertigkeit. Dementsprechend müssen die Aufgabenstellungen sich ebenfalls an Inhalten von @inhalte orientieren.
 
-=== Obligatorische Aufgabenstellungen
+=== Obligatorische Aufgabenstellungen <o-aufgaben>
 
 Die folgenden Aufgabenstellungen müssen von allen Studierenden nach Abschluss des Moduls weitestgehend ohne Probleme gelöst werden können:
 
@@ -429,12 +453,50 @@ Sowohl auf den Folien als auch auf den Aufgabenblättern werden die folgenden El
 
 = Inhalte und inhaltliche Ziele <inhalte>
 
+== Zielsetzung
+
+=== Richtziele
+
+Die Aufgabenstellungen aus @o-aufgaben bieten die Grundlage für die wichtigsten Fähigkeiten und Fertigkeiten, die die Studierenden ausbilden müssen.
+
+Die Studierenden generieren Sachkompetenz, indem sie ...
+- ... Grundkonzepte definieren.
+- ... Zusammenhänge und Felder im logischen Quadrat ausfüllen.
+
+Die Studierenden generieren Methodenkompetenz, indem sie ...
+- ... Aussagesätze identifizieren.
+- ... Aussagesätze in AL formalsieren.
+- ... zu bestehenden Wenn-Dann-Sätzen logisch-äquivalente Wenn-Dann-Sätze identifizieren.
+- ... zu bestehenden Wenn-Dann-Sätzen logisch-äquivalente Wenn-Dann-Sätze  bilden.
+- ... notwendige und hinreichende Bedingungen in Wenn-Dann-Sätzen bestimmen.
+- ... logische Wahrheit, logische Falschheit, logische Folgerung und logische Äquivalenz mit der Wahrheitstabelle beweisen.
+- ... Beweise mit dem aussagenlogischen Kalkül des natürlichen Schließens führen.
+- ... Aussagesätze in PL formalisieren.
+- ... Beweise mit dem prädikatenlogischen Kalkül des natürlichen Schließens führen.
+- ... verzweigte Beweise mit dem Kalkül des natürlichen Schließens führen.
+
+=== Grobziele
+
+// Richtziele auseinandernehmen und feiner machen
+
+=== Gewichtung
+
+// Wie wichtig sind die einzelnen Ziele?
+
+== Zentrale Begriffe
+
+/*
+TODO: Bereich neu machen.
+
+== Ziele und Ablaufplan
+
 Das Tutorium soll sowohl einen festen inhaltlichen Plan verfolgen, als auch Raum für individuelle Wünsche der Studierenden enthalten. Dabei gibt es ein kontingent an obligatorischen Inhalten, die sich aus den klausurrelevanten Aufgabenstellungen zusammensetzen, und fakultative Inhalte, die zur Vertiefung und Sicherung genutzt werden können.
 
 Die Ziele werden je mit einer Identifikator versehen. Dieser besteht aus einer Abkürzung aus zwei Großbuchstaben (etwa "LG" für "logische Grundlagen") und einer fortlaufenden Nummer für die jeweilige Sequenz. Damit kann für alle Sitzungsziele nachverfolgt werden, aus welchen Sequenzzielen sie stammen.
 
 #set table(inset: 0.75em)
 #show table.cell: set text(size: 0.75em)
+#show table.cell: set par(justify: false)
 
 #table(
     columns: (20%, auto, auto),
