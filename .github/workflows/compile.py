@@ -15,7 +15,7 @@ for path, subdirs, files in os.walk(INPUT_DIRECTORY):
 
         split_path = os.path.normpath(file_name).split(os.sep)
 
-        if split_path[1] == "templates" or split_path[1] == "packages" or split_path[1] == "pool":
+        if split_path[1] == "templates" or split_path[1] == "packages" or split_path[1] == "pool" or split_path[1] == "misc":
             print("Skipping file ", file_name," because it's in a non-compilation path.")
             continue
 
