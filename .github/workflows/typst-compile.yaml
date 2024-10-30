@@ -17,7 +17,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: "3.x"
 
       - name: Setup Typst
         uses: typst-community/setup-typst@v3
@@ -29,7 +29,7 @@ jobs:
         run: |
           wget -P $GITHUB_WORKSPACE/fonts https://github.com/firamath/firamath/releases/download/v0.4-beta-3/firamath-otf.zip
           unzip $GITHUB_WORKSPACE/fonts/firamath-otf.zip -d $GITHUB_WORKSPACE/fonts/firamath
-          wget -P $GITHUB_WORKSPACE/fonts https://brailleinstitute.org/wp-content/uploads/atkinson-hyperlegible-font/Atkinson-Hyperlegible-Font-Print-and-Web-2020-0514.zip
+          wget -P $GITHUB_WORKSPACE/fonts https://www.brailleinstitute.org/atkinson-hyperlegible-font/Atkinson-Hyperlegible-Font-Print-and-Web-2020-0514.zip
           unzip $GITHUB_WORKSPACE/fonts/Atkinson-Hyperlegible-Font-Print-and-Web-2020-0514.zip -d $GITHUB_WORKSPACE/fonts/atkinsonhyperlegible
           wget -P $GITHUB_WORKSPACE/fonts https://github.com/stipub/stixfonts/archive/refs/tags/v2.13b171.zip
           unzip $GITHUB_WORKSPACE/fonts/v2.13b171.zip -d $GITHUB_WORKSPACE/fonts/stix2
@@ -43,5 +43,5 @@ jobs:
       - name: Commit compiled PDFs
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: '[deploy]: compile sources to PDF'
-          file_pattern: '*.pdf'
+          commit_message: "[deploy]: compile sources to PDF"
+          file_pattern: "*.pdf"
