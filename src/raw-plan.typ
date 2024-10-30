@@ -30,7 +30,7 @@
         strong(
             text(fill: white,
                 counter("table-sequence").step() +
-                [Abschnitt #counter("table-sequence").display() - #content])))),
+                [Abschnitt #context counter("table-sequence").display() - #content])))),
 
     table.hline(stroke: purple + 1pt)
 )
@@ -43,6 +43,10 @@
         } else {
             [N/A]
         }
+
+        15:15 Uhr -- 16:45 Uhr
+
+        // Parkstraße 6, R.~206
     ])
 )
 
@@ -63,52 +67,6 @@
             1 + calc.rem(row, 2)
         }
     ),
-
-    // map-cells: cell => {
-    //     if cell.x == 0 and cell.y >= 1 and cell.colspan == 1 {
-    //         cell.content = align(center + top, counter("plan-table").step() + locate(loc => [
-    //             *#counter("plan-table").at(loc).first(). Sitzung* \
-    //             #if state("tut-dates").at(loc).len() > (counter("plan-table").at(loc).first() - 1) {
-    //                 state("tut-dates").at(loc).at(counter("plan-table").at(loc).first() - 1).display("[day].[month].[year]")
-    //             } else {
-    //                 [N/A]
-    //             }
-    //         ]))
-    //     }
-
-    //     return cell
-    // },
-
-    // map-rows: (row, cells) => {
-    //     let index = 0
-
-    //     while index < cells.len() {
-    //         if cells.at(index) == none {
-    //             index += 1
-    //             continue
-    //         }
-
-    //         cells.at(index).content = [
-    //             #set par(justify: false)
-    //             #set text(size: 0.75em)
-
-    //             #if row <= 0 {
-    //                 v(0.25em)
-    //                 cells.at(index).content
-    //                 v(0.25em)
-
-    //             } else {
-    //                 v(0.5em)
-    //                 cells.at(index).content
-    //                 v(0.5em)
-    //             }
-    //         ]
-
-    //         index += 1
-    //     }
-
-    //     return cells
-    // },
 
 
     // Nr., Datum, Thema + organisatorisches (Lernevaluation?), Lektüre, Aufgabenblatt
@@ -132,82 +90,67 @@
 
         *Material:*
         - Aufgabenserie #counter("plan-table").display()
+        - @Beckermann2014[S. 1-24]
+        - @HardySchamberger2018[S. 37-39. Achtung: "Gültigkeit" und "Schlüssigkeit" werden hier synonym verwandt, sind es bei uns aber nicht]
     ], [
-        // - Ich kann den Begriff "Logik" definieren.
-        // - Ich kann den Aufbau eines philosophischen Argumentes erklären.
-        // - Ich kann den Begriff "Argument" definieren.
-        // - Ich kann die Gütekriterien von philosophischen Argumenten nennen.
-
-        @definieren-logik[Ich kann den Begriff "Logik" definieren.]
-
-        #multi-goal-ref([Ich weiß, was ein philosophisches Argument ist und wie es aufgebaut ist.], "wissen-phil-argumente", "erkennen-phil-argumente")
-
-        @definieren-argument[Ich kann den Begriff "Argument" definieren.]
-
-        #multi-goal-ref([Ich kann die Gütekriterien von philosophischen Argumenten nennen.], "definieren-gültigkeit", "definieren-schlüssigkeit")
+        #print-goals("definieren-grundkonzepte")
     ],
 
     cell-meeting, [
-        *Folgern und Folgerung Beweisen*
-        - Vertiefung der Gütekriterien
-        - logische Folgerung
-        - einfaches Beweisen
-
+        *Folgerung und Aussagesätze*
+        - Vertiefung Gültigkeit, Beweis gültiger Argumente
+        - Aussagesätze und deren Wahrheitsbedingungen
 
         *Material:*
         - Aufgabenserie #counter("plan-table").display()
-        - LEV #counter("table-sequence").display()
+        // - LEV #context counter("table-sequence").display()
+        - @Beckermann2014[S. 28-34]
+        - @HardySchamberger2018[S. 37-39]
     ], [
-        @identifizieren-aussagesätze[Ich kann Aussagesätze identifizieren.]
-
-        #multi-goal-ref([Ich kann die Gütekriterien von philosophischen Argumenten definieren und voneinander abgrenzen.], "definieren-gültigkeit", "definieren-schlüssigkeit")
-
-        @definieren-logische-folgerung[Ich kann "logische Folgerung" definieren.]
-
-        @kennen-aufbau-beweis[Ich kann einen Beweis korrekt aufbauen.]
-
-        // @beweise-metasprache[Ich kann einen einfachen indirekten Beweis führen.]
+        #print-goals("definieren-grundkonzepte")
+        #print-goals("identifizieren-aussagesätze")
+        #print-goals("formalisieren-al")
     ],
 
     ..plan-sequence[Aussagenlogik],
     cell-meeting, [
         *Grundlagen der Formalisierung*
-        - aussagenlogische Zusammenhänge in der natürlichen Sprache
+        // - aussagenlogische Zusammenhänge in der natürlichen Sprache // durch letzte Sitzung abgedeckt
         - aussagenlogische Satzbausteine der natürlichen Sprache
-        - notwendige und hinreichende Bedingungen
+        - Schemata und Mustererkennung
 
 
         *Material:*
-        - Skript p. / S.
         - Aufgabenserie #counter("plan-table").display()
+        - @Beckermann2014[S. 39-43]
+        - @HardySchamberger2018[S. 37-48]
     ], [
-        // - Ich kann die Formalisierung von gültigen Schlüssen motivieren.
-        @identifizieren-al-strukturen[Ich kann die aussagenlogische Struktur der deutschen Sprache identifizieren.]
-        @identifizieren-hinr-notw-bed[Ich kann die hinreichende und notwendige Bedingung in einem Wenn-Dann-Satz bestimmen.]
+        #print-goals(
+            "identifizieren-aussagesätze",
+            "identifizieren-hin-not-bedingungen",
+            "formalisieren-al",
+        )
     ],
 
     cell-meeting, [
         *Syntax der Aussagenlogik, AL-Formalisierung*
-
-        - Schemata und Mustererkennung
         - Syntax der Aussagenlogik
         - aussagenlogische Junktoren
         - Formalisieren von Ausdrücken natürlicher Sprache in die Sprache AL
-
+        - das Konditional sowie notwendige und hinreichende Bedingungen
 
         *Material:*
-        - Skript p. / S.
         - Aufgabenserie #counter("plan-table").display()
-        - LEV #counter("table-sequence").display()
+        // - LEV #context counter("table-sequence").display()
+        - @Beckermann2014[S. 20 f., 51-103, 155 f]
+        - @HardySchamberger2018[S. 55-74, 93 f]
     ], [
-        #multi-goal-ref([Ich kann erkennen, ob ein Ausdruck syntaktisch korrekt nach den Regeln von AL gebildet wurde.], "entwickeln-gefühl-al-syntax",
-"erkennen-suchen-schemata")
-
-        #multi-goal-ref([Ich kann syntaktisch korrekte Ausdrücke nach den Bildungsregeln von AL bilden.], "entwickeln-gefühl-al-syntax", "bilden-ausdrücke-schemata")
-
-        #multi-goal-ref([Ich kann die aussagenlogischen Junktoren in der natürlichen Sprache erkennen und korrekt formalisieren.], "identifizieren-junktoren", "formalisieren-al")
-
-        @formalisieren-wd-gdw-nur[Ich kann die Phänomene "nur" und "genau dann, wenn" im Wenn-Dann-Satz bzw. Genau-Dann-Wenn-Satz korrekt formalisieren.]
+        #print-goals(
+            "identifizieren-aussagesätze",
+            "identifizieren-hin-not-bedingungen",
+            "bestimmen-hin-not-bedingungen",
+            "formalisieren-al",
+        )
     ],
 
     ..plan-sequence[Wahrheitstabelle],
@@ -220,67 +163,68 @@
         *Material:*
         - Skript p. / S.
         - Aufgabenserie #counter("plan-table").display()
-        - LEV #counter("table-sequence").display()
+        // - LEV #context counter("table-sequence").display()
+        - @Beckermann2014[S. 51-103]
+        - @HardySchamberger2018[S. 74-79]
     ], [
-        @bilden-notw-hinr-äquivalenz[Ich kann äquivalente natürlichsprachliche Sätze für Wenn-Dann-Sätze bilden, besonders im Zusammenhang von "nur" und der Kontraposition des Konditionals.]
-
-        @definieren-semantik-junktoren[Ich kann die Wahrheitsbedingungen der Junktoren natürlich-sprachlich wiedergeben.]
-
-        @darstellen-junktoren-wahrheitstabelle[Ich kann die Wahrheitsbedingungen der Junktoren mit der Wahrheitstabelle darstellen.]
-
-        @auswerten-ausdrücke-wahrheitstabelle[Ich kann AL-Ausdrücke mit der Wahrheitstabelle auswerten.]
-
-        #multi-goal-ref([Ich kann "logische Wahrheit", "logische Falschheit" und "logische Äquivalenz" mit der Wahrheitstabelle beweisen.], "beweisen-logische-wahrheit", "beweisen-logische-folgerung", "beweisen-logische-äquivalenz")
+        #print-goals(
+            "bilden-hin-not-bedingungen",
+            "formalisieren-al",
+            "beweisen-wahrheistabelle",
+        )
     ],
 
     ..plan-sequence[Kalkül des natürlichen Schließens (KdnS)],
     cell-meeting, [
         *Ableiten mit dem KdnS*
         - Einführung des KdnS
-        - die Regeln: DS, KM, KP, $not$-Bes. und $not$-Einf.
+        - Mustererkennung und Regelanwendung
+        // - die Regeln: DS, KM, KP, $not$-Bes. und $not$-Einf., $and$-Bes., $and$-Einf.
 
         *Material:*
-        - Skript p. / S.
         - Aufgabenserie #counter("plan-table").display()
+        - @HardySchamberger2018[S. 103-128]
     ], [
-        @aufbauen-kdns[Ich kann den KdnS korrekt aufbauen.]
-
-        #multi-goal-ref([Ich kann Schemata für Ableitungsregeln im KdnS erkennen und anwenden.], "verstehen-direkte-regeln", "beweise-kdns-einfach")
-
-        @beweise-kdns-einfach[Ich kann einfache bis mittelkomplexe Beweise im Kalkül des natürlichen Schließens führen.]
+        #print-goals(
+            "formalisieren-al",
+            "beweisen-wahrheistabelle",
+            "beweisen-kdns-al",
+        )
     ],
 
     cell-meeting, [
-        *Beweise mit Zusatzannahmen*
-        - die Regeln: $and$-Bes., $and$-Einf., $or$-Einf., MP, MT
+        *Beweise mit Zusatzannahmen, Einführung in die Prädikatenlogik*
+        // - die Regeln: $or$-Einf., MP, MT, DM, $<->$-Bes., $<->$-Einf.
         - linke Beweisspalte
         - die Regel der $->$-Einführung
-
-        *Material:*
-        - Skript p. / S.
-        - Aufgabenserie #counter("plan-table").display()
-    ], [
-        @bilden-linke-beweisspalte[Ich kann die linke Beweisspalte korrekt herstellen und darin die Abhängigkeiten einer Zeile ablesen.]
-
-        @erkennen-konditionalisierung[Ich kann erkennen, wann eine $->$-Einf. gefordert ist.]
-
-        @prüfen-abhängigkeiten[Ich weiß, wann und wie ich die Abhängigkeiten meiner abgeleiteten Konklusion prüfen muss.]
-    ],
-
-    cell-meeting, [
-        *Reductio ad absurdum, verzweigte Beweise*
-        - die Regeln: DM, $<->$-Bes., $<->$-Einf., $->$-Ers. und $->$-Einf.
-        - die Regel des Reductio ad absurdums (RAA)
         - verzweigte Beweise
 
         *Material:*
-        - Skript p. / S.
         - Aufgabenserie #counter("plan-table").display()
-        - LEV #counter("table-sequence").display()
+        - @HardySchamberger2018[S. 128-132, 143-149]
     ], [
-        #multi-goal-ref([Ich kann einen Beweis mittels der Regel RAA im KdnS korrekt führen.], "wissen-raa-verfahren", "beweisen-mittels-raa")
+        #print-goals(
+            "formalisieren-al",
+            "beweisen-kdns-al",
+            "beweisen-verzweigt",
+        )
+    ],
 
-        @beweisen-verzweigt[Ich kann einen einfachen verzweigten Beweis führen.]
+    cell-meeting, [
+        *Reductio ad absurdum, verzweigte Beweise und das logische Quadrat*
+        - die Regel des Reductio ad absurdums (RAA)
+        - das logische Quadrat
+
+        *Material:*
+        - Aufgabenserie #counter("plan-table").display()
+        // - LEV #context counter("table-sequence").display()
+        - @HardySchamberger2018[S. 132-142]
+    ], [
+        #print-goals(
+            "formalisieren-al",
+            "beweisen-kdns-al",
+            "ausfüllen-log-quad"
+        )
     ],
 
     ..plan-sequence[Prädikatenlogik],
@@ -288,15 +232,17 @@
         *Motivation und Syntax der Prädikatenlogik, prädikatenlogische Formalisierung*
         - Syllogismen, Prädikatierung und Modelltheorie
         - Syntax der Prädikatenlogik
-        - Formalisierung unquantifizierter Beispiele
-        - Formalisierung quantifizierter Beispiele
+        - Formalisierung unquantifizierter und quantifizierter Beispiele
 
         *Material:*
-        - Skript p. / S.
         - Aufgabenserie #counter("plan-table").display()
+        - @Beckermann2014[S. 172-185, 240-263]
+        - @HardySchamberger2018[S. 151-175]
     ], [
-        @formalisieren-pl-unquantifiziert[Ich kann einfache bis mittelkomplexe prädikatenlogische unquantifizierte Sachverhalte formalisieren.]
-        @formalisieren-pl-quantifiziert[Ich kann einfache prädikatenlogische quantifizierte Sachverhalte formalisieren.]
+        #print-goals(
+            "formalisieren-pl",
+            "ausfüllen-log-quad",
+        )
     ],
 
     cell-meeting, [
@@ -305,13 +251,16 @@
         - Formalisierung quantifizierter Sätze
 
         *Material:*
-        - Skript p. / S.
         - Aufgabenserie #counter("plan-table").display()
-        - LEV #counter("table-sequence").display()
+        // - LEV #context counter("table-sequence").display()
+        - @Beckermann2014[S. 240-263]
+        - @HardySchamberger2018[S. 163-179]
     ], [
-        @benennen-begriffe-log-quad[Ich kann die Begriffe des logischen Quadrats benennen.]
-        @finden-beispiele-log-quad[Ich kann zu einem gegebenen Satz im logischen Quadrat weitere Sätze für die freien Stellen im logischen Quadrat bilden.]
-        @umrechnen-quantoren[Ich kann das Negationszeichen vor Quantoren durch Umwandlung entfernen.]
+        #print-goals(
+            "formalisieren-pl",
+            "beweisen-kdns-pl",
+            "ausfüllen-log-quad",
+        )
     ],
 
     ..plan-sequence[Prädikatenlogisches Kalkül des natürlichen Schließens],
@@ -320,11 +269,14 @@
         - die Regeln: $forall$-Bes., $exists$-Einf. und QT
 
         *Material:*
-        - Skript p. / S.
         - Aufgabenserie #counter("plan-table").display()
+        - @HardySchamberger2018[S. 179-182, 185-187]
     ], [
-        @variablen-spezialisieren[Ich kann allquantifizierte Sätze korrekt mit der $forall$-Bes. spezialisieren.]
-        @konstanten-generalisieren[Ich kann unquantifizierte Sätze korrekt mit der $exists$-Einf. generalisieren.]
+        #print-goals(
+            "formalisieren-pl",
+            "beweisen-kdns-pl",
+            "beweisen-verzweigt",
+        )
     ],
 
     cell-meeting, [
@@ -332,23 +284,25 @@
         - die Regeln: $exists$-Bes., $forall$-Einf. und PKS
 
         *Material:*
-        - Skript p. / S.
         - Aufgabenserie #counter("plan-table").display()
-        - LEV #counter("table-sequence").display()
+        // - LEV #context counter("table-sequence").display()
+        - @HardySchamberger2018[S. 182-185, 188-194]
     ], [
-        #multi-goal-ref([Ich kann unquantifizierte Sätze unter Berücksichtigung der Einsränkungen korrekt mit der $forall$-Einf. generalisieren.], "kennen-einschränkung-allq-einf", "konstanten-generalisieren")
-
-        #multi-goal-ref([Ich kann existenzquantifizierte Sätze unter Berücksichtigung der Einsränkungen korrekt mit der $exists$-Bes. spezialisieren.], "kennen-einschränkung-exq-bes", "variablen-spezialisieren")
-
-        #multi-goal-ref([Ich kann die Bedingungen der $exists$-Bes. und $forall$-Einf. in meiner Ableitung korrekt prüfen.],  "kennen-einschränkung-allq-einf", "kennen-einschränkung-exq-bes")
+        #print-goals(
+            "formalisieren-pl",
+            "beweisen-kdns-pl",
+            "ausfüllen-log-quad",
+        )
     ],
 
     ..plan-sequence[Reserve],
-    cell-meeting, table.cell(align: center + horizon, [
+    cell-meeting, table.cell(align: center + horizon, colspan: 2, [
         *Reserve*
-    ]), [],
+    ]),
 
     // [], table.cell(align: center + horizon, [
     //     *Reserve*
     // ]), [],
 )
+
+#place(hide(bibliography("bibliography.bib", style: "/src/citation-style.csl")))
