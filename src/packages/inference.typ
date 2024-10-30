@@ -26,27 +26,62 @@
         ..lines.flatten())
 }
 
-#let inference-line = (v(-0.6em), table.hline(stroke: 0.75pt), v(0em))
+#let inference-line = table.hline(start: 1, end: 2, stroke: 1pt)
 
-#let inference(..lines) = {
+#let inference(..lines, indent: (:)) = {
+    // set table.cell(inset: (y: 0.325em))
+
+    show table.cell.where(x: 0): it => {
+        show: align.with(right)
+        it
+    }
+
     table(
         inset: 0pt,
-        row-gutter: 0.65em,
+        // row-gutter: 0.65em,
         stroke: none,
+        columns: 2,
 
-        ..lines.pos().map(e => if e != inference-line {
-            block(inset: (x: 2pt), e)
+        ..lines.pos()
+            .enumerate()
+            .map(((index, e)) => if e != inference-line {
+                let e = if type(e) == array { e } else { (none, e) }
+
+                e.map(e => block(e, inset: if index == 0 { (bottom: 0.325em) }
+                        else if index > 0 and index < lines.pos().len() - 1 { (y: 0.325em) }
+                        else { (top: 0.325em) }))
         } else {
-            e
-        }).flatten())
+            (table.cell(colspan: 2,
+                v(0.1525em)),
+                e,
+                table.cell(colspan: 2, v(0.1525em)))
+
+        }).flatten()
+    )
 }
 
-#let inference-raw(raw-block) = {
+#let inference-wl(..a) = inference(..a.pos().slice(0, a.pos().len() - 1), inference-line, a.pos().last())
+
+#let inference-raw(raw-block, ..options) = {
     inference(..raw-block.text.split("\n")
         .map(e => e.trim())
         .map(e => if e == "----" {
             inference-line
         } else {
-            eval(mode: "markup", e)
-        }))
+            let e = e.trim()
+            if e.starts-with("[") {
+                let arr = e.split("]")
+                let prefix = arr.first() + "]"
+                let content = arr.slice(1, arr.len()).join("]")
+
+                (eval(mode: "markup", prefix), eval(mode: "markup", content))
+
+             } else {
+                (none, eval(mode: "markup", e))
+            }
+        }), ..options)
 }
+
+#let rule(caption: none, supplement: "Regel", ..bodies) = figure(supplement: supplement,
+    caption: caption,
+    stack(dir: ltr, spacing: 0.5cm, ..bodies))
