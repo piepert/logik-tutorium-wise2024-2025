@@ -1,6 +1,8 @@
 #import "@preview/grape-suite:1.0.0": slides, seminar-paper
 #import seminar-paper: blockquote
-#import slides: slide
+#import slides: slide, task
+
+#import "/src/packages/inference.typ": *
 
 #show: slides.slides.with()
 
@@ -33,23 +35,42 @@
 #slide[
     = Existenz und Subalternation
 
-    Daimonen sind Kinder von Göttern.
-    ---
-    Es gibt Daimonen, die Kinder von Göttern sind.
+    #inference-raw(```
+        Dämonen sind Kinder von Göttern.
+        ----
+        Es gibt Dämonen, die Kinder von Göttern sind.
+    ```)
 
-    $forall x (D x -> K x)$
-    ---
-    $exists x (D x and K x)$
+    // #inference-raw(```
+    //     $forall x (D x -> K x)$
+    //     ----
+    //     $exists x (D x and K x)$
+    // ```)
 
-    Ist der Schluss gültig? → Nein. Was müsste man machen, um ihn gültig zu machen? → Prämisse hinzufügen!
 
-    Daimonen sind Kinder von Göttern.
-    Es gibt Daimonen.
-    ---
-    Es gibt Daimonen, die Kinder von Göttern sind.
+    #task(time: [5 min.])[
+        Formalisieren Sie den Schluss und beurteilen Sie, ob der Schluss gültig ist oder nicht!
+    ]
+]
 
-    $forall x (D x -> K x)$
-    $exists x (D x)$
-    ---
-    $exists x (D x and K x)$
+#slide[
+    *Idee:* Prämisse hinzufügen.
+
+    #inference-raw(```
+    Dämonen sind Kinder von Göttern.
+    Es gibt Dämonen.
+    ----
+    Es gibt Dämonen, die Kinder von Göttern sind.
+    ```)
+
+    // #inference-raw(```
+    //     $forall x (D x -> K x)$
+    //     $exists x D x$
+    //     ----
+    //     $exists x (D x and K x)$
+    // ```)
+
+    #task(time: [5 min.])[
+        Formalisieren Sie den Schluss und beurteilen Sie, ob der Schluss gültig ist oder nicht!
+    ]
 ]
