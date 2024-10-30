@@ -95,12 +95,12 @@
 #task(lines: 10, points: 4, extra: true, [Beweis], [
     Beweisen Sie die Gültigkeit des folgenden Arguments durch einen indirekten Beweis!
 ], [
-    #inference(
-        [Alle Ärzte sind brilliant.],
-        [Alle Chirurgen sind Ärzte.],
-        inference-line,
-        [Alle Chirurgen sind brilliant.]
-    )
+    #inference-raw(```
+        Alle Ärzte sind brilliant.
+        Alle Chirurgen sind Ärzte.
+        ----
+        Alle Chirurgen sind brilliant.
+    ```)
 ], (
     (1, [Die Konklusion wurde verneint.]),
     (1, [Weitere Beweisschritte sind nachvollziehbar.]),
