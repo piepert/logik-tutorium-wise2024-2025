@@ -2,6 +2,21 @@
 #import colors: *
 
 #let goal-list = (
+    // Auf Grobziele beschränken
+    "definieren-grundkonzepte": [Grundkonzepte definieren],
+    "ausfüllen-log-quad": [Zusammenhänge und Felder im logischen Quadrat ausfüllen],
+    "identifizieren-aussagesätze": [Aussagesätze identifizieren],
+    "formalisieren-al": [Aussagesätze in AL formalisieren],
+    "identifizieren-hin-not-bedingungen": [zu bestehenden Wenn-Dann-Sätzen logisch-äquivalente Wenn-Dann-Sätze identifizieren],
+    "bilden-hin-not-bedingungen": [zu bestehenden Wenn-Dann-Sätzen logisch-äquivalente Wenn-Dann-Sätze bilden],
+    "bestimmen-hin-not-bedingungen": [notwendige und hinreichende Bedingungen in Wenn-Dann-Sätzen bestimmen],
+    "beweisen-wahrheistabelle": [logische Wahrheit, logische Falschheit, logische Folgerung und logische Äquivalenz mit der Wahrheitstabelle beweisen],
+    "beweisen-kdns-al": [Beweise mit dem aussagenlogischen Kalkül des natürlichen Schließens führen],
+    "formalisieren-pl": [Aussagesätze in PL formalisieren],
+    "beweisen-kdns-pl": [Beweise mit dem prädikatenlogischen Kalkül des natürlichen Schließens führen],
+    "beweisen-verzweigt": [verzweigte Beweise mit dem Kalkül des natürlichen Schließens führen],
+
+    /*
     // Grundlagen
     definieren-logik: ["Logik" definieren],
     wissen-phil-argumente: [wissen, was philosophische Argumente sind],
@@ -59,6 +74,7 @@
     konstanten-generalisieren: [Ausdrücke, die Konstanten beinhalten, generalisieren und die Konstanten korrekt binden],
     kennen-einschränkung-allq-einf: [kennen die Einschränkungen der $forall$-Einf. und beachten sie bei der Ableitung],
     kennen-einschränkung-exq-bes: [kennen die Einschränkungden der $exists$-Bes. und beachten sie bei der Ableitung],
+    */
 )
 
 #let set-all-goals() = state("sequence-goals").update((
@@ -66,70 +82,91 @@
 
     goals: (
         "LG": (
-            "definieren-logik",
-            "wissen-phil-argumente",
-            "erkennen-phil-argumente",
+            "definieren-grundkonzepte",
             "identifizieren-aussagesätze",
-            "definieren-argument",
-            "definieren-gültigkeit",
-            "definieren-schlüssigkeit",
-            "kennen-aufbau-beweis",
-            "beweise-metasprache",
-            "definieren-logische-folgerung",
+            "identifizieren-hin-not-bedingungen",
+            "bestimmen-hin-not-bedingungen",
+            "bilden-hin-not-bedingungen",
         ),
 
         "AL": (
-            "identifizieren-al-strukturen",
-            "identifizieren-hinr-notw-bed",
-            "entwickeln-gefühl-al-syntax",
-            "erkennen-suchen-schemata",
-            "bilden-ausdrücke-schemata",
-            "identifizieren-junktoren",
             "formalisieren-al",
-            "formalisieren-wd-gdw-nur",
-            "bilden-notw-hinr-äquivalenz",
-            "erkennen-wahrheitsbedingungen",
-            "definieren-semantik-junktoren",
-        ),
-
-        "WT": (
-            "darstellen-junktoren-wahrheitstabelle",
-            "auswerten-ausdrücke-wahrheitstabelle",
-            "beweisen-logische-wahrheit",
-            "beweisen-logische-folgerung",
-            "beweisen-logische-äquivalenz",
-            "korrekte-beweisform",
-        ),
-
-        "KS": (
-            "aufbauen-kdns",
-            "verstehen-direkte-regeln",
-            "beweise-kdns-einfach",
-            "wissen-raa-verfahren",
-            "bilden-linke-beweisspalte",
-            "beweisen-mittels-raa",
-            "erkennen-konditionalisierung",
-            "prüfen-abhängigkeiten",
+            "beweisen-wahrheistabelle",
+            "beweisen-kdns-al",
             "beweisen-verzweigt",
         ),
 
-        // PL
         "PL": (
-            "wissen-unterschied-al-pl",
-            "formalisieren-pl-unquantifiziert",
-            "formalisieren-pl-quantifiziert",
-            "umrechnen-quantoren",
-            "benennen-begriffe-log-quad",
-            "finden-beispiele-log-quad",
-        ),
+            "formalisieren-pl",
+            "beweisen-kdns-pl",
+            "ausfüllen-log-quad",
+        )
 
-        // PL KdnS
-        "PK": (
-            "variablen-spezialisieren",
-            "konstanten-generalisieren",
-            "kennen-einschränkung-allq-einf",
-            "kennen-einschränkung-exq-bes",
-        ),
+        // "LG": (
+        //     "definieren-logik",
+        //     "wissen-phil-argumente",
+        //     "erkennen-phil-argumente",
+        //     "identifizieren-aussagesätze",
+        //     "definieren-argument",
+        //     "definieren-gültigkeit",
+        //     "definieren-schlüssigkeit",
+        //     "kennen-aufbau-beweis",
+        //     "beweise-metasprache",
+        //     "definieren-logische-folgerung",
+        // ),
+
+        // "AL": (
+        //     "identifizieren-al-strukturen",
+        //     "identifizieren-hinr-notw-bed",
+        //     "entwickeln-gefühl-al-syntax",
+        //     "erkennen-suchen-schemata",
+        //     "bilden-ausdrücke-schemata",
+        //     "identifizieren-junktoren",
+        //     "formalisieren-al",
+        //     "formalisieren-wd-gdw-nur",
+        //     "bilden-notw-hinr-äquivalenz",
+        //     "erkennen-wahrheitsbedingungen",
+        //     "definieren-semantik-junktoren",
+        // ),
+
+        // "WT": (
+        //     "darstellen-junktoren-wahrheitstabelle",
+        //     "auswerten-ausdrücke-wahrheitstabelle",
+        //     "beweisen-logische-wahrheit",
+        //     "beweisen-logische-folgerung",
+        //     "beweisen-logische-äquivalenz",
+        //     "korrekte-beweisform",
+        // ),
+
+        // "KS": (
+        //     "aufbauen-kdns",
+        //     "verstehen-direkte-regeln",
+        //     "beweise-kdns-einfach",
+        //     "wissen-raa-verfahren",
+        //     "bilden-linke-beweisspalte",
+        //     "beweisen-mittels-raa",
+        //     "erkennen-konditionalisierung",
+        //     "prüfen-abhängigkeiten",
+        //     "beweisen-verzweigt",
+        // ),
+
+        // // PL
+        // "PL": (
+        //     "wissen-unterschied-al-pl",
+        //     "formalisieren-pl-unquantifiziert",
+        //     "formalisieren-pl-quantifiziert",
+        //     "umrechnen-quantoren",
+        //     "benennen-begriffe-log-quad",
+        //     "finden-beispiele-log-quad",
+        // ),
+
+        // // PL KdnS
+        // "PK": (
+        //     "variablen-spezialisieren",
+        //     "konstanten-generalisieren",
+        //     "kennen-einschränkung-allq-einf",
+        //     "kennen-einschränkung-exq-bes",
+        // ),
     )
 ))
 
@@ -182,16 +219,33 @@
     })
 }
 
-#let format-goal-key(..keys) = text(fill: purple,
-    math.equation(block: true, $mat(delim: "[",
-        #block(width: 0.5cm,
-            align(center,
-                text(font: "Atkinson Hyperlegible",
-                    size: 0.6em,
-                    strong(keys.pos().join([\ ])))
-            )
-        )
-    )$))
+#let format-goal-key(key) = text(fill: purple, [[#key]])
+
+#let print-goals(..goals, suffix: none) = context {
+    let goals = goals.pos()
+    let goals-table = ()
+    let max-goal-size = calc.max(..goals.map(e => measure(format-goal-key(e)+[,]).width))
+
+    for key in goals {
+
+        let goal = get-goal(key, here())
+
+        let goal-key = if goal != none {
+            goal.at(0)
+        } else {
+            return text(fill: red, strong("\""+key+"\" NOT FOUND"))
+        }
+
+        goals-table.push(format-goal-key(goal-key))
+        goals-table.push(goal.at(1) + suffix)
+    }
+
+    grid(columns: (auto, 1fr),
+            column-gutter: 0.5em,
+            row-gutter: 0.65em,
+
+            ..goals-table)
+}
 
 #let print-goals-for-sequence() = locate(loc => { style(sty => {
     let s = state("sequence-goals", ()).at(loc)
@@ -200,58 +254,39 @@
         return none
     }
 
-    let goals = ()
-    let max-goal-size = calc.max(..get-all-goals(loc).map(e => measure(format-goal-key(e)+[,], sty).width))
+    print-goals(..s.goals.at(s.current-key))
+})})
 
-    for key in s.goals.at(s.current-key) {
+#let ref-goal(key, supplement: none) = context {
+    let max-goal-size = calc.max(..get-all-goals(here()).map(e => measure(format-goal-key(e+[,])).width))
 
-        let goal = get-goal(key, loc)
+    let goal = get-goal(key, here())
 
-        let goal-key = if goal != none {
-            goal.at(0)
-        } else {
-            return text(fill: red, strong("\""+key+"\" NOT FOUND"))
-        }
-
-        goals.push(format-goal-key(goal-key))
-        goals.push(goal.at(1))
+    let goal-key = if goal != none {
+        goal.at(0)
+    } else {
+        return text(fill: magenta, strong("\""+key+"\" NOT FOUND"))
     }
 
-    grid(columns: (max-goal-size, 1fr),
-            column-gutter: 0.5em,
-            row-gutter: 1.5em,
+    if supplement == none or supplement == auto {
+        goal-key
 
-            ..goals)
-})})
+    } else {
+        grid(columns: (max-goal-size, 1fr),
+            column-gutter: 1em,
+            row-gutter: 1em,
+
+            format-goal-key(goal-key),
+            it.supplement)
+    }
+}
 
 #let ref-goals(body) = {
     show ref: it => {
         let key = str(it.target)
 
         if key in goal-list {
-            locate(loc => { style(s => {
-                let max-goal-size = calc.max(..get-all-goals(loc).map(e => measure(format-goal-key(e+[,]), s).width))
-
-                let goal = get-goal(key, loc)
-
-                let goal-key = if goal != none {
-                    goal.at(0)
-                } else {
-                    return text(fill: red, strong("\""+key+"\" NOT FOUND"))
-                }
-
-                if it.supplement == none or it.supplement == auto {
-                    goal-key
-
-                } else {
-                    grid(columns: (max-goal-size, 1fr),
-                        column-gutter: 1em,
-                        row-gutter: 1em,
-
-                        format-goal-key(goal-key),
-                        it.supplement)
-                }
-            })})
+            ref-goal(key, supplement: it.supplement)
 
         } else {
             it
@@ -276,6 +311,8 @@
             }
 
             list.push(goal-key)
+        } else {
+            panic("goal \""+key+"\" not found")
         }
     }
 
