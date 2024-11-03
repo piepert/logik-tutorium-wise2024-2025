@@ -55,3 +55,20 @@
 
     body
 })
+
+#let focus-slide(body) = {
+    set page(fill: purple)
+    set text(fill: white)
+
+    state("grape-suite-slides", ()).update(k => {
+        k.push("focus")
+        k
+    })
+
+    polylux.polylux-slide[
+        #set text(size: 1.5em, weight: "bold")
+        #show: align.with(center + horizon)
+        #v(-0.75em)
+        #body
+    ]
+}
