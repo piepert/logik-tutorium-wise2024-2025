@@ -1,4 +1,4 @@
-#import "@preview/grape-suite:1.0.1": exercise
+#import "@preview/grape-suite:1.0.0": exercise
 #import "/src/packages/goals.typ": set-all-goals, ref-goal
 #import exercise: *
 
