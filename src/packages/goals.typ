@@ -10,7 +10,7 @@
     "identifizieren-hin-not-bedingungen": [zu bestehenden Wenn-Dann-Sätzen logisch-äquivalente Wenn-Dann-Sätze identifizieren],
     "bilden-hin-not-bedingungen": [zu bestehenden Wenn-Dann-Sätzen logisch-äquivalente Wenn-Dann-Sätze bilden],
     "bestimmen-hin-not-bedingungen": [notwendige und hinreichende Bedingungen in Wenn-Dann-Sätzen bestimmen],
-    "beweisen-wahrheistabelle": [logische Wahrheit, logische Falschheit, logische Folgerung und logische Äquivalenz mit der Wahrheitstabelle beweisen],
+    "beweisen-wahrheitstabelle": [logische Wahrheit, logische Falschheit, logische Folgerung und logische Äquivalenz mit der Wahrheitstabelle beweisen],
     "beweisen-kdns-al": [Beweise mit dem aussagenlogischen Kalkül des natürlichen Schließens führen],
     "formalisieren-pl": [Aussagesätze in PL formalisieren],
     "beweisen-kdns-pl": [Beweise mit dem prädikatenlogischen Kalkül des natürlichen Schließens führen],
@@ -91,7 +91,7 @@
 
         "AL": (
             "formalisieren-al",
-            "beweisen-wahrheistabelle",
+            "beweisen-wahrheitstabelle",
             "beweisen-kdns-al",
             "beweisen-verzweigt",
         ),
@@ -233,7 +233,7 @@
         let goal-key = if goal != none {
             goal.at(0)
         } else {
-            return text(fill: red, strong("\""+key+"\" NOT FOUND"))
+            return text(fill: magenta, strong("\""+key+"\" NOT FOUND"))
         }
 
         goals-table.push(format-goal-key(goal-key))

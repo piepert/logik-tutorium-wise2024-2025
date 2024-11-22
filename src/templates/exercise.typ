@@ -84,7 +84,7 @@
         box-example-title: [Beispiel],
         box-hint-title: [Hinweis],
         box-notice-title: [Achtung],
-        box-solution-title: [Lösung],
+        box-solution-title: [Lösungsvorschlag],
         box-task-title: [Aufgabe],
 
         ..a
