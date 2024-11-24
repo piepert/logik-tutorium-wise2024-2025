@@ -764,7 +764,7 @@ Die Studierenden generieren logische Methodenkompetenz, indem sie ...
         ([@bilden-hin-not-bedingungen], 5, 4),
         ([@bestimmen-hin-not-bedingungen], 3, 6),
         ([@formalisieren-al], 2, 12),
-        ([@beweisen-wahrheistabelle], 5, 7),
+        ([@beweisen-wahrheitstabelle], 5, 7),
         ([@beweisen-kdns-al], 5, 9),
         ([@formalisieren-pl], 7, 7),
         ([@beweisen-kdns-pl], 8, 6),

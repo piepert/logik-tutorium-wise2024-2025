@@ -3,7 +3,6 @@
 #import colors: *
 
 #show: project.with(title: [Formelsammlung])
-#set block(breakable: false)
 
 #let rule = rule.with(supplement: none)
 
@@ -38,6 +37,7 @@
 + Mit "#super[T]" markierte Regeln dürfen auch auf Teilformeln angewandt werden.
 + Seien $alpha$, $beta$ und $gamma$ beliebige Sätze der Aussagenlogik.
 
+#set grid.cell(breakable: false)
 #show grid: set text(size: 0.85em)
 #show grid.cell: block.with(stroke: purple, inset: 1em, width: 100%)
 #grid(columns: 2,
