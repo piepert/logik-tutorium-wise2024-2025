@@ -8,7 +8,7 @@
     type: "Material",
     no: 2,
     suffix-title: [Junktoren],
-    date: datetime(year: 2023, month: 11, day: 6))
+    date: datetime(year: 2024, month: 11, day: 6))
 
 #task(time: [Stammgruppen, 7 min.])[
     Sammeln Sie aus den Aussagesätzen in Ihrem Material die Ihnen bekannten logischen Operationen heraus und erarbeiten Sie die folgenden Merkmale mit Hilfe des Skripts, euren Aufzeichnungen und der Vorlesung:

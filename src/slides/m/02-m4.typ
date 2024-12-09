@@ -8,7 +8,7 @@
     type: "Material",
     no: 4,
     suffix-title: [Argumenttypen],
-    date: datetime(year: 2023, month: 10, day: 30))
+    date: datetime(year: 2024, month: 10, day: 30))
 
 #task(time: [Stammgruppen, 10 min.])[
     Ordnen Sie die Argumente jeweils mit Hilfe der Definitionen Ihrer Experten das folgende Schema ein:

@@ -8,7 +8,7 @@
     type: "Material",
     no: 5.1,
     suffix-title: [Normalform],
-    date: datetime(year: 2023, month: 10, day: 30))
+    date: datetime(year: 2024, month: 10, day: 30))
 
 #task(time: [Stammgruppen, 10 min.])[
     Bringen Sie die folgenden Argumente aus der Normalform in eine natürliche Textform! Benutzen Sie dazu die Hinweiswörter, die Prämissen und Konklusionen kennzeichnen.

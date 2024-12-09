@@ -6,7 +6,7 @@
     type: "Material",
     no: 3,
     suffix-title: [Schlüssigkeit],
-    date: datetime(year: 2023, month: 10, day: 30))
+    date: datetime(year: 2024, month: 10, day: 30))
 
 #task(time: [10 min.])[
     + Definieren Sie, was ein schlüssiges Argument ist.

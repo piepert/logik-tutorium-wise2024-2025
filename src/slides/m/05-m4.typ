@@ -9,7 +9,7 @@
     type: "Material",
     no: 4,
     suffix-title: [Logische Äquivalenz],
-    date: datetime(year: 2023, month: 11, day: 20))
+    date: datetime(year: 2024, month: 11, day: 20))
 
 #task(time: [Expertengruppen, 10 min.])[
     Definieren Sie Begriff den Begriff der logischen Wahrheit mit Hilfe Ihres Materials, dem Skript und den Vorlesungsfolien! Erklären Sie anhand eines Beispiels, wie Sie dies innerhalb der Wahrheitstabelle erkennen!

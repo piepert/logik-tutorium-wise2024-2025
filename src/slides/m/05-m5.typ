@@ -8,7 +8,7 @@
 #show: project.with(
     type: "Material",
     no: 5,
-    date: datetime(year: 2023, month: 11, day: 20))
+    date: datetime(year: 2024, month: 11, day: 20))
 
 #task(title: [Aufgabe 1], time: [Stammgruppen, 5 min.])[
     Bestimmen Sie jeweils mit der Wahrheitstabelle, ob die Aussage logisch wahr, erfüllbar oder logisch falsch ist!

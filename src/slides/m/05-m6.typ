@@ -8,7 +8,7 @@
 #show: project.with(
     type: "Material",
     no: 6,
-    date: datetime(year: 2023, month: 11, day: 20))
+    date: datetime(year: 2024, month: 11, day: 20))
 
 #task(title: [PA, 10 min.])[
     Formalisieren Sie die Schlüsses und prüfen Sie mit Hilfe der Wahrheitstafel, ob es sich um gültige Argumente handelt!
