@@ -437,9 +437,6 @@
         return body.debug
     }
 
-    // todo: remove debug
-    // return body
-
     let t = table(columns: body.header.len(),
         stroke: stroke,
         align: top,

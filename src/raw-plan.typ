@@ -170,7 +170,7 @@
         #print-goals(
             "bilden-hin-not-bedingungen",
             "formalisieren-al",
-            "beweisen-wahrheistabelle",
+            "beweisen-wahrheitstabelle",
         )
     ],
 
@@ -187,7 +187,7 @@
     ], [
         #print-goals(
             "formalisieren-al",
-            "beweisen-wahrheistabelle",
+            "beweisen-wahrheitstabelle",
             "beweisen-kdns-al",
         )
     ],

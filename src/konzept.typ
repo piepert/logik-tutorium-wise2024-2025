@@ -677,7 +677,7 @@ Die Studierenden generieren logische Methodenkompetenz, indem sie ...
     "bilden-hin-not-bedingungen",
     "bestimmen-hin-not-bedingungen",
     "formalisieren-al",
-    "beweisen-wahrheistabelle",
+    "beweisen-wahrheitstabelle",
     "beweisen-kdns-al",
     "formalisieren-pl",
     "beweisen-kdns-pl",
@@ -724,7 +724,7 @@ Die Studierenden generieren logische Methodenkompetenz, indem sie ...
     #lorem(200)
 ]
 
-#annotate-goal("beweisen-wahrheistabelle")[
+#annotate-goal("beweisen-wahrheitstabelle")[
     #lorem(200)
 ]
 
@@ -840,7 +840,7 @@ Die Studierenden generieren logische Methodenkompetenz, indem sie ...
 
     ],
 
-    print-goals("beweisen-wahrheistabelle"), [], [
+    print-goals("beweisen-wahrheitstabelle"), [], [
 
     ],
 

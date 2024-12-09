@@ -27,9 +27,7 @@
         ..a
     )
 
-    show terms: it => {
-        it.children.map(e => par(hanging-indent: 1.5em)[#strong(e.term): #e.description]).join[]
-    }
+    set terms(separator: strong[: ])
 
     show link: underline
     show link: text.with(fill: colors.purple)

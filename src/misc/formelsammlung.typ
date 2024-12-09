@@ -154,10 +154,10 @@
     $not alpha and not beta$
     ```))),
 
-    rule(caption: [Konditional-Ersetzung ($->$-Eers.)#super[T]], inference-raw(```
+    rule(caption: [Konditional-Ersetzung ($->$-Ers.)#super[T]], inference-raw(```
     $not (alpha -> beta)$
     ----
-    $beta and not alpha$
+    $alpha and not beta$
     ```)),
 
     grid.cell(colspan: 1, rule(caption: [Kommutation (KM)#super[T]], inference-raw(```

@@ -128,7 +128,7 @@
     #subtask[
         Sokrates endet tragisch: Er wird vor Gericht angeklagt und beschuldigt, die Jugend zu verderben. Dabei unterstellt man ihm, daimonische Lehren zu verbreiten und die Götter zu verachten. Sokrates hatte jedoch ein Gegenargument, das in etwa so ging:
 
-        Sokrates verdirbt die Jugend nicht dadurch, dass er ihnen daimonisches lehrt, denn Daimonen sind Kinder von Göttern. Wenn Sokrates aber nicht an die Götter glaubt, dann auch nicht an die Kinder von Göttern. Und wer an etwas nicht glaubt, kann dasjenige auch nicht lehren. Sokrates glaubt nicht an die Götter.
+        Sokrates verdirbt die Jugend nicht dadurch, dass er ihnen Daimonisches lehrt, denn Daimonen sind Kinder von Göttern. Wenn Sokrates aber nicht an die Götter glaubt, dann auch nicht an die Kinder von Göttern. Und wer an etwas nicht glaubt, kann dasjenige auch nicht lehren. Sokrates glaubt nicht an die Götter.
     ]
 
 ], [
