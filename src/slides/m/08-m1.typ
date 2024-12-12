@@ -43,7 +43,7 @@
     table.hline(),
 
     strong[Allquantor], [
-        #v(4.5cm)<
+        #v(4.5cm)
     ], [], [],
     table.hline(),
 

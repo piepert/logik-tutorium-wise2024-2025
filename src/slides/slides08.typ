@@ -109,10 +109,62 @@
         Erarbeiten Sie in Gruppenarbeit eine Übersicht über die Bestandteile der Prädikatenlogik! (M1 gibt eine unausgefüllte Vorlage vor.)
 
         Klären Sie dabei folgende Begriffe:
-        - Nominator
-        - Prädikator
+        - Nominator (Individuenkonstanten & -variablen)
+        - Prädikator (Prädikate)
         - Existenzquantor
         - Allquantor
+
+        Erklären Sie, wie man Aussagen in PL bildet!
+    ]
+]
+
+#slide[
+    #set text(size: 0.925em)
+    #task(time: [PA, 5 min.])[
+        Übersetzen Sie die die folgenden PL-Sätze zurück in die natürliche Sprache!
+
+        #grid(columns: 2, column-gutter: 1em)[
+            $R x$: $x$ ist eine Reinigungskraft. \
+            $L x y$: $x$ und $y$ leiten gemeinsam eine Reinigungsfirma.
+        ][
+            $a$: Alice \
+            $b$: Bob
+        ]
+
+        + $R a$
+        + $R a and R b and L a b$
+        + $exists x R x$
+        + $forall x R x$
+        + $exists x exists y (R x and R y and L x y)$
+    ]
+]
+
+#slide[
+    #task(time: [PA, 5 min.])[
+        Formalisieren Sie die folgenden Aussagen in PL!
+
+        + Alice und Bob leiten gemeinsam keine Reinigungsfirma.
+        + Wenn Bob eine Reinigungskraft ist, dann auch Alice.
+        + Es gibt keine Reinigungskräfte.
+        + Es gibt Dinge, die keine Reinigungskräfte sind.
+        + Alle Reinigungskräfte leiten zusammen eine Firma.
+    ]
+]
+
+#slide[
+    #task(time: [Plenum, 5 min.])[
+        #set par(justify: false)
+        #set text(size: 0.95em)
+        Vergleichen Sie die beiden Aussagen! Beide sind eine verneinte Form von "Alle Äpfel sind giftig.", aber sagen sie auch das gleiche aus?
+
+        #set enum(numbering: "(a)")
+        + "Nicht alle Äpfel sind giftig." \
+        + "Alle Äpfel sind nicht giftig."
+
+        #set enum(numbering: "1.")
+        + Können (a) und (b) zusammen wahr sein?
+        + Können (a) und (b) zusammen falsch sein?
+        + Können (a) und (b) unterschiedliche Wahrheitswerte haben?
     ]
 ]
 
