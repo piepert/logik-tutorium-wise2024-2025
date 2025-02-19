@@ -2,7 +2,7 @@
 #import "/src/packages/inference.typ": *
 
 #show: project.with(no: 2,
-    date: datetime(year: 2023, month: 10, day: 30),
+    date: datetime(year: 2024, month: 10, day: 30),
     show-solutions: true,
     show-hints: true)
 

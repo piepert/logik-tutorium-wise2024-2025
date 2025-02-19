@@ -13,7 +13,7 @@
 #show raw.where(lang: "inference"): inference-raw
 
 #show: project.with(no: 8,
-    date: datetime(year: 2023, month: 12, day: 11),
+    date: datetime(year: 2024, month: 12, day: 11),
     show-solutions: true,
     show-hints: true)
 
