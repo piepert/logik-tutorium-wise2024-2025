@@ -13,8 +13,8 @@
     title: [die Prädikatenlogik und das relationale Modell der Welt],
     date: datetime(
         year: 2024,
-        month: 11,
-        day: 27
+        month: 12,
+        day: 11
     )
 )
 
@@ -168,6 +168,4 @@
     ]
 ]
 
-#focus-slide[
-    Fassen Sie in einem Satz zusammen, was Sie aus der heutigen Sitzung mitnehmen!
-]
+#final-slide
