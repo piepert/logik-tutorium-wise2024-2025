@@ -7,7 +7,7 @@
     suffix-title: [Logische Grundlagen],
 
     university: [Universität Rostock],
-    institute: [Institur für Philosophie],
+    institute: [Institut für Philosophie],
     seminar: [Tutorium: Sprache, Logik, Argumentation],
 
     show-point-distribution-in-tasks: true,

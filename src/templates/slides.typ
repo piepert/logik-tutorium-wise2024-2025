@@ -70,3 +70,14 @@
         #body
     ]
 }
+
+#let final-slide = focus-slide[
+    #v(0.5fr)
+
+    Fassen Sie in einem Satz zusammen, was Sie aus der heutigen Sitzung mitnehmen!
+
+    #v(0.5fr)
+    #set text(size: 0.5em, weight: "medium", fill: blue.lighten(25%))
+    #set align(left)
+    Folien, Übungsblätter, Ablaufplan, Konzepte und Sourcecode: \ #link("https://github.com/piepert/logik-tutorium-wise2023-2024", text(fill: blue.lighten(25%))[https:\//github.com/piepert/logik-tutorium-wise2023-2024])
+]
