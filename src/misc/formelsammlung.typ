@@ -1,4 +1,5 @@
-#import "/src/templates/exercise.typ": project, colors
+#import "/src/packages/log-quad.typ": *
+#import "/src/templates/exercise.typ": project, colors, definition
 #import "/src/packages/inference.typ": *
 #import colors: *
 
@@ -254,9 +255,9 @@
 
     block(align(left)[
         Voraussetzungen:
-        + $pi$ kommt _nicht_ in den Annahmen vor.
-        + $pi$ kommt _nicht_ in der Konklusion vor.
-        + Bei mehrfacher Anwendung der $exists$-Bes. innerhalb eines Beweises oder Zweigs ist für $pi$ jedes mal eine neue Konstante zu verwenden.
+        + $pi$ kommt _weder_ in den Annahmen _noch_ der Konklusion vor.
+        + $pi$ wurde zuvor durch keine andere $exists$-Bes. innerhalb des Beweises eingeführt.
+        + $pi$ kommt nicht in $alpha$ vor.
     ]+rule(caption: [Existenzquantor-Beseitigung ($exists$-Bes.)], inference-raw(```
     $exists psi alpha$
     ----
@@ -265,12 +266,15 @@
 
     block(align(left)[
         Voraussetzung:
-        + $pi$ kommt _nicht_ in den Annahmen vor.
-        + $pi$ kommt _nicht_ in der Konklusion vor.
-        + Die Zeile, auf die Sie die Allquantor-Einführung anwenden, enthält keinen Namensbuchstaben, den Sie zuvor durch eine Existenzquantor-Beseitigung abgeleitet haben.
+        + $pi$ kommt _weder_ in den Annahmen _noch_ der Konklusion vor.
+        + In $alpha$ kommt keine Konstante vor, die durch eine $exists$-Bes. in den Beweis eingeführt wurde.
     ])+rule(caption: [Allquantor-Einführung ($forall$-Einf.)], inference-raw(```
     $alpha$
     ----
     $forall psi alpha[pi\/psi]$
     ```)),
 )
+
+= Das logische Quadrat
+#set align(center)
+#log-quad()
